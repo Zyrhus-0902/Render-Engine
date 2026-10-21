@@ -1,0 +1,34 @@
+# Design-review style: every surface white, flat white background, real sun shadows.
+# Use for early-stage studies where materials are not decided yet.
+description: White model, white background, sun from the SketchUp shadow settings.
+
+environment:
+  type: sky
+  sky:
+    model: MULTIPLE_SCATTERING
+    strength: 0.5
+  camera_background:              # what the camera sees; lighting still comes from the sky
+    color: "#FFFFFF"
+    strength: 4.0                 # AgX maps 1.0 to light grey; ~4 reads as paper white
+
+sun:
+  mode: sketchup                 # matches the shadows you set up in SketchUp
+  strength: 3.5
+  angle_deg: 0.53
+  color: "#FFFFFF"
+
+ground:
+  enabled: true
+  material: MASSING_WHITE
+  size_m: 600
+
+color:
+  view_transform: AgX
+  look: AgX - Base Contrast
+  exposure: 0.5
+  gamma: 1.0
+
+# Replace every material with MASSING_WHITE, but keep glass as glass.
+material_override:
+  material: MASSING_WHITE
+  keep_types: [glass]

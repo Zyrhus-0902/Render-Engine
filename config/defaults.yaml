@@ -1,0 +1,89 @@
+# Studio-wide defaults. Projects override anything here in their project.yaml.
+# Change these deliberately: every value here affects every render.
+
+style: exterior_day
+preset: draft
+
+blender:
+  # Pin one Blender version for the whole studio. Different versions can shade
+  # differently; the renderer warns when it runs on anything else.
+  version: "5.2"
+
+# --- Camera standard ---------------------------------------------------------
+# Scene names in SketchUp start with a view-type prefix, e.g. "EXT-01 Entrance",
+# "INT-03 Living", "AER-01 Site", "ELV-N North elevation".
+camera:
+  sensor_width_mm: 36            # full-frame equivalent focal lengths
+  default_type: EXT
+  lens_policy: snap              # sketchup | snap | fixed
+  allowed_lenses_mm: [18, 24, 28, 35, 50]
+  two_point_max_pitch_deg: 25    # above this, keep the real perspective
+  types:
+    EXT:                         # exterior, eye level
+      lock_eye_height: true
+      eye_height_m: 1.6
+      two_point: true
+      allowed_lenses_mm: [24, 28, 35]
+      lens_mm: 28
+    INT:                         # interior, eye level
+      lock_eye_height: false     # floor levels differ; set eye height in SketchUp
+      eye_height_m: 1.5
+      two_point: true
+      allowed_lenses_mm: [18, 24]
+      lens_mm: 24
+      clip_start_m: 0.05
+    AER:                         # aerial / bird's eye
+      two_point: false
+      allowed_lenses_mm: [35, 50]
+      lens_mm: 35
+      clip_end_m: 5000
+    DET:                         # detail / close-up
+      two_point: true
+      allowed_lenses_mm: [50]
+      lens_mm: 50
+      clip_start_m: 0.02
+    ELV:                         # orthographic elevations / sections
+      orthographic: true
+
+# --- Render quality presets --------------------------------------------------
+# Every preset uses the same aspect ratio, so a draft frames exactly like a final.
+render_presets:
+  draft:
+    resolution: [3000, 2000]
+    resolution_percentage: 25
+    samples: 32
+    adaptive_threshold: 0.1
+    denoise: true
+    format: PNG
+    color_depth: 8
+    strict_materials: false      # unmapped materials render magenta
+  preview:
+    resolution: [3000, 2000]
+    resolution_percentage: 50
+    samples: 256
+    adaptive_threshold: 0.03
+    denoise: true
+    format: PNG
+    color_depth: 8
+    strict_materials: false
+  final:
+    resolution: [3000, 2000]
+    resolution_percentage: 100
+    samples: 1024
+    adaptive_threshold: 0.01
+    denoise: true
+    format: PNG
+    color_depth: 16
+    strict_materials: true       # refuse to render with unmapped materials
+    save_blend: true             # keep the built scene for touch-ups
+
+render:
+  device: auto                   # auto picks a GPU if present. Keep one device type per project.
+  seed: 0                        # fixed noise pattern = repeatable images
+  filter_width: 1.5
+  clamp_indirect: 10.0
+  bounces: {total: 12, diffuse: 4, glossy: 4, transmission: 12, transparent: 8}
+
+site:
+  ground_z_m: 0.0
+  north_angle_deg: 0.0

@@ -1,0 +1,30 @@
+# Blue-hour exterior: low warm sun, deep sky, interiors read through glazing.
+description: Dusk, sun 4 degrees above the horizon in the west, cool sky, raised exposure.
+
+environment:
+  type: sky
+  sky:
+    model: MULTIPLE_SCATTERING
+    strength: 0.6
+    air: 1.2
+    aerosol: 2.0
+    ozone: 1.5
+
+sun:
+  mode: fixed
+  azimuth_deg: 280
+  elevation_deg: 4
+  strength: 1.5
+  angle_deg: 1.0
+  color: "#FFB27A"
+
+ground:
+  enabled: true
+  material: SITE_GRASS
+  size_m: 600
+
+color:
+  view_transform: AgX
+  look: AgX - Base Contrast
+  exposure: 1.0
+  gamma: 1.0

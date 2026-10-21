@@ -1,0 +1,165 @@
+# Studio material library: the single source of truth for how surfaces look.
+#
+# Name SketchUp materials exactly after these ids (e.g. "CONC_BOARDFORM").
+# The SketchUp colour/texture is only for modelling; at render time it is
+# replaced by the definition here, so the same material looks identical in
+# every view and every project.
+#
+# Fields (all optional except base_color):
+#   type:          principled (default) | glass
+#   base_color:    sRGB hex. Used when there is no base_color texture.
+#   roughness, metallic, ior, specular, coat, alpha
+#   emission_color / emission_strength
+#   textures:      {base_color, roughness, metallic, normal | bump} paths relative to materials/
+#   size_m:        [width, height] real-world size of one texture tile
+#   projection:    box (world-space, default: continuous across objects) | uv (use SketchUp UVs)
+#   rotation_deg:  texture rotation around Z
+#
+# Keep albedos physically plausible (nothing brighter than ~#F0F0F0 except
+# lights), otherwise exposure stops being comparable between projects.
+
+materials:
+  # --- neutral / massing ------------------------------------------------------
+  MASSING_WHITE:
+    base_color: "#E6E6E3"
+    roughness: 0.9
+  PLASTER_WHITE:
+    base_color: "#DCD9D2"
+    roughness: 0.85
+  PAINT_WARM_WHITE:
+    base_color: "#E3DDD0"
+    roughness: 0.7
+
+  # --- masonry ----------------------------------------------------------------
+  CONC_EXPOSED:
+    base_color: "#9C9A95"
+    roughness: 0.8
+    # textures:
+    #   base_color: textures/conc_exposed/albedo.jpg
+    #   roughness:  textures/conc_exposed/roughness.jpg
+    #   normal:     textures/conc_exposed/normal.png
+    # size_m: [2.0, 2.0]
+  CONC_BOARDFORM:
+    base_color: "#8F8C86"
+    roughness: 0.85
+    size_m: [2.4, 1.2]
+  BRICK_WIRECUT_RED:
+    base_color: "#8A4A36"
+    roughness: 0.85
+    size_m: [1.2, 0.6]
+  BRICK_EXPOSED_INDIAN:
+    base_color: "#9A5440"
+    roughness: 0.9
+    size_m: [1.15, 0.6]
+  STONE_LIMESTONE:
+    base_color: "#C9BFA8"
+    roughness: 0.75
+    size_m: [1.2, 0.6]
+  STONE_KOTA_BLUE:
+    base_color: "#6E7472"
+    roughness: 0.55
+    size_m: [0.6, 0.6]
+  STONE_GRANITE_BLACK:
+    base_color: "#2B2B2B"
+    roughness: 0.25
+    size_m: [0.6, 0.6]
+  TILE_TERRAZZO:
+    base_color: "#C8C3B8"
+    roughness: 0.35
+    size_m: [0.6, 0.6]
+  ROOF_TILE_CLAY:
+    base_color: "#9E4B2F"
+    roughness: 0.7
+    size_m: [1.0, 1.0]
+
+  # --- timber -----------------------------------------------------------------
+  WOOD_TEAK:
+    base_color: "#7A4E2D"
+    roughness: 0.55
+    size_m: [2.0, 0.3]
+  WOOD_OAK_FLOOR:
+    base_color: "#A97C50"
+    roughness: 0.45
+    size_m: [2.0, 1.0]
+  WOOD_CEDAR_CLADDING:
+    base_color: "#9A6A43"
+    roughness: 0.7
+    size_m: [2.0, 1.0]
+
+  # --- metal ------------------------------------------------------------------
+  METAL_ALU_GREY:
+    base_color: "#6E7074"
+    metallic: 1.0
+    roughness: 0.35
+  METAL_STEEL_BLACK:
+    base_color: "#1E1E1E"
+    metallic: 1.0
+    roughness: 0.45
+  METAL_STAINLESS:
+    base_color: "#B4B4B4"
+    metallic: 1.0
+    roughness: 0.2
+  METAL_CORTEN:
+    base_color: "#7C3F22"
+    metallic: 0.0
+    roughness: 0.85
+
+  # --- glass ------------------------------------------------------------------
+  GLASS_CLEAR:
+    type: glass
+    tint: "#F2F7F5"
+    roughness: 0.0
+    ior: 1.52
+  GLASS_TINTED_GREY:
+    type: glass
+    tint: "#9EA6A6"
+    roughness: 0.0
+    ior: 1.52
+  GLASS_FROSTED:
+    type: glass
+    tint: "#F2F5F5"
+    roughness: 0.35
+    ior: 1.52
+
+  # --- site -------------------------------------------------------------------
+  SITE_GRASS:
+    base_color: "#4A5A2C"
+    roughness: 0.95
+    size_m: [4.0, 4.0]
+  SITE_PAVING_GREY:
+    base_color: "#8C8B87"
+    roughness: 0.8
+    size_m: [1.2, 1.2]
+  SITE_GRAVEL:
+    base_color: "#A59D8E"
+    roughness: 0.95
+    size_m: [2.0, 2.0]
+  SITE_ASPHALT:
+    base_color: "#3A3A3A"
+    roughness: 0.9
+  SITE_SOIL:
+    base_color: "#5E4A36"
+    roughness: 1.0
+  WATER_POOL:
+    type: glass
+    tint: "#9FD3D6"
+    roughness: 0.02
+    ior: 1.33
+
+  # --- fabric / soft ----------------------------------------------------------
+  FABRIC_LINEN:
+    base_color: "#CFC6B6"
+    roughness: 0.95
+  FABRIC_CHARCOAL:
+    base_color: "#3C3C3E"
+    roughness: 0.95
+
+  # --- light sources ----------------------------------------------------------
+  LIGHT_WARM:
+    base_color: "#FFE3B8"
+    emission_color: "#FFD9A0"
+    emission_strength: 15.0
+  LIGHT_NEUTRAL:
+    base_color: "#FFFFFF"
+    emission_color: "#FFF4E8"
+    emission_strength: 15.0

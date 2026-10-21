@@ -1,0 +1,126 @@
+{
+  "exporter_version": "demo",
+  "sketchup_version": null,
+  "model_name": "Demo pavilion",
+  "exported_at": null,
+  "model_file": "model.fbx",
+  "model_scale": 1.0,
+  "up_axis": "Z",
+  "units": "m",
+  "viewport": {
+    "width": 1500,
+    "height": 1000
+  },
+  "shadow_info": {
+    "latitude": 12.9716,
+    "longitude": 77.5946,
+    "north_angle_deg": 0.0,
+    "sun_direction": [
+      -0.5,
+      -0.6,
+      0.62
+    ]
+  },
+  "scenes": [
+    {
+      "name": "EXT-01 Approach",
+      "description": "Main approach from the south-west",
+      "camera": {
+        "eye": [
+          -14.0,
+          -16.0,
+          1.75
+        ],
+        "target": [
+          0.0,
+          0.0,
+          2.6
+        ],
+        "up": [
+          0,
+          0,
+          1
+        ],
+        "perspective": true,
+        "fov_deg": 35.0,
+        "fov_is_height": true,
+        "aspect_ratio": 1.5
+      }
+    },
+    {
+      "name": "EXT-02 Garden side",
+      "description": "From the east lawn",
+      "camera": {
+        "eye": [
+          17.0,
+          -9.0,
+          1.4
+        ],
+        "target": [
+          0.0,
+          0.5,
+          2.0
+        ],
+        "up": [
+          0,
+          0,
+          1
+        ],
+        "perspective": true,
+        "fov_deg": 30.0,
+        "fov_is_height": true,
+        "aspect_ratio": 1.5
+      }
+    },
+    {
+      "name": "AER-01 Overview",
+      "description": "Bird's eye",
+      "camera": {
+        "eye": [
+          -22.0,
+          -26.0,
+          18.0
+        ],
+        "target": [
+          0.0,
+          0.0,
+          1.5
+        ],
+        "up": [
+          0,
+          0,
+          1
+        ],
+        "perspective": true,
+        "fov_deg": 28.0,
+        "fov_is_height": true,
+        "aspect_ratio": 1.5
+      }
+    },
+    {
+      "name": "INT-01 Pavilion",
+      "description": "Inside, looking out through the glazing",
+      "camera": {
+        "eye": [
+          0.8,
+          2.3,
+          1.95
+        ],
+        "target": [
+          -3.5,
+          -2.6,
+          1.9
+        ],
+        "up": [
+          0,
+          0,
+          1
+        ],
+        "perspective": true,
+        "fov_deg": 50.0,
+        "fov_is_height": true,
+        "aspect_ratio": 1.5
+      }
+    }
+  ]
+}

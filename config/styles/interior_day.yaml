@@ -1,0 +1,30 @@
+# Daylit interiors: soft sky through openings, higher exposure, gentler contrast.
+description: Bright overcast-leaning sky, soft sun, +1.5 EV for interiors.
+
+environment:
+  type: sky
+  sky:
+    model: MULTIPLE_SCATTERING
+    strength: 0.6
+    air: 1.0
+    aerosol: 3.0
+    ozone: 1.0
+
+sun:
+  mode: fixed
+  azimuth_deg: 200
+  elevation_deg: 40
+  strength: 3.0
+  angle_deg: 3.0                 # softer shadows
+  color: "#FFF6EC"
+
+ground:
+  enabled: true
+  material: SITE_GRASS
+  size_m: 600
+
+color:
+  view_transform: AgX
+  look: AgX - Base Contrast
+  exposure: 1.5
+  gamma: 1.0

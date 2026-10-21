@@ -1,0 +1,68 @@
+[
+  {
+    "name": "CONC_BOARDFORM",
+    "color": [
+      140,
+      138,
+      133
+    ],
+    "alpha": 1.0,
+    "texture": null,
+    "texture_size_m": null
+  },
+  {
+    "name": "Wood Teak",
+    "color": [
+      122,
+      76,
+      46
+    ],
+    "alpha": 1.0,
+    "texture": null,
+    "texture_size_m": null
+  },
+  {
+    "name": "Translucent_Glass_Blue",
+    "color": [
+      153,
+      178,
+      204
+    ],
+    "alpha": 1.0,
+    "texture": null,
+    "texture_size_m": null
+  },
+  {
+    "name": "SITE_PAVING_GREY",
+    "color": [
+      128,
+      128,
+      128
+    ],
+    "alpha": 1.0,
+    "texture": null,
+    "texture_size_m": null
+  },
+  {
+    "name": "Metal_Aluminum_Anodized",
+    "color": [
+      102,
+      102,
+      107
+    ],
+    "alpha": 1.0,
+    "texture": null,
+    "texture_size_m": null
+  },
+  {
+    "name": "PLASTER_WHITE",
+    "color": [
+      217,
+      214,
+      204
+    ],
+    "alpha": 1.0,
+    "texture": null,
+    "texture_size_m": null
+  }
+]

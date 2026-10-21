@@ -1,0 +1,31 @@
+# How SketchUp material names are mapped to library ids when they are not
+# already named after one. Names are compared case-insensitively with spaces,
+# dashes and duplicate suffixes ("#1", ".001") ignored.
+#
+# Projects can add their own aliases/overrides in <project>/materials.yaml.
+
+# Faces painted with SketchUp's "Default" material, or with none.
+default_material: PLASTER_WHITE
+
+# Legacy and vendor names -> library id.
+aliases:
+  "Translucent_Glass_Blue": GLASS_CLEAR
+  "Translucent_Glass_Gray": GLASS_TINTED_GREY
+  "Translucent_Glass_Safety": GLASS_FROSTED
+  "Concrete_Aggregate_Smoke": CONC_EXPOSED
+  "Concrete_Form_4x8": CONC_BOARDFORM
+  "Brick_Antique": BRICK_WIRECUT_RED
+  "Wood_Floor_Light": WOOD_OAK_FLOOR
+  "Vegetation_Grass1": SITE_GRASS
+  "Metal_Aluminum_Anodized": METAL_ALU_GREY
+  "Water_Pool_Light": WATER_POOL
+
+# Glob rules, tried in order after exact names and aliases.
+patterns:
+  - {match: "*glass*", material: GLASS_CLEAR}
+  - {match: "*glazing*", material: GLASS_CLEAR}
+  - {match: "*grass*", material: SITE_GRASS}
+  - {match: "*lawn*", material: SITE_GRASS}
+  - {match: "*water*", material: WATER_POOL}
+  - {match: "*concrete*", material: CONC_EXPOSED}
+  - {match: "*plaster*", material: PLASTER_WHITE}

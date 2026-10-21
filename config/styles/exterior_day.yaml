@@ -1,0 +1,32 @@
+# Clear late-morning daylight. The house style for exterior presentation views.
+description: Clear sky, warm sun from the south-west at 35 degrees, neutral AgX grading.
+
+environment:
+  type: sky
+  sky:
+    model: MULTIPLE_SCATTERING   # falls back to NISHITA on older Blender
+    strength: 0.35
+    air: 1.0
+    aerosol: 1.5
+    ozone: 1.0
+
+sun:
+  # fixed = the same light on every project, regardless of site.
+  # Switch a project to mode: solar (or sketchup) in its project.yaml for real shadows.
+  mode: fixed
+  azimuth_deg: 225               # compass bearing, 0 = true north, clockwise
+  elevation_deg: 35
+  strength: 4.0
+  angle_deg: 0.53
+  color: "#FFF4E5"
+
+ground:
+  enabled: true
+  material: SITE_GRASS
+  size_m: 600
+
+color:
+  view_transform: AgX
+  look: AgX - Medium High Contrast
+  exposure: 0.0
+  gamma: 1.0

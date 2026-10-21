@@ -1,0 +1,4 @@
+-r requirements.txt
+pytest>=8.0
+# Optional: Blender as a Python module, for --in-process renders and tests.
+# bpy==5.2.2

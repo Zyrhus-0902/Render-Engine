@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+
+# Render output and large source exports
+projects/*/renders/
+projects/*/export/*.fbx
+projects/*/export/*.obj
+projects/*/export/*.glb
+!projects/demo/export/model.fbx
+*.blend1
