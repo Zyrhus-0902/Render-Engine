@@ -1,0 +1,8 @@
+# Defaults every preset inherits. A preset file only lists what it changes.
+seed: 20261022               # same seed for every view in a set
+style_reference: null        # image in config/ai/references/ (FLUX Redux); null = prompt only
+style_strength: 0.3
+harmonize:
+  enabled: true
+  anchor: first              # first | <view name> | style_reference
+  strength: 0.7              # 0 = off, 1 = fully match the anchor's colour statistics

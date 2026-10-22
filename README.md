@@ -1,115 +1,107 @@
 # Render Engine
 
-**Consistent architectural renders from SketchUp scenes.**
+**Consistent architectural renders from SketchUp views.**
 
-You model and compose views in SketchUp. A one-click exporter writes the model,
-every scene camera, the sun and the material list. A headless **Blender
-Cycles** pipeline then rebuilds the scene from version-controlled settings and
-renders every view. Because no setting is clicked by hand, every image in a set
-shares the same environment, camera standard, materials and colour grading.
+Export your views from SketchUp as images. The pipeline turns a whole set into
+photoreal renders that share **one scene setting, one material palette and one
+colour grade**, while keeping each view's geometry, framing and focal point.
 
 ```
- SketchUp (Pro)                         this repo                                 output
-┌──────────────────┐   export/   ┌───────────────────────────────┐   renders/<run>/
-│ scenes = views   │──model.fbx─▶│ job builder (Python)          │   EXT-01_Approach.png
-│ materials named  │──scenes.json│  + config/defaults.yaml       │──▶EXT-01_Approach.json  (manifest)
-│ after library ids│──materials. │  + config/styles/<style>.yaml │   qa/contact_sheet.jpg
-│ Render Engine    │  json       │  + materials/library.yaml     │   qa/*_overlay.jpg
-│ exporter (Ruby)  │──reference/ │  = job.json  ──▶ Blender 5.2  │
-└──────────────────┘   *.png     └───────────────────────────────┘
+SketchUp scenes                      this repo                                     ComfyUI (your NVIDIA PC)
+ File > Export > 2D Graphic   ┌──────────────────────────────────────┐   workflow   ┌─────────────────────────────┐
+ input/EXT-01 Entrance.png ──▶│ preset    (light, sky, mood, seed)   │──── JSON ───▶│ FLUX.1-dev + ControlNet     │
+ input/INT-02 Living.png   ──▶│ fidelity  (how tight to the input)   │              │   depth + edges of your view│
+ input/AER-01 Site.png     ──▶│ materials (project palette → prompt) │◀─── image ───│   img2img from your view    │
+                              │ quality   (draft / final)            │              │   [style reference: Redux]  │
+                              └──────────────────────────────────────┘              └─────────────────────────────┘
+                                   │ colour-match every view to one anchor
+                                   ▼
+                               renders/<run>/  images + manifests + qa/contact_sheet.jpg + qa/*_overlay.jpg
 ```
 
----
+## Why this design
 
-## 1. The decision: which engine?
+- **Image in, no software link.** Any SketchUp image export works (and Revit
+  or hand-drawn views later). There's no plugin and no model export.
+- **AI rendering, held on a short leash.** Free text-to-image would redesign
+  your building. Here a depth map and an edge map of *your* image steer the
+  model, and your image is the starting point. Geometry, view range and focal
+  point come from your export.
+- **Consistency comes from config, not clicks.** Scene, materials, seed,
+  models and grading are files in this repo. Every image records a `look_hash`
+  of all of them, and `qa` flags a set that mixes looks.
+- **Runs locally** on the studio's 24 GB NVIDIA PC through ComfyUI (free,
+  scriptable, no per-image fees).
 
-| Option | Consistency | Automation | Cost | Verdict |
-|---|---|---|---|---|
-| **Blender + Cycles (chosen)** | Every setting is code. Fixed seed, pinned version, path-traced | Full Python API, headless CLI, runs on any machine or in the cloud | Free, open source | **Core engine** |
-| V-Ray for SketchUp | Very good (`.vrmat` library, `.vrscene`) | Ruby API + V-Ray Standalone | Per-seat and per-render-node licences | Upgrade path if you need V-Ray specifically |
-| Enscape / D5 / Lumion / Twinmotion | Depends on someone clicking the same presets every time | Little or no headless or scripted rendering | Subscription | Good for live client walkthroughs, weak for a repeatable pipeline |
-
-Real-time engines look great, but consistency in them comes from discipline:
-someone has to reapply the same sky, exposure and materials in a GUI for every
-view. With Blender, the settings live in this repository, rendering runs from
-the command line, and a view rendered today can be re-rendered pixel-identical
-next month. Blender also runs headless, so views you send in can be rendered
-by an automated job, including by Claude in a cloud session.
-
-## 2. How each kind of consistency is enforced
-
-| What must match | Where it is fixed | Mechanism |
-|---|---|---|
-| **Scene setting / environment** | `config/styles/*.yaml` | Physical sky model, a sun lamp from a fixed bearing/elevation (or real solar position, or SketchUp's shadow settings), a ground plane, and AgX colour grading with a fixed exposure. One style = one look. |
-| **View range** | `config/defaults.yaml → camera` | 36 mm full-frame sensor. Focal lengths are snapped to an allowed set per view type (EXT 24/28/35, INT 18/24, AER 35/50, DET 50). One aspect ratio (3:2) for every preset, and SketchUp scenes are locked to the same 3:2 frame. |
-| **Focal point / eye level** | same | Exterior eye height locked to 1.6 m above ground. Two-point perspective (levelled camera plus lens shift) keeps verticals vertical while keeping the framing. Orthographic for elevations. |
-| **Materials** | `materials/library.yaml` + `mapping.yaml` | SketchUp materials are *named* after library ids. At render time every SketchUp material is replaced by its library definition: one PBR definition, real-world texture scale, world-space box mapping. Unknown materials render magenta in drafts and **block** final renders. |
-| **Repeatability** | job + manifest | Fixed sampling seed, pinned Blender version (warns on mismatch), and a `look_hash` over every look setting. Every image gets a JSON manifest, and `qa` fails if a set mixes looks or Blender versions. |
-
-## 3. Workflow
-
-1. **Model in SketchUp** following [docs/sketchup-standards.md](docs/sketchup-standards.md):
-   name materials after library ids, and create one scene per view named `EXT-01 …`, `INT-02 …`, `AER-01 …`.
-2. **Extensions › Render Engine › Lock scenes to render frame** (once), then compose inside the 3:2 frame.
-3. **Extensions › Render Engine › Export for rendering…** and select `projects/<name>/`.
-4. **Validate**: `python -m render_engine validate projects/<name>` lists every view and every material mapping.
-5. **Draft**: `python -m render_engine render projects/<name> --preset draft`. This is fast. Check the contact sheet and the SketchUp overlays in `renders/<run>/qa/`.
-6. **Final**: `python -m render_engine render projects/<name> --preset final`. It refuses to run while any material is unmapped.
-7. Keep the run folder: `job.json` plus the manifests reproduce it exactly.
-
-## 4. Quick start
+## Quick start
 
 ```bash
-pip install -r requirements.txt          # PyYAML, Pillow
-# Install Blender 5.2 LTS (https://www.blender.org/download/lts/) and put it on PATH or set $BLENDER.
-
+pip install -r requirements.txt              # PyYAML, Pillow, numpy
 cd pipeline
-python -m render_engine validate ../projects/demo
-python -m render_engine render   ../projects/demo --style exterior_day --preset draft
-python -m render_engine styles                       # exterior_day, exterior_dusk, interior_day, massing_white
+python -m render_engine presets              # list scene presets
+python -m render_engine render ../projects/demo --preset day_clear --dry-run       # no GPU needed
+python -m render_engine render ../projects/demo --preset day_clear --quality draft  # needs ComfyUI running
 ```
 
-No Blender binary? `pip install bpy==5.2.2` (Blender as a Python module, Python 3.13) and add `--in-process`.
+Setting up ComfyUI and the models on the render PC: **[docs/image-track.md](docs/image-track.md)**.
 
-To create a new project, copy `projects/_template` to `projects/<name>`, set the site location, and export from SketchUp into it.
+To start a new project, copy `projects/_template` to `projects/<name>`, set
+`ai.context` and `ai.materials` in `project.yaml`, and drop the SketchUp
+exports into `input/`.
 
-Install the SketchUp exporter by copying `sketchup/render_engine_exporter.rb` and the
-`sketchup/render_engine_exporter/` folder into SketchUp's Plugins folder. It needs SketchUp Pro, for FBX export.
+## The presets system
 
-## 5. Repository layout
+A render is three choices plus a project:
+
+| Choice | Options | Lives in |
+|---|---|---|
+| **Scene preset** | `day_clear`, `overcast_soft`, `golden_hour`, `blue_hour`, `night`, `monsoon`, `interior_daylight`, `interior_evening` (add your own) | `config/ai/presets/` |
+| **Fidelity** | `strict`, `balanced` (default), `concept` | `config/ai/fidelity.yaml` |
+| **Quality** | `draft`, `final` (same look, different speed) | `config/ai/quality.yaml` |
+| **Project** | site context, material palette, per-view notes | `projects/<name>/project.yaml` |
+
+The same SketchUp exports can be rendered in several presets, e.g. a day set
+and a dusk set, and each set stays internally consistent.
+
+## Licensing note
+
+`flux_dev` (default, best quality) is licensed for **non-commercial use only**.
+Before renders go to clients, buy a FLUX.1 [dev] commercial licence from Black
+Forest Labs, or switch to `--engine sdxl` (commercial use allowed).
+
+## Repository layout
 
 ```
-config/
-  defaults.yaml          camera standard, render presets (draft/preview/final), pinned Blender version
-  styles/*.yaml          the looks: exterior_day, exterior_dusk, interior_day, massing_white
-materials/
-  library.yaml           studio PBR material library (source of truth)
-  mapping.yaml           aliases + glob rules for legacy SketchUp names
-  textures/              texture maps (Git LFS)
-sketchup/                SketchUp extension: lock frame, check scenes, export
-pipeline/
-  render_engine/         pure-Python job builder: config, cameras, sun, materials, QA, CLI
-  blender/render_job.py  applies a job inside Blender and renders. Makes no decisions of its own
-projects/
-  _template/             copy per architecture project
-  demo/                  synthetic pavilion to try the pipeline without SketchUp
-tests/                   unit tests for the camera, sun, material and job logic
-tools/make_demo_project.py
-docs/                    standards and how-tos
+config/ai/            engines, fidelity, quality, view-type wording, scene presets, style references
+materials/library.yaml  studio materials: a prompt description (image track) + PBR values (3D track)
+pipeline/render_engine/
+  ai/                 image track: settings, ComfyUI graph builder, client, colour harmonisation, runner
+  qa.py, cli.py       shared QA (look-hash check, contact sheet, overlays) and command line
+projects/_template/   copy per architecture project (input/ for view images)
+projects/demo/        small pavilion with SketchUp-style inputs, to try everything
+docs/                 image-track setup and guides
+tests/                unit and end-to-end tests (a fake ComfyUI server stands in for the GPU)
 ```
 
-## 6. Roadmap
+### Optional: 3D track
 
-- **Phase 1: pipeline (this repo).** Exporter, camera standard, material library, four styles, QA.
-- **Phase 2: calibrate on a real project.** Export a real SketchUp model, check the `qa/*_overlay.jpg` alignment, and confirm FBX scale/axes and the north-angle direction (see *Assumptions* below). Tune the styles until the studio likes them, then freeze them.
-- **Phase 3: build out the material library.** Add CC0 PBR textures (Poly Haven, ambientCG) for the most used materials, and make a material preview sheet (one sphere/swatch per material, rendered with the same style).
-- **Phase 4: entourage and planting.** Asset library linked by SketchUp proxy component names (`ENT_TREE_NEEM_8M` → Blender asset).
-- **Phase 5: automation.** Render on push (CI with a GPU runner), and per-scene tag visibility.
+The repo also contains a fully deterministic 3D path: a SketchUp exporter
+(`sketchup/`) plus Blender Cycles (`render3d`, `config/styles/`,
+`pipeline/blender/`). It needs a model export instead of an image, but gives
+physically exact light and materials. Use it if a project ever needs exact
+material or daylight studies. See [docs/sketchup-standards.md](docs/sketchup-standards.md)
+and [docs/styles-and-cameras.md](docs/styles-and-cameras.md).
 
-## 7. Assumptions to check on the first real export
+## Roadmap
 
-These could not be tested without SketchUp:
-
-- **FBX scale and axes.** The exporter writes metres with Z up, and Blender's FBX importer reads the file's axis header. If the overlay is off, set `model: {scale, axis_forward, axis_up}` in `project.yaml`.
-- **North angle.** The code treats SketchUp's `NorthAngle` as clockwise from the green axis. Sun mode `sketchup` sidesteps this by using SketchUp's own sun vector. For `fixed` and `solar` modes, check one shadow against SketchUp.
-- **SketchUp FBX option keys** (`units`, `triangulated_faces`, …) follow the Ruby API `Model#export` documentation. If an option is ignored, export by hand once with the same settings.
+1. **Now**: image track with presets, fidelity levels, material palette and colour harmonisation.
+2. **Calibrate on a real project**: render one real SketchUp set in 2–3
+   presets, tune the fidelity values and preset wording, and choose a style
+   reference photo per preset.
+3. **Per-region materials**: an optional second export per view with flat
+   material colours (a SketchUp style with textures off) used as masks, so
+   each material is prompted only where it is. This is the strongest material
+   control.
+4. **Entourage**: consistent people, cars and planting via prompt fragments
+   per site type.
+5. **Commercial path**: FLUX licence or tuned SDXL, before client use.

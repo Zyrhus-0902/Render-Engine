@@ -1,0 +1,9 @@
+# Quality levels change speed, never the look: same seed, prompt, controls and frame.
+draft:
+  steps_factor: 0.6        # x the engine's steps
+  megapixels_factor: 0.5
+  upscale: null
+final:
+  steps_factor: 1.0
+  megapixels_factor: 1.0
+  upscale: {factor: 2}     # model upscale x4, then resized to x2 of the generated size

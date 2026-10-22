@@ -1,7 +1,8 @@
 """Build projects/demo: a small pavilion that stands in for a SketchUp export.
 
-It writes exactly what the SketchUp exporter writes (model.fbx, scenes.json,
-materials.json), so the whole pipeline can be tried without SketchUp.
+It writes what both tracks expect, so the pipeline can be tried without SketchUp:
+  export/  model.fbx, scenes.json, materials.json   (3D track)
+  input/   one SketchUp-style image per view         (image track)
 
     python tools/make_demo_project.py      # needs the bpy module (pip install bpy)
 """
@@ -9,10 +10,12 @@ materials.json), so the whole pipeline can be tried without SketchUp.
 from __future__ import annotations
 
 import json
+import math
 import shutil
 from pathlib import Path
 
 import bpy
+from mathutils import Vector
 
 ROOT = Path(__file__).resolve().parents[1]
 PROJECT = ROOT / "projects" / "demo"
@@ -58,10 +61,60 @@ def build_model():
     box("Column", (0.25, 0.25, 3.2), (5.3, -3.2, 1.9), "Metal_Aluminum_Anodized")
 
 
+def render_inputs(scenes):
+    """Flat-coloured views with black edges, in the spirit of a SketchUp 2D export."""
+    bpy.ops.mesh.primitive_plane_add(size=200, location=(0, 0, -0.01))
+    ground = bpy.context.active_object
+    lawn = bpy.data.materials.new("lawn")
+    lawn.diffuse_color = (0.35, 0.45, 0.25, 1.0)
+    ground.data.materials.append(lawn)
+    for mat in bpy.data.materials:
+        mat.use_nodes = True
+        bsdf = mat.node_tree.nodes.get("Principled BSDF")
+        bsdf.inputs["Base Color"].default_value = mat.diffuse_color
+        bsdf.inputs["Roughness"].default_value = 1.0
+        if "Glass" in mat.name:
+            bsdf.inputs["Alpha"].default_value = 0.3   # SketchUp-style translucent glass
+
+    scene = bpy.context.scene
+    scene.render.engine = "CYCLES"
+    scene.cycles.samples = 16
+    scene.cycles.max_bounces = 2
+    scene.render.resolution_x, scene.render.resolution_y = 1500, 1000
+    scene.view_settings.view_transform = "Standard"
+    scene.render.use_freestyle = True
+    scene.render.line_thickness = 1.2
+    world = bpy.data.worlds.new("sky")
+    scene.world = world
+    world.use_nodes = True
+    world.node_tree.nodes["Background"].inputs["Color"].default_value = (0.62, 0.75, 0.9, 1.0)
+    world.node_tree.nodes["Background"].inputs["Strength"].default_value = 0.9
+    sun = bpy.data.objects.new("sun", bpy.data.lights.new("sun", "SUN"))
+    sun.data.energy = 2.5
+    sun.rotation_euler = (math.radians(50), 0, math.radians(-40))
+    scene.collection.objects.link(sun)
+
+    cam_data = bpy.data.cameras.new("view")
+    cam = bpy.data.objects.new("view", cam_data)
+    scene.collection.objects.link(cam)
+    scene.camera = cam
+    cam.rotation_mode = "QUATERNION"
+    (PROJECT / "input").mkdir(parents=True, exist_ok=True)
+    for s in scenes:
+        c = s["camera"]
+        cam_data.sensor_fit = "VERTICAL"
+        cam_data.angle = math.radians(c["fov_deg"])
+        cam.location = c["eye"]
+        cam.rotation_quaternion = (Vector(c["target"]) - Vector(c["eye"])).to_track_quat("-Z", "Y")
+        scene.render.filepath = str(PROJECT / "input" / f"{s['name']}.png")
+        bpy.ops.render.render(write_still=True)
+
+
 def main():
     if EXPORT.exists():
         shutil.rmtree(EXPORT)
     (EXPORT / "reference").mkdir(parents=True)
+    (EXPORT / "reference" / ".gitkeep").touch()
     build_model()
     bpy.ops.export_scene.fbx(filepath=str(EXPORT / "model.fbx"), use_selection=False,
                              apply_unit_scale=True, bake_space_transform=False)
@@ -99,6 +152,8 @@ def main():
     (EXPORT / "materials.json").write_text(json.dumps(
         [{"name": n, "color": [round(c * 255) for c in rgb], "alpha": 1.0, "texture": None, "texture_size_m": None}
          for n, rgb in MATERIALS.items()], indent=2))
+
+    render_inputs(scenes)
 
     project_yaml = PROJECT / "project.yaml"
     if not project_yaml.exists():

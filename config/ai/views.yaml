@@ -1,0 +1,11 @@
+# The view type comes from the image file name prefix: "EXT-01 Entrance.png".
+default_type: EXT
+types:
+  EXT: "architectural exterior photograph, eye-level view, two-point perspective, vertical lines perfectly straight"
+  INT: "architectural interior photograph, wide-angle eye-level view, vertical lines perfectly straight"
+  AER: "aerial architectural photograph, drone view from above"
+  DET: "architectural detail photograph, close-up, shallow depth of field"
+  ELV: "architectural elevation rendering, flat frontal orthographic view"
+
+# Appended to every prompt.
+suffix: "photorealistic, professional architectural photography, sharp focus, realistic materials, natural colours, high detail"

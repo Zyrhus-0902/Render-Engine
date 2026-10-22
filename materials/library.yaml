@@ -6,6 +6,7 @@
 # every view and every project.
 #
 # Fields (all optional except base_color):
+#   prompt:        how the AI image pipeline describes it in a prompt
 #   type:          principled (default) | glass
 #   base_color:    sRGB hex. Used when there is no base_color texture.
 #   roughness, metallic, ior, specular, coat, alpha
@@ -21,17 +22,21 @@
 materials:
   # --- neutral / massing ------------------------------------------------------
   MASSING_WHITE:
+    prompt: "matte white model surfaces"
     base_color: "#E6E6E3"
     roughness: 0.9
   PLASTER_WHITE:
+    prompt: "smooth white plastered walls"
     base_color: "#DCD9D2"
     roughness: 0.85
   PAINT_WARM_WHITE:
+    prompt: "warm white painted walls"
     base_color: "#E3DDD0"
     roughness: 0.7
 
   # --- masonry ----------------------------------------------------------------
   CONC_EXPOSED:
+    prompt: "smooth exposed grey concrete"
     base_color: "#9C9A95"
     roughness: 0.8
     # textures:
@@ -40,82 +45,100 @@ materials:
     #   normal:     textures/conc_exposed/normal.png
     # size_m: [2.0, 2.0]
   CONC_BOARDFORM:
+    prompt: "board-formed exposed concrete with visible timber grain"
     base_color: "#8F8C86"
     roughness: 0.85
     size_m: [2.4, 1.2]
   BRICK_WIRECUT_RED:
+    prompt: "red wire-cut brick"
     base_color: "#8A4A36"
     roughness: 0.85
     size_m: [1.2, 0.6]
   BRICK_EXPOSED_INDIAN:
+    prompt: "exposed handmade terracotta brick"
     base_color: "#9A5440"
     roughness: 0.9
     size_m: [1.15, 0.6]
   STONE_LIMESTONE:
+    prompt: "pale limestone cladding"
     base_color: "#C9BFA8"
     roughness: 0.75
     size_m: [1.2, 0.6]
   STONE_KOTA_BLUE:
+    prompt: "blue-grey Kota stone"
     base_color: "#6E7472"
     roughness: 0.55
     size_m: [0.6, 0.6]
   STONE_GRANITE_BLACK:
+    prompt: "polished black granite"
     base_color: "#2B2B2B"
     roughness: 0.25
     size_m: [0.6, 0.6]
   TILE_TERRAZZO:
+    prompt: "light terrazzo flooring"
     base_color: "#C8C3B8"
     roughness: 0.35
     size_m: [0.6, 0.6]
   ROOF_TILE_CLAY:
+    prompt: "terracotta clay roof tiles"
     base_color: "#9E4B2F"
     roughness: 0.7
     size_m: [1.0, 1.0]
 
   # --- timber -----------------------------------------------------------------
   WOOD_TEAK:
+    prompt: "warm teak wood"
     base_color: "#7A4E2D"
     roughness: 0.55
     size_m: [2.0, 0.3]
   WOOD_OAK_FLOOR:
+    prompt: "light oak wooden flooring"
     base_color: "#A97C50"
     roughness: 0.45
     size_m: [2.0, 1.0]
   WOOD_CEDAR_CLADDING:
+    prompt: "cedar timber cladding"
     base_color: "#9A6A43"
     roughness: 0.7
     size_m: [2.0, 1.0]
 
   # --- metal ------------------------------------------------------------------
   METAL_ALU_GREY:
+    prompt: "grey anodised aluminium frames"
     base_color: "#6E7074"
     metallic: 1.0
     roughness: 0.35
   METAL_STEEL_BLACK:
+    prompt: "slim black steel"
     base_color: "#1E1E1E"
     metallic: 1.0
     roughness: 0.45
   METAL_STAINLESS:
+    prompt: "brushed stainless steel"
     base_color: "#B4B4B4"
     metallic: 1.0
     roughness: 0.2
   METAL_CORTEN:
+    prompt: "rusted corten steel"
     base_color: "#7C3F22"
     metallic: 0.0
     roughness: 0.85
 
   # --- glass ------------------------------------------------------------------
   GLASS_CLEAR:
+    prompt: "clear glass with natural reflections"
     type: glass
     tint: "#F2F7F5"
     roughness: 0.0
     ior: 1.52
   GLASS_TINTED_GREY:
+    prompt: "grey tinted glass"
     type: glass
     tint: "#9EA6A6"
     roughness: 0.0
     ior: 1.52
   GLASS_FROSTED:
+    prompt: "frosted glass"
     type: glass
     tint: "#F2F5F5"
     roughness: 0.35
@@ -123,24 +146,30 @@ materials:
 
   # --- site -------------------------------------------------------------------
   SITE_GRASS:
+    prompt: "green lawn"
     base_color: "#4A5A2C"
     roughness: 0.95
     size_m: [4.0, 4.0]
   SITE_PAVING_GREY:
+    prompt: "grey stone paving"
     base_color: "#8C8B87"
     roughness: 0.8
     size_m: [1.2, 1.2]
   SITE_GRAVEL:
+    prompt: "beige gravel"
     base_color: "#A59D8E"
     roughness: 0.95
     size_m: [2.0, 2.0]
   SITE_ASPHALT:
+    prompt: "asphalt road"
     base_color: "#3A3A3A"
     roughness: 0.9
   SITE_SOIL:
+    prompt: "earth and planting beds"
     base_color: "#5E4A36"
     roughness: 1.0
   WATER_POOL:
+    prompt: "clear turquoise pool water"
     type: glass
     tint: "#9FD3D6"
     roughness: 0.02
@@ -148,18 +177,22 @@ materials:
 
   # --- fabric / soft ----------------------------------------------------------
   FABRIC_LINEN:
+    prompt: "natural linen upholstery"
     base_color: "#CFC6B6"
     roughness: 0.95
   FABRIC_CHARCOAL:
+    prompt: "charcoal fabric upholstery"
     base_color: "#3C3C3E"
     roughness: 0.95
 
   # --- light sources ----------------------------------------------------------
   LIGHT_WARM:
+    prompt: "warm glowing light fittings"
     base_color: "#FFE3B8"
     emission_color: "#FFD9A0"
     emission_strength: 15.0
   LIGHT_NEUTRAL:
+    prompt: "neutral white light fittings"
     base_color: "#FFFFFF"
     emission_color: "#FFF4E8"
     emission_strength: 15.0

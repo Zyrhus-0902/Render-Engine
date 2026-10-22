@@ -1,6 +1,34 @@
 # One folder per architecture project. Copy projects/_template to projects/<name>.
 name: Demo Pavilion
-style: exterior_day             # default style for this project
+
+# --- Image track (SketchUp view images -> AI render) ---------------------------
+# Put one exported image per view in input/, named by view type:
+#   input/EXT-01 Entrance.png, input/INT-02 Living.png, input/AER-01 Site.png
+ai:
+  engine: flux_dev              # flux_dev (internal only) | sdxl (commercial OK)
+  preset: day_clear             # scene setting; `python -m render_engine presets` lists them
+  fidelity: balanced            # strict | balanced | concept
+  # seed: 20261022              # change to get a different variation of the whole set
+
+  # The site and surroundings, the same for every view.
+  context: "suburban residential plot in Bengaluru, tropical landscaping with palms and frangipani"
+
+  # Materials used on this project (ids from materials/library.yaml). They are
+  # described in every prompt, so each view gets the same materials.
+  materials: [CONC_BOARDFORM, WOOD_TEAK, PLASTER_WHITE, GLASS_CLEAR, METAL_ALU_GREY, SITE_PAVING_GREY, SITE_GRASS]
+
+  # Per-view additions. Keep them rare.
+  # views:
+  #   "INT-02 Living":
+  #     materials: [PLASTER_WHITE, WOOD_OAK_FLOOR, GLASS_CLEAR, FABRIC_LINEN]
+  #     prompt: "double-height living room, view to the garden"
+
+  # Tweak the preset for this project only.
+  # preset_overrides:
+  #   harmonize: {anchor: "EXT-01 Entrance", strength: 0.8}
+
+# --- 3D track (SketchUp model export -> Blender) ----------------------------------
+style: exterior_day             # default lighting style for this project
 
 site:
   latitude: 12.9716             # used by sun mode: solar

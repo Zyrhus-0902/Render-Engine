@@ -1,0 +1,3 @@
+extends: _base
+description: Bright overcast. Even, shadowless light that shows materials truthfully.
+scene: "bright overcast sky, soft diffuse even daylight, gentle shadows, calm muted atmosphere"

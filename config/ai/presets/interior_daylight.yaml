@@ -1,0 +1,3 @@
+extends: _base
+description: Daylit interior. Soft window light, bright and airy.
+scene: "soft natural daylight streaming through the windows, bright airy interior, gentle shadows"

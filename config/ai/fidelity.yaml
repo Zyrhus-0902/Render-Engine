@@ -1,0 +1,18 @@
+# How strongly the output is held to the input image.
+#   denoise   how much of the input is repainted (1.0 = everything)
+#   depth     holds massing, spatial depth and the camera view
+#   edges     holds lines, openings and mullions (Canny edges of the input)
+# end = fraction of the sampling steps the control stays active
+
+strict:
+  denoise: 0.6
+  depth: {strength: 0.8, end: 0.8}
+  edges: {strength: 0.65, end: 0.7, low: 0.1, high: 0.3}
+balanced:
+  denoise: 0.75
+  depth: {strength: 0.7, end: 0.7}
+  edges: {strength: 0.45, end: 0.5, low: 0.15, high: 0.4}
+concept:
+  denoise: 0.9
+  depth: {strength: 0.55, end: 0.5}
+  edges: {strength: 0.0, end: 0.0, low: 0.15, high: 0.4}

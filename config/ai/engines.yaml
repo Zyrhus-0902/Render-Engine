@@ -1,0 +1,31 @@
+# AI models, as file names inside your ComfyUI models/ folders.
+# Swap the engine per run with --engine, or per project in project.yaml (ai.engine).
+
+flux_dev:
+  family: flux
+  licence: "FLUX.1 [dev] Non-Commercial License - internal use only. Buy a BFL licence or switch to sdxl before client work."
+  unet: flux1-dev.safetensors                 # models/diffusion_models/
+  weight_dtype: default                       # 24 GB VRAM runs full precision
+  t5: t5xxl_fp16.safetensors                  # models/text_encoders/
+  clip_l: clip_l.safetensors                  # models/text_encoders/
+  vae: ae.safetensors                         # models/vae/
+  controlnet: FLUX.1-dev-ControlNet-Union-Pro-2.0.safetensors   # models/controlnet/  (Shakker-Labs)
+  redux: flux1-redux-dev.safetensors          # models/style_models/  (style reference)
+  clip_vision: sigclip_vision_patch14_384.safetensors           # models/clip_vision/
+  sampler: {sampler_name: euler, scheduler: simple, steps: 28, cfg: 1.0, guidance: 3.5}
+  megapixels: 1.6
+  multiple_of: 16
+
+sdxl:
+  family: sdxl
+  licence: "CreativeML Open RAIL++-M - commercial use allowed. ControlNet Union (xinsir) is Apache-2.0."
+  checkpoint: sd_xl_base_1.0.safetensors      # models/checkpoints/  (or a photoreal SDXL fine-tune)
+  controlnet: controlnet-union-sdxl-1.0-promax.safetensors      # models/controlnet/
+  sampler: {sampler_name: dpmpp_2m, scheduler: karras, steps: 30, cfg: 5.0}
+  megapixels: 1.0
+  multiple_of: 8
+  negative: "cartoon, illustration, painting, sketch, cgi, blurry, distorted perspective, warped lines, extra windows, text, watermark"
+
+# Shared helpers
+depth_model: depth_anything_v2_vitl.pth       # comfyui_controlnet_aux downloads it on first use
+upscale_model: RealESRGAN_x4plus.pth          # models/upscale_models/  (BSD-3)
