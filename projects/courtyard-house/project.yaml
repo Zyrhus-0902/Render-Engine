@@ -1,0 +1,54 @@
+# One folder per architecture project. Copy projects/_template to projects/<name>.
+name: Courtyard House
+
+# --- Image track (SketchUp view images -> AI render) ---------------------------
+# Put one exported image per view in input/, named by view type:
+#   input/EXT-01 Entrance.png, input/INT-02 Living.png, input/AER-01 Site.png
+ai:
+  engine: flux_dev              # flux_dev (internal only) | sdxl (commercial OK)
+  preset: day_clear             # scene setting; `python -m render_engine presets` lists them
+  fidelity: balanced            # strict | balanced | concept
+  # seed: 20261022              # change to get a different variation of the whole set
+
+  # The site and surroundings, the same for every view.
+  context: "single-storey courtyard house, gravel courtyard with a young deciduous tree, ornamental grasses, floor-to-ceiling glazing showing a furnished interior"
+
+  # Materials used on this project (ids from materials/library.yaml). They are
+  # described in every prompt, so each view gets the same materials.
+  materials: [METAL_STANDING_SEAM_CHARCOAL, WOOD_CEDAR_CLADDING, METAL_ALU_BLACK, GLASS_CLEAR, PLASTER_WHITE, SITE_GRAVEL, SITE_PAVER_CONCRETE]
+
+  # Per-view additions. Keep them rare.
+  # views:
+  #   "INT-02 Living":
+  #     materials: [PLASTER_WHITE, WOOD_OAK_FLOOR, GLASS_CLEAR, FABRIC_LINEN]
+  #     prompt: "double-height living room, view to the garden"
+
+  # Tweak the preset for this project only.
+  # preset_overrides:
+  #   harmonize: {anchor: "EXT-01 Entrance", strength: 0.8}
+
+# --- 3D track (SketchUp model export -> Blender) ----------------------------------
+style: exterior_day             # default lighting style for this project
+
+site:
+  latitude: 12.9716             # used by sun mode: solar
+  longitude: 77.5946
+  timezone: Asia/Kolkata
+  north_angle_deg: 0            # from SketchUp: Window > Model Info > Geo-location / Solar North
+  ground_z_m: 0.0               # finished ground level in the model, for eye-height locking
+
+# Uncomment if the first alignment overlay shows the model scaled or rotated.
+# model:
+#   scale: 1.0
+#   axis_forward: "-Z"
+#   axis_up: "Y"
+
+# Per-view exceptions. Keep these rare: every exception is an inconsistency.
+# scene_overrides:
+#   "INT-02 Kitchen":
+#     ground_z_m: 3.2
+#     camera: {lens_policy: fixed, lens_mm: 18}
+
+# Project-level tweaks to the chosen style (merged over config/styles/<style>.yaml).
+# style_settings:
+#   sun: {mode: solar, date: "2026-03-21", time: "10:30"}

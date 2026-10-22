@@ -121,6 +121,7 @@ def test_flux_graph(project):
     assert c["UNETLoader"][0]["unet_name"] == "flux1-dev.safetensors"
     assert c["FluxGuidance"][0]["guidance"] == 3.5
     assert len(c["ControlNetApplyAdvanced"]) == 2               # depth + edges
+    assert c["ImageBlur"][0]["blur_radius"] == 5                 # texture noise removed before Canny
     assert "SetUnionControlNetType" not in c                     # Union Pro 2.0 infers the type
     k = c["KSampler"][0]
     assert k["seed"] == 20261022 and k["denoise"] == 0.75 and k["cfg"] == 1.0

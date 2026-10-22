@@ -3,7 +3,7 @@
 The graph for one view:
 
   input image -> resize (keeps aspect) -+-> depth (Depth Anything V2) -> ControlNet --+
-                                        +-> edges (Canny) ------------> ControlNet --+-> sampler -> decode -> [upscale] -> save
+                                        +-> blur -> edges (Canny) ----> ControlNet --+-> sampler -> decode -> [upscale] -> save
                                         +-> VAE encode (img2img: keeps indicative     |
                                             textures, colours and layout) ------------+
   prompt (+ style reference via Redux) -----------------------------------------------+
@@ -84,7 +84,11 @@ def build_graph(
                           resolution=max(512, min(2048, round(max(width, height) / 64) * 64))))
         controls.append(("depth", depth, fid["depth"]))
     if fid["edges"]["strength"] > 0:
-        edges = out(g.add("Canny", image=image, low_threshold=fid["edges"]["low"], high_threshold=fid["edges"]["high"]))
+        source = image
+        if fid["edges"].get("blur"):
+            r = int(fid["edges"]["blur"])
+            source = out(g.add("ImageBlur", image=image, blur_radius=r, sigma=r / 2))
+        edges = out(g.add("Canny", image=source, low_threshold=fid["edges"]["low"], high_threshold=fid["edges"]["high"]))
         controls.append(("canny/lineart/anime_lineart/mlsd", edges, fid["edges"]))
     for union_type, hint, c in controls:
         net = controlnet
