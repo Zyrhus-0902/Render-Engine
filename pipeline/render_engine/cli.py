@@ -1,7 +1,8 @@
 """Command line entry point.
 
-Image track (SketchUp view images -> ComfyUI):
-    python -m render_engine render   projects/my-house --preset day_clear --fidelity balanced --quality final
+Image track (SketchUp view images -> fal.ai hosted model, or ComfyUI on your own GPU):
+    python -m render_engine render   projects/my-house --preset day_clear --quality final
+    python -m render_engine score    projects/my-house/renders/<run_id>
     python -m render_engine presets
 
 3D track (SketchUp model export -> Blender Cycles):
@@ -50,18 +51,39 @@ def cmd_validate(args) -> int:
 
 def cmd_render(args) -> int:
     from .ai.comfy import ComfyError
+    from .ai.fal import FalError
+    from .ai.hosted import render_set_hosted
     from .ai.run import render_set
+    from .ai.settings import resolve_settings
 
+    project = Path(args.project)
+    hosted = resolve_settings(project, args.preset, args.fidelity, args.quality, args.engine)["engine"]["family"] == "fal_edit"
     try:
-        run_dir = render_set(Path(args.project), args.preset, args.fidelity, args.quality, args.engine,
-                             args.views or None, args.comfy, args.dry_run)
-    except ComfyError as e:
+        if hosted:
+            run_dir = render_set_hosted(project, args.preset, args.quality, args.engine, args.views or None,
+                                        Path(args.hero_from) if args.hero_from else None, args.dry_run)
+        else:
+            run_dir = render_set(project, args.preset, args.fidelity, args.quality, args.engine,
+                                 args.views or None, args.comfy, args.dry_run)
+    except (ComfyError, FalError) as e:
         print(f"error: {e}", file=sys.stderr)
         return 3
     if args.dry_run:
-        print(f"dry run: ComfyUI workflows written to {run_dir / 'graphs'}")
+        print(f"dry run: requests written to {run_dir / ('requests' if hosted else 'graphs')}")
         return 0
+    if hosted:
+        cmd_score(argparse.Namespace(run_dir=str(run_dir), project=args.project))
     return cmd_qa(argparse.Namespace(run_dir=str(run_dir), project=args.project))
+
+
+def cmd_score(args) -> int:
+    from .ai.score import format_card, score_run
+
+    run_dir = Path(args.run_dir)
+    project = Path(args.project) if args.project else run_dir.parents[1]
+    card = score_run(run_dir, project)
+    print(format_card(card))
+    return 0 if card["verdict"]["materials"] in (None, "consistent") and card["verdict"]["geometry"] in (None, "kept") else 1
 
 
 def cmd_presets(args) -> int:
@@ -144,11 +166,17 @@ def main(argv: list[str] | None = None) -> int:
     a.add_argument("--preset", help="scene preset, see `presets` (default: project ai.preset)")
     a.add_argument("--fidelity", help="strict | balanced | concept (default: project ai.fidelity)")
     a.add_argument("--quality", default="draft", help="draft | final")
-    a.add_argument("--engine", help="flux_dev | sdxl (default: project ai.engine)")
+    a.add_argument("--engine", help="nano_banana_pro | flux2_pro (hosted) | flux_dev | sdxl (ComfyUI); default: project ai.engine")
+    a.add_argument("--hero-from", help="hosted engines: reuse the approved hero render from this run folder")
     a.add_argument("--views", nargs="*", help="input image names without extension (default: all)")
     a.add_argument("--comfy", default=os.environ.get("COMFYUI_URL", "http://127.0.0.1:8188"), help="ComfyUI address")
     a.add_argument("--dry-run", action="store_true", help="write the ComfyUI workflows only")
     a.set_defaults(func=cmd_render)
+
+    sc = sub.add_parser("score", help="consistency scorecard: material colour difference across views + geometry kept")
+    sc.add_argument("run_dir")
+    sc.add_argument("--project")
+    sc.set_defaults(func=cmd_score)
 
     pr = sub.add_parser("presets", help="list scene presets for the image track")
     pr.set_defaults(func=cmd_presets)

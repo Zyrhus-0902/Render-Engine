@@ -26,6 +26,29 @@ sdxl:
   multiple_of: 8
   negative: "cartoon, illustration, painting, sketch, cgi, blurry, distorted perspective, warped lines, extra windows, text, watermark"
 
+# --- Hosted engines (fal.ai). Need FAL_KEY in the environment. ---------------------
+# Multi-reference image editing models: they receive the SketchUp view, the
+# material colour key, the approved hero render and texture swatches as images.
+# `args` are passed to the model unchanged, so a renamed parameter is a config fix.
+
+nano_banana_pro:
+  family: fal_edit
+  model: fal-ai/nano-banana-pro/edit          # Google Gemini 3 Pro Image
+  licence: "Google Gemini API terms via fal.ai: commercial use of outputs allowed. Check current terms."
+  image_field: image_urls
+  seed_field: null                            # no seed: reruns vary, the hero reference + shade lock hold the set together
+  max_images: 10
+  args: {resolution: "2K", output_format: png, num_images: 1}
+
+flux2_pro:
+  family: fal_edit
+  model: fal-ai/flux-2-pro/edit               # Black Forest Labs FLUX.2 [pro]
+  licence: "BFL API terms via fal.ai: commercial use of outputs allowed. Check current terms."
+  image_field: image_urls
+  seed_field: seed                            # repeatable
+  max_images: 8
+  args: {output_format: png}
+
 # Shared helpers
 depth_model: depth_anything_v2_vitl.pth       # comfyui_controlnet_aux downloads it on first use
 upscale_model: RealESRGAN_x4plus.pth          # models/upscale_models/  (BSD-3)

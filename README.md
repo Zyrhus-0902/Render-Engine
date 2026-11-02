@@ -6,18 +6,24 @@ Export your views from SketchUp as images. The pipeline turns a whole set into
 photoreal renders that share **one scene setting, one material palette and one
 colour grade**, while keeping each view's geometry, framing and focal point.
 
+**Recommended setup: [docs/hosted.md](docs/hosted.md).** It runs on a
+hosted model (fal.ai), needs no GPU, and every view of a building is held to
+the same materials and light:
+
 ```
-SketchUp scenes                      this repo                                     ComfyUI (your NVIDIA PC)
- File > Export > 2D Graphic   ┌──────────────────────────────────────┐   workflow   ┌─────────────────────────────┐
- input/EXT-01 Entrance.png ──▶│ preset    (light, sky, mood, seed)   │──── JSON ───▶│ FLUX.1-dev + ControlNet     │
- input/INT-02 Living.png   ──▶│ fidelity  (how tight to the input)   │              │   depth + edges of your view│
- input/AER-01 Site.png     ──▶│ materials (project palette → prompt) │◀─── image ───│   img2img from your view    │
-                              │ quality   (draft / final)            │              │   [style reference: Redux]  │
-                              └──────────────────────────────────────┘              └─────────────────────────────┘
-                                   │ colour-match every view to one anchor
-                                   ▼
-                               renders/<run>/  images + manifests + qa/contact_sheet.jpg + qa/*_overlay.jpg
+input/EXT-01 Entrance.png      ┐
+input/EXT-01 Entrance.key.png  ┘ material colour key (red = cedar, blue = glass, ...)
+        │
+        ▼ 1. hero view rendered first (view + key + swatches)
+        ▼ 2. other views rendered with the hero as reference ("same building, same materials")
+        ▼ 3. shade lock: each material pulled to the hero's colour in every view (via the key)
+        ▼ 4. scorecard: colour difference per material across views + geometry kept
+renders/<run>/  images, raw/, requests/, qa/scorecard.json, qa/contact_sheet.jpg
 ```
+
+The same project also renders on your own GPU through ComfyUI (`--engine
+flux_dev` or `sdxl`, see [docs/image-track.md](docs/image-track.md)), or as a
+fully physical Blender render (the 3D track below).
 
 ## Why this design
 
@@ -36,14 +42,14 @@ SketchUp scenes                      this repo                                  
 ## Quick start
 
 ```bash
-pip install -r requirements.txt              # PyYAML, Pillow, numpy
+pip install -r requirements.txt              # PyYAML, Pillow, numpy (no GPU needed)
 cd pipeline
 python -m render_engine presets              # list scene presets
-python -m render_engine render ../projects/demo --preset day_clear --dry-run       # no GPU needed
-python -m render_engine render ../projects/demo --preset day_clear --quality draft  # needs ComfyUI running
+python -m render_engine render ../projects/courtyard-house --dry-run   # shows the prompts, no cost
+python -m render_engine render ../projects/courtyard-house             # needs FAL_KEY (docs/hosted.md)
 ```
 
-Setting up ComfyUI and the models on the render PC: **[docs/image-track.md](docs/image-track.md)**.
+Setup: **[docs/hosted.md](docs/hosted.md)** (hosted, default) or [docs/image-track.md](docs/image-track.md) (own GPU).
 
 To start a new project, copy `projects/_template` to `projects/<name>`, set
 `ai.context` and `ai.materials` in `project.yaml`, and drop the SketchUp
@@ -65,9 +71,10 @@ and a dusk set, and each set stays internally consistent.
 
 ## Licensing note
 
-`flux_dev` (default, best quality) is licensed for **non-commercial use only**.
-Before renders go to clients, buy a FLUX.1 [dev] commercial licence from Black
-Forest Labs, or switch to `--engine sdxl` (commercial use allowed).
+The hosted engines (`nano_banana_pro`, `flux2_pro`) are used through their
+providers' APIs, whose terms allow commercial use of outputs; check the current
+terms before client delivery. On your own GPU, `flux_dev` is **non-commercial
+only**, while `sdxl` allows commercial use.
 
 ## Repository layout
 

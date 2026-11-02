@@ -95,11 +95,12 @@ def resolve_settings(
         if not ref_path.exists():
             raise ConfigError(f"style reference not found: {ref_path}")
         pre["style_reference"] = str(ref_path)
-    if ref and eng["family"] != "flux":
+    if ref and eng["family"] not in ("flux", "fal_edit"):
         raise ConfigError(f"style_reference needs a flux engine (Redux); '{engine}' is {eng['family']}")
 
-    sampler = dict(eng["sampler"])
-    sampler["steps"] = max(8, round(sampler["steps"] * float(qual.get("steps_factor", 1.0))))
+    sampler = dict(eng.get("sampler") or {})
+    if "steps" in sampler:
+        sampler["steps"] = max(8, round(sampler["steps"] * float(qual.get("steps_factor", 1.0))))
 
     settings = {
         "engine_name": engine,
@@ -110,14 +111,19 @@ def resolve_settings(
         "fidelity": fid,
         "quality": quality,
         "sampler": sampler,
-        "megapixels": float(eng["megapixels"]) * float(qual.get("megapixels_factor", 1.0)),
+        "megapixels": float(eng.get("megapixels", 1.0)) * float(qual.get("megapixels_factor", 1.0)),
         "upscale": qual.get("upscale"),
         "views": views,
         "context": ai.get("context", ""),
         "materials": material_phrases(ai.get("materials") or []),
         "view_overrides": ai.get("views") or {},
         "seed": int(ai.get("seed", pre.get("seed", 0))),
+        "hero": ai.get("hero"),
+        "color_key": {str(k).upper(): normalize_name(v) for k, v in (ai.get("color_key") or {}).items()},
+        "shade_lock": {"enabled": True, "strength": 0.85, "source": "hero", **(ai.get("shade_lock") or {})},
     }
+    for mat in settings["color_key"].values():
+        material_phrases([mat])  # fail early on unknown ids
     settings["look_hash"] = look_hash(settings)
     return settings
 
@@ -125,7 +131,8 @@ def resolve_settings(
 def look_hash(settings: dict[str, Any]) -> str:
     """Everything that defines the look of the set. Quality-only settings are excluded,
     so a draft and a final of the same set share a hash."""
-    look = {k: settings[k] for k in ("engine_name", "preset", "fidelity", "views", "context", "materials", "seed")}
+    look = {k: settings[k] for k in ("engine_name", "preset", "fidelity", "views", "context", "materials", "seed",
+                                     "color_key", "shade_lock")}
     look["engine"] = {k: v for k, v in settings["engine"].items() if k not in ("licence",)}
     look["engine"].pop("sampler", None)
     look["sampler"] = {k: v for k, v in settings["sampler"].items() if k != "steps"}
@@ -155,9 +162,19 @@ def build_prompt(settings: dict[str, Any], view_name: str) -> dict[str, str]:
     }
 
 
+def key_image_for(view_image: Path) -> Path | None:
+    """The material colour key exported next to a view: 'EXT-01 Entrance.key.png'."""
+    for suffix in IMAGE_SUFFIXES:
+        candidate = view_image.with_name(f"{view_image.stem}.key{suffix}")
+        if candidate.exists():
+            return candidate
+    return None
+
+
 def find_inputs(project_dir: Path, only: list[str] | None = None) -> list[Path]:
     folder = project_dir / "input"
-    images = sorted(p for p in folder.glob("*") if p.suffix.lower() in IMAGE_SUFFIXES)
+    images = sorted(p for p in folder.glob("*")
+                    if p.suffix.lower() in IMAGE_SUFFIXES and not p.stem.lower().endswith(".key"))
     if only:
         images = [p for p in images if p.stem in only]
         missing = set(only) - {p.stem for p in images}

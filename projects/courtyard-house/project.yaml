@@ -5,9 +5,20 @@ name: Courtyard House
 # Put one exported image per view in input/, named by view type:
 #   input/EXT-01 Entrance.png, input/INT-02 Living.png, input/AER-01 Site.png
 ai:
-  engine: flux_dev              # flux_dev (internal only) | sdxl (commercial OK)
+  engine: nano_banana_pro       # hosted (fal.ai, needs FAL_KEY): nano_banana_pro | flux2_pro
+                                # own GPU (ComfyUI): flux_dev (internal only) | sdxl
   preset: day_clear             # scene setting; `python -m render_engine presets` lists them
-  fidelity: balanced            # strict | balanced | concept
+  fidelity: balanced            # ComfyUI engines only: strict | balanced | concept
+  hero: "EXT-01 Courtyard entrance"   # rendered first; the other views copy its materials and light
+
+  # Material colour key (strongest consistency). Export each view a second time as
+  # "<view>.key.png" with a SketchUp style that has textures, edges and shadows off,
+  # and every material painted in its own pure colour. Then map colours to materials:
+  # color_key:
+  #   "#FF0000": WOOD_CEDAR_CLADDING
+  #   "#0000FF": GLASS_CLEAR
+  #   "#FFFF00": METAL_STANDING_SEAM_CHARCOAL
+  # shade_lock: {strength: 0.85, source: hero}   # source: hero | library (library base_color)
   # seed: 20261022              # change to get a different variation of the whole set
 
   # The site and surroundings, the same for every view.

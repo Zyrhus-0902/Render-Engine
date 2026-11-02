@@ -7,6 +7,7 @@
 #
 # Fields (all optional except base_color):
 #   prompt:        how the AI image pipeline describes it in a prompt
+#   swatch:        optional texture photo (relative to materials/) sent to hosted engines as a reference
 #   type:          principled (default) | glass
 #   base_color:    sRGB hex. Used when there is no base_color texture.
 #   roughness, metallic, ior, specular, coat, alpha
