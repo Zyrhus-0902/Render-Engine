@@ -2240,7 +2240,7 @@
     },
     {
       "id": "landscape--dry_native--1",
-      "file": "landscape--dry_native--1.svg",
+      "file": "landscape--dry_native--1.jpg",
       "dimension_id": "landscape",
       "option_id": "dry_native",
       "origin": "modern",
@@ -2275,14 +2275,17 @@
         "status": "ok",
         "note": ""
       },
-      "source": "placeholder",
-      "credit": "",
-      "placeholder": true,
-      "code": "#57"
+      "source": "https://commons.wikimedia.org/wiki/File:Brooklyn_Botanic_Garden_-_20200911_-_12_-_Rock_Garden.jpg",
+      "credit": "Andre Carrotflower / Wikimedia Commons",
+      "placeholder": false,
+      "code": "#57",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "title": "Brooklyn Botanic Garden - 20200911 - 12 - Rock Garden.jpg"
     },
     {
       "id": "landscape--dry_native--2",
-      "file": "landscape--dry_native--2.svg",
+      "file": "landscape--dry_native--2.jpg",
       "dimension_id": "landscape",
       "option_id": "dry_native",
       "origin": "modern",
@@ -2317,10 +2320,13 @@
         "status": "ok",
         "note": ""
       },
-      "source": "placeholder",
-      "credit": "",
-      "placeholder": true,
-      "code": "#58"
+      "source": "https://www.flickr.com/photos/25186605@N04/2888120894",
+      "credit": "Jeremy Levine Design / Openverse/flickr",
+      "placeholder": false,
+      "code": "#58",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/",
+      "title": "Xeriscape"
     },
     {
       "id": "landscape--reflecting_pool--1",
