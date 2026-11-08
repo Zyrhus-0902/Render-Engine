@@ -649,7 +649,7 @@
     },
     {
       "id": "courtyard--side_court_linear--1",
-      "file": "courtyard--side_court_linear--1.svg",
+      "file": "courtyard--side_court_linear--1.jpg",
       "dimension_id": "courtyard",
       "option_id": "side_court_linear",
       "origin": "modern",
@@ -680,14 +680,17 @@
         "status": "ok",
         "note": ""
       },
-      "source": "placeholder",
-      "credit": "",
-      "placeholder": true,
-      "code": "#17"
+      "source": "https://commons.wikimedia.org/wiki/File:Modern_Acre_Studio_-_Courtyard_Modern_-_walkway.webp",
+      "credit": "Modern Acre Studio / Wikimedia Commons",
+      "placeholder": false,
+      "code": "#17",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "title": "Modern Acre Studio - Courtyard Modern - walkway.webp"
     },
     {
       "id": "courtyard--side_court_linear--2",
-      "file": "courtyard--side_court_linear--2.svg",
+      "file": "courtyard--side_court_linear--2.jpg",
       "dimension_id": "courtyard",
       "option_id": "side_court_linear",
       "origin": "modern",
@@ -718,10 +721,13 @@
         "status": "ok",
         "note": ""
       },
-      "source": "placeholder",
-      "credit": "",
-      "placeholder": true,
-      "code": "#18"
+      "source": "https://www.flickr.com/photos/25186605@N04/3161459094",
+      "credit": "Jeremy Levine Design / Openverse/flickr",
+      "placeholder": false,
+      "code": "#18",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/",
+      "title": "Frozen Motion - Rain Window"
     },
     {
       "id": "courtyard--compact_no_court--1",
