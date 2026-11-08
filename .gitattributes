@@ -7,3 +7,9 @@
 *.exr filter=lfs diff=lfs merge=lfs -text
 *.skp filter=lfs diff=lfs merge=lfs -text
 materials/textures/**/*.png filter=lfs diff=lfs merge=lfs -text
+
+# Visual brief reference photos are small (~100 KB) and must be real files for the
+# single-file bundle, so they are kept out of LFS.
+visual-brief/**/*.jpg -filter -diff -merge binary
+visual-brief/**/*.jpeg -filter -diff -merge binary
+visual-brief/**/*.png -filter -diff -merge binary

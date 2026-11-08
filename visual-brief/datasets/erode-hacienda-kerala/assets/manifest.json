@@ -2,7 +2,7 @@
   "images": [
     {
       "id": "roof--kerala_steep_tile--1",
-      "file": "roof--kerala_steep_tile--1.svg",
+      "file": "roof--kerala_steep_tile--1.jpg",
       "dimension_id": "roof",
       "option_id": "kerala_steep_tile",
       "origin": "kerala",
@@ -33,14 +33,17 @@
         "status": "ok",
         "note": ""
       },
-      "source": "placeholder",
-      "credit": "",
-      "placeholder": true,
-      "code": "#01"
+      "source": "https://commons.wikimedia.org/wiki/File:Traditional_Kerala_Style_house_located_at_Punnamada.jpg",
+      "credit": "Varghesepunnamada / Wikimedia Commons",
+      "placeholder": false,
+      "code": "#01",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "title": "Traditional Kerala Style house located at Punnamada.jpg"
     },
     {
       "id": "roof--kerala_steep_tile--2",
-      "file": "roof--kerala_steep_tile--2.svg",
+      "file": "roof--kerala_steep_tile--2.jpg",
       "dimension_id": "roof",
       "option_id": "kerala_steep_tile",
       "origin": "kerala",
@@ -71,14 +74,17 @@
         "status": "ok",
         "note": ""
       },
-      "source": "placeholder",
-      "credit": "",
-      "placeholder": true,
-      "code": "#02"
+      "source": "https://commons.wikimedia.org/wiki/File:Old_Kerala_traditional_home.jpg",
+      "credit": "Vinayaraj / Wikimedia Commons",
+      "placeholder": false,
+      "code": "#02",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "title": "Old Kerala traditional home.jpg"
     },
     {
       "id": "roof--kerala_steep_tile--3",
-      "file": "roof--kerala_steep_tile--3.svg",
+      "file": "roof--kerala_steep_tile--3.jpg",
       "dimension_id": "roof",
       "option_id": "kerala_steep_tile",
       "origin": "kerala",
@@ -109,10 +115,13 @@
         "status": "ok",
         "note": ""
       },
-      "source": "placeholder",
-      "credit": "",
-      "placeholder": true,
-      "code": "#03"
+      "source": "https://commons.wikimedia.org/wiki/File:Traditional_kerala_house.jpg",
+      "credit": "Shagil Kannur / Wikimedia Commons",
+      "placeholder": false,
+      "code": "#03",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "title": "Traditional kerala house.jpg"
     },
     {
       "id": "roof--hacienda_low_hip--1",
