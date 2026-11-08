@@ -1,0 +1,719 @@
+{
+  "pairs": [
+    {
+      "id": "roof-01",
+      "dimension_id": "roof",
+      "image_a": "roof--kerala_steep_tile--1",
+      "image_b": "roof--hacienda_low_hip--1",
+      "origin_a": "kerala",
+      "origin_b": "hacienda",
+      "tags": [
+        "kerala_steep_tile",
+        "hacienda_low_hip"
+      ],
+      "note": "Same mass and wall finish, same sky and camera; only the roof changes."
+    },
+    {
+      "id": "roof-02",
+      "dimension_id": "roof",
+      "image_a": "roof--hacienda_low_hip--2",
+      "image_b": "roof--kerala_steep_tile--2",
+      "origin_a": "hacienda",
+      "origin_b": "kerala",
+      "tags": [
+        "hacienda_low_hip",
+        "kerala_steep_tile"
+      ],
+      "note": "Same mass and wall finish, same sky and camera; only the roof changes."
+    },
+    {
+      "id": "roof-03",
+      "dimension_id": "roof",
+      "image_a": "roof--kerala_steep_tile--3",
+      "image_b": "roof--hacienda_low_hip--3",
+      "origin_a": "kerala",
+      "origin_b": "hacienda",
+      "tags": [
+        "kerala_steep_tile",
+        "hacienda_low_hip"
+      ],
+      "note": "Same mass and wall finish, same sky and camera; only the roof changes."
+    },
+    {
+      "id": "roof-04",
+      "dimension_id": "roof",
+      "image_a": "roof--kerala_steep_tile--1",
+      "image_b": "roof--modern_flat_slab--1",
+      "origin_a": "kerala",
+      "origin_b": "modern",
+      "tags": [
+        "kerala_steep_tile",
+        "modern_flat_slab"
+      ],
+      "note": "Same mass and wall finish, same sky and camera; only the roof changes."
+    },
+    {
+      "id": "roof-05",
+      "dimension_id": "roof",
+      "image_a": "roof--hacienda_low_hip--1",
+      "image_b": "roof--modern_flat_slab--2",
+      "origin_a": "hacienda",
+      "origin_b": "modern",
+      "tags": [
+        "hacienda_low_hip",
+        "modern_flat_slab"
+      ],
+      "note": "Same mass and wall finish, same sky and camera; only the roof changes."
+    },
+    {
+      "id": "roof-06",
+      "dimension_id": "roof",
+      "image_a": "roof--modern_mono_pitch--1",
+      "image_b": "roof--kerala_steep_tile--2",
+      "origin_a": "modern",
+      "origin_b": "kerala",
+      "tags": [
+        "modern_mono_pitch",
+        "kerala_steep_tile"
+      ],
+      "note": "Same mass and wall finish, same sky and camera; only the roof changes."
+    },
+    {
+      "id": "roof-07",
+      "dimension_id": "roof",
+      "image_a": "roof--hacienda_low_hip--2",
+      "image_b": "roof--modern_mono_pitch--2",
+      "origin_a": "hacienda",
+      "origin_b": "modern",
+      "tags": [
+        "hacienda_low_hip",
+        "modern_mono_pitch"
+      ],
+      "note": "Same mass and wall finish, same sky and camera; only the roof changes."
+    },
+    {
+      "id": "courtyard-01",
+      "dimension_id": "courtyard",
+      "image_a": "courtyard--nalukettu_enclosed--1",
+      "image_b": "courtyard--open_patio--1",
+      "origin_a": "kerala",
+      "origin_b": "hacienda",
+      "tags": [
+        "nalukettu_enclosed",
+        "open_patio"
+      ],
+      "note": "Aerial or eye-level views at the same scale and plot size."
+    },
+    {
+      "id": "courtyard-02",
+      "dimension_id": "courtyard",
+      "image_a": "courtyard--open_patio--2",
+      "image_b": "courtyard--nalukettu_enclosed--2",
+      "origin_a": "hacienda",
+      "origin_b": "kerala",
+      "tags": [
+        "open_patio",
+        "nalukettu_enclosed"
+      ],
+      "note": "Aerial or eye-level views at the same scale and plot size."
+    },
+    {
+      "id": "courtyard-03",
+      "dimension_id": "courtyard",
+      "image_a": "courtyard--nalukettu_enclosed--3",
+      "image_b": "courtyard--open_patio--3",
+      "origin_a": "kerala",
+      "origin_b": "hacienda",
+      "tags": [
+        "nalukettu_enclosed",
+        "open_patio"
+      ],
+      "note": "Aerial or eye-level views at the same scale and plot size."
+    },
+    {
+      "id": "courtyard-04",
+      "dimension_id": "courtyard",
+      "image_a": "courtyard--nalukettu_enclosed--1",
+      "image_b": "courtyard--side_court_linear--1",
+      "origin_a": "kerala",
+      "origin_b": "modern",
+      "tags": [
+        "nalukettu_enclosed",
+        "side_court_linear"
+      ],
+      "note": "Aerial or eye-level views at the same scale and plot size."
+    },
+    {
+      "id": "courtyard-05",
+      "dimension_id": "courtyard",
+      "image_a": "courtyard--open_patio--1",
+      "image_b": "courtyard--compact_no_court--1",
+      "origin_a": "hacienda",
+      "origin_b": "modern",
+      "tags": [
+        "open_patio",
+        "compact_no_court"
+      ],
+      "note": "Aerial or eye-level views at the same scale and plot size."
+    },
+    {
+      "id": "courtyard-06",
+      "dimension_id": "courtyard",
+      "image_a": "courtyard--side_court_linear--2",
+      "image_b": "courtyard--open_patio--2",
+      "origin_a": "modern",
+      "origin_b": "hacienda",
+      "tags": [
+        "side_court_linear",
+        "open_patio"
+      ],
+      "note": "Aerial or eye-level views at the same scale and plot size."
+    },
+    {
+      "id": "courtyard-07",
+      "dimension_id": "courtyard",
+      "image_a": "courtyard--compact_no_court--2",
+      "image_b": "courtyard--nalukettu_enclosed--2",
+      "origin_a": "modern",
+      "origin_b": "kerala",
+      "tags": [
+        "compact_no_court",
+        "nalukettu_enclosed"
+      ],
+      "note": "Aerial or eye-level views at the same scale and plot size."
+    },
+    {
+      "id": "facade_material-01",
+      "dimension_id": "facade_material",
+      "image_a": "facade_material--laterite--1",
+      "image_b": "facade_material--textured_stucco--1",
+      "origin_a": "kerala",
+      "origin_b": "hacienda",
+      "tags": [
+        "laterite",
+        "textured_stucco"
+      ],
+      "note": "Same window, same light, same crop; only the wall finish changes."
+    },
+    {
+      "id": "facade_material-02",
+      "dimension_id": "facade_material",
+      "image_a": "facade_material--lime_whitewash--1",
+      "image_b": "facade_material--exposed_brick--1",
+      "origin_a": "hybrid",
+      "origin_b": "modern",
+      "tags": [
+        "lime_whitewash",
+        "exposed_brick"
+      ],
+      "note": "Same window, same light, same crop; only the wall finish changes."
+    },
+    {
+      "id": "facade_material-03",
+      "dimension_id": "facade_material",
+      "image_a": "facade_material--textured_stucco--2",
+      "image_b": "facade_material--lime_whitewash--2",
+      "origin_a": "hacienda",
+      "origin_b": "hybrid",
+      "tags": [
+        "textured_stucco",
+        "lime_whitewash"
+      ],
+      "note": "Same window, same light, same crop; only the wall finish changes."
+    },
+    {
+      "id": "facade_material-04",
+      "dimension_id": "facade_material",
+      "image_a": "facade_material--exposed_brick--2",
+      "image_b": "facade_material--laterite--2",
+      "origin_a": "modern",
+      "origin_b": "kerala",
+      "tags": [
+        "exposed_brick",
+        "laterite"
+      ],
+      "note": "Same window, same light, same crop; only the wall finish changes."
+    },
+    {
+      "id": "facade_material-05",
+      "dimension_id": "facade_material",
+      "image_a": "facade_material--laterite--1",
+      "image_b": "facade_material--lime_whitewash--1",
+      "origin_a": "kerala",
+      "origin_b": "hybrid",
+      "tags": [
+        "laterite",
+        "lime_whitewash"
+      ],
+      "note": "Same window, same light, same crop; only the wall finish changes."
+    },
+    {
+      "id": "facade_material-06",
+      "dimension_id": "facade_material",
+      "image_a": "facade_material--textured_stucco--1",
+      "image_b": "facade_material--exposed_brick--1",
+      "origin_a": "hacienda",
+      "origin_b": "modern",
+      "tags": [
+        "textured_stucco",
+        "exposed_brick"
+      ],
+      "note": "Same window, same light, same crop; only the wall finish changes."
+    },
+    {
+      "id": "facade_material-07",
+      "dimension_id": "facade_material",
+      "image_a": "facade_material--textured_stucco--2",
+      "image_b": "facade_material--laterite--2",
+      "origin_a": "hacienda",
+      "origin_b": "kerala",
+      "tags": [
+        "textured_stucco",
+        "laterite"
+      ],
+      "note": "Same window, same light, same crop; only the wall finish changes."
+    },
+    {
+      "id": "columns-01",
+      "dimension_id": "columns",
+      "image_a": "columns--timber_columns--1",
+      "image_b": "columns--masonry_arcade--1",
+      "origin_a": "kerala",
+      "origin_b": "hacienda",
+      "tags": [
+        "timber_columns",
+        "masonry_arcade"
+      ],
+      "note": "Same verandah depth and floor; columns and ceiling change."
+    },
+    {
+      "id": "columns-02",
+      "dimension_id": "columns",
+      "image_a": "columns--wrought_iron--1",
+      "image_b": "columns--timber_columns--2",
+      "origin_a": "hacienda",
+      "origin_b": "kerala",
+      "tags": [
+        "wrought_iron",
+        "timber_columns"
+      ],
+      "note": "Same verandah depth and floor; columns and ceiling change."
+    },
+    {
+      "id": "columns-03",
+      "dimension_id": "columns",
+      "image_a": "columns--masonry_arcade--2",
+      "image_b": "columns--modern_slender--1",
+      "origin_a": "hacienda",
+      "origin_b": "modern",
+      "tags": [
+        "masonry_arcade",
+        "modern_slender"
+      ],
+      "note": "Same verandah depth and floor; columns and ceiling change."
+    },
+    {
+      "id": "columns-04",
+      "dimension_id": "columns",
+      "image_a": "columns--masonry_arcade--1",
+      "image_b": "columns--timber_columns--1",
+      "origin_a": "hacienda",
+      "origin_b": "kerala",
+      "tags": [
+        "masonry_arcade",
+        "timber_columns"
+      ],
+      "note": "Same verandah depth and floor; columns and ceiling change."
+    },
+    {
+      "id": "columns-05",
+      "dimension_id": "columns",
+      "image_a": "columns--modern_slender--2",
+      "image_b": "columns--timber_columns--2",
+      "origin_a": "modern",
+      "origin_b": "kerala",
+      "tags": [
+        "modern_slender",
+        "timber_columns"
+      ],
+      "note": "Same verandah depth and floor; columns and ceiling change."
+    },
+    {
+      "id": "columns-06",
+      "dimension_id": "columns",
+      "image_a": "columns--wrought_iron--2",
+      "image_b": "columns--masonry_arcade--2",
+      "origin_a": "hacienda",
+      "origin_b": "hacienda",
+      "tags": [
+        "wrought_iron",
+        "masonry_arcade"
+      ],
+      "note": "Same verandah depth and floor; columns and ceiling change."
+    },
+    {
+      "id": "columns-07",
+      "dimension_id": "columns",
+      "image_a": "columns--modern_slender--1",
+      "image_b": "columns--wrought_iron--1",
+      "origin_a": "modern",
+      "origin_b": "hacienda",
+      "tags": [
+        "modern_slender",
+        "wrought_iron"
+      ],
+      "note": "Same verandah depth and floor; columns and ceiling change."
+    },
+    {
+      "id": "openings-01",
+      "dimension_id": "openings",
+      "image_a": "openings--timber_slat_rect--1",
+      "image_b": "openings--arched_openings--1",
+      "origin_a": "kerala",
+      "origin_b": "hacienda",
+      "tags": [
+        "timber_slat_rect",
+        "arched_openings"
+      ],
+      "note": "Same wall, same room behind; only the opening changes."
+    },
+    {
+      "id": "openings-02",
+      "dimension_id": "openings",
+      "image_a": "openings--modern_full_height--1",
+      "image_b": "openings--timber_slat_rect--2",
+      "origin_a": "modern",
+      "origin_b": "kerala",
+      "tags": [
+        "modern_full_height",
+        "timber_slat_rect"
+      ],
+      "note": "Same wall, same room behind; only the opening changes."
+    },
+    {
+      "id": "openings-03",
+      "dimension_id": "openings",
+      "image_a": "openings--arched_openings--2",
+      "image_b": "openings--jaali_screen--1",
+      "origin_a": "hacienda",
+      "origin_b": "hybrid",
+      "tags": [
+        "arched_openings",
+        "jaali_screen"
+      ],
+      "note": "Same wall, same room behind; only the opening changes."
+    },
+    {
+      "id": "openings-04",
+      "dimension_id": "openings",
+      "image_a": "openings--arched_openings--1",
+      "image_b": "openings--timber_slat_rect--1",
+      "origin_a": "hacienda",
+      "origin_b": "kerala",
+      "tags": [
+        "arched_openings",
+        "timber_slat_rect"
+      ],
+      "note": "Same wall, same room behind; only the opening changes."
+    },
+    {
+      "id": "openings-05",
+      "dimension_id": "openings",
+      "image_a": "openings--jaali_screen--2",
+      "image_b": "openings--timber_slat_rect--2",
+      "origin_a": "hybrid",
+      "origin_b": "kerala",
+      "tags": [
+        "jaali_screen",
+        "timber_slat_rect"
+      ],
+      "note": "Same wall, same room behind; only the opening changes."
+    },
+    {
+      "id": "openings-06",
+      "dimension_id": "openings",
+      "image_a": "openings--modern_full_height--2",
+      "image_b": "openings--arched_openings--2",
+      "origin_a": "modern",
+      "origin_b": "hacienda",
+      "tags": [
+        "modern_full_height",
+        "arched_openings"
+      ],
+      "note": "Same wall, same room behind; only the opening changes."
+    },
+    {
+      "id": "openings-07",
+      "dimension_id": "openings",
+      "image_a": "openings--jaali_screen--1",
+      "image_b": "openings--modern_full_height--1",
+      "origin_a": "hybrid",
+      "origin_b": "modern",
+      "tags": [
+        "jaali_screen",
+        "modern_full_height"
+      ],
+      "note": "Same wall, same room behind; only the opening changes."
+    },
+    {
+      "id": "palette-01",
+      "dimension_id": "palette",
+      "image_a": "palette--ochre_terracotta--1",
+      "image_b": "palette--wood_whitewash--1",
+      "origin_a": "hacienda",
+      "origin_b": "kerala",
+      "tags": [
+        "ochre_terracotta",
+        "wood_whitewash"
+      ],
+      "note": "Similar rooms or facades; colour is what differs."
+    },
+    {
+      "id": "palette-02",
+      "dimension_id": "palette",
+      "image_a": "palette--earthy_neutral--1",
+      "image_b": "palette--ochre_terracotta--2",
+      "origin_a": "modern",
+      "origin_b": "hacienda",
+      "tags": [
+        "earthy_neutral",
+        "ochre_terracotta"
+      ],
+      "note": "Similar rooms or facades; colour is what differs."
+    },
+    {
+      "id": "palette-03",
+      "dimension_id": "palette",
+      "image_a": "palette--wood_whitewash--2",
+      "image_b": "palette--earthy_neutral--2",
+      "origin_a": "kerala",
+      "origin_b": "modern",
+      "tags": [
+        "wood_whitewash",
+        "earthy_neutral"
+      ],
+      "note": "Similar rooms or facades; colour is what differs."
+    },
+    {
+      "id": "palette-04",
+      "dimension_id": "palette",
+      "image_a": "palette--wood_whitewash--1",
+      "image_b": "palette--ochre_terracotta--1",
+      "origin_a": "kerala",
+      "origin_b": "hacienda",
+      "tags": [
+        "wood_whitewash",
+        "ochre_terracotta"
+      ],
+      "note": "Similar rooms or facades; colour is what differs."
+    },
+    {
+      "id": "palette-05",
+      "dimension_id": "palette",
+      "image_a": "palette--ochre_terracotta--2",
+      "image_b": "palette--earthy_neutral--1",
+      "origin_a": "hacienda",
+      "origin_b": "modern",
+      "tags": [
+        "ochre_terracotta",
+        "earthy_neutral"
+      ],
+      "note": "Similar rooms or facades; colour is what differs."
+    },
+    {
+      "id": "palette-06",
+      "dimension_id": "palette",
+      "image_a": "palette--earthy_neutral--2",
+      "image_b": "palette--wood_whitewash--2",
+      "origin_a": "modern",
+      "origin_b": "kerala",
+      "tags": [
+        "earthy_neutral",
+        "wood_whitewash"
+      ],
+      "note": "Similar rooms or facades; colour is what differs."
+    },
+    {
+      "id": "landscape-01",
+      "dimension_id": "landscape",
+      "image_a": "landscape--courtyard_planting--1",
+      "image_b": "landscape--fountain_patio--1",
+      "origin_a": "kerala",
+      "origin_b": "hacienda",
+      "tags": [
+        "courtyard_planting",
+        "fountain_patio"
+      ],
+      "note": "Same verandah edge; the planting and water change."
+    },
+    {
+      "id": "landscape-02",
+      "dimension_id": "landscape",
+      "image_a": "landscape--lush_verandah_garden--1",
+      "image_b": "landscape--dry_native--1",
+      "origin_a": "kerala",
+      "origin_b": "modern",
+      "tags": [
+        "lush_verandah_garden",
+        "dry_native"
+      ],
+      "note": "Same verandah edge; the planting and water change."
+    },
+    {
+      "id": "landscape-03",
+      "dimension_id": "landscape",
+      "image_a": "landscape--fountain_patio--2",
+      "image_b": "landscape--reflecting_pool--1",
+      "origin_a": "hacienda",
+      "origin_b": "modern",
+      "tags": [
+        "fountain_patio",
+        "reflecting_pool"
+      ],
+      "note": "Same verandah edge; the planting and water change."
+    },
+    {
+      "id": "landscape-04",
+      "dimension_id": "landscape",
+      "image_a": "landscape--dry_native--2",
+      "image_b": "landscape--courtyard_planting--2",
+      "origin_a": "modern",
+      "origin_b": "kerala",
+      "tags": [
+        "dry_native",
+        "courtyard_planting"
+      ],
+      "note": "Same verandah edge; the planting and water change."
+    },
+    {
+      "id": "landscape-05",
+      "dimension_id": "landscape",
+      "image_a": "landscape--fountain_patio--1",
+      "image_b": "landscape--courtyard_planting--1",
+      "origin_a": "hacienda",
+      "origin_b": "kerala",
+      "tags": [
+        "fountain_patio",
+        "courtyard_planting"
+      ],
+      "note": "Same verandah edge; the planting and water change."
+    },
+    {
+      "id": "landscape-06",
+      "dimension_id": "landscape",
+      "image_a": "landscape--reflecting_pool--2",
+      "image_b": "landscape--lush_verandah_garden--2",
+      "origin_a": "modern",
+      "origin_b": "kerala",
+      "tags": [
+        "reflecting_pool",
+        "lush_verandah_garden"
+      ],
+      "note": "Same verandah edge; the planting and water change."
+    },
+    {
+      "id": "landscape-07",
+      "dimension_id": "landscape",
+      "image_a": "landscape--courtyard_planting--2",
+      "image_b": "landscape--reflecting_pool--1",
+      "origin_a": "kerala",
+      "origin_b": "modern",
+      "tags": [
+        "courtyard_planting",
+        "reflecting_pool"
+      ],
+      "note": "Same verandah edge; the planting and water change."
+    },
+    {
+      "id": "landscape-08",
+      "dimension_id": "landscape",
+      "image_a": "landscape--dry_native--1",
+      "image_b": "landscape--fountain_patio--2",
+      "origin_a": "modern",
+      "origin_b": "hacienda",
+      "tags": [
+        "dry_native",
+        "fountain_patio"
+      ],
+      "note": "Same verandah edge; the planting and water change."
+    },
+    {
+      "id": "abstraction-01",
+      "dimension_id": "abstraction",
+      "image_a": "abstraction--ornate--1",
+      "image_b": "abstraction--restrained--1",
+      "origin_a": "kerala",
+      "origin_b": "kerala",
+      "tags": [
+        "ornate",
+        "restrained"
+      ],
+      "note": "Same subject (e.g. a verandah) drawn at different levels of detail."
+    },
+    {
+      "id": "abstraction-02",
+      "dimension_id": "abstraction",
+      "image_a": "abstraction--restrained--2",
+      "image_b": "abstraction--ornate--2",
+      "origin_a": "hacienda",
+      "origin_b": "hacienda",
+      "tags": [
+        "restrained",
+        "ornate"
+      ],
+      "note": "Same subject (e.g. a verandah) drawn at different levels of detail."
+    },
+    {
+      "id": "abstraction-03",
+      "dimension_id": "abstraction",
+      "image_a": "abstraction--restrained--1",
+      "image_b": "abstraction--minimal--1",
+      "origin_a": "kerala",
+      "origin_b": "modern",
+      "tags": [
+        "restrained",
+        "minimal"
+      ],
+      "note": "Same subject (e.g. a verandah) drawn at different levels of detail."
+    },
+    {
+      "id": "abstraction-04",
+      "dimension_id": "abstraction",
+      "image_a": "abstraction--minimal--2",
+      "image_b": "abstraction--restrained--2",
+      "origin_a": "modern",
+      "origin_b": "hacienda",
+      "tags": [
+        "minimal",
+        "restrained"
+      ],
+      "note": "Same subject (e.g. a verandah) drawn at different levels of detail."
+    },
+    {
+      "id": "abstraction-05",
+      "dimension_id": "abstraction",
+      "image_a": "abstraction--ornate--1",
+      "image_b": "abstraction--minimal--1",
+      "origin_a": "kerala",
+      "origin_b": "modern",
+      "tags": [
+        "ornate",
+        "minimal"
+      ],
+      "note": "Same subject (e.g. a verandah) drawn at different levels of detail."
+    },
+    {
+      "id": "abstraction-06",
+      "dimension_id": "abstraction",
+      "image_a": "abstraction--minimal--2",
+      "image_b": "abstraction--ornate--2",
+      "origin_a": "modern",
+      "origin_b": "hacienda",
+      "tags": [
+        "minimal",
+        "ornate"
+      ],
+      "note": "Same subject (e.g. a verandah) drawn at different levels of detail."
+    }
+  ]
+}

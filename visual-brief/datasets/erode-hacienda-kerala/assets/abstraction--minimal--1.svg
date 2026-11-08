@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" font-family="system-ui, sans-serif">
+<rect width="800" height="600" fill="#f3f1ec"/>
+<rect width="800" height="10" fill="#1baf7a"/>
+<text x="48" y="64" font-size="18" fill="#52514e" letter-spacing="2">MODERN ABSTRACTION · MODERN</text>
+<text x="48" y="124" font-size="40" font-weight="600" fill="#1d1c1a">Minimal, abstracted</text>
+<text x="48" y="172" font-size="22" fill="#1d1c1a">Shows: Kerala-style verandah</text>
+<text x="48" y="226" font-size="21" fill="#3b3a37"><tspan x="48" dy="0">Only the essence: proportion, shade, material; no</tspan><tspan x="48" dy="30">ornament.</tspan></text>
+<rect x="48" y="440" width="116" height="72" rx="6" fill="#a9a59c" stroke="#0002"/><text x="48" y="534" font-size="15" fill="#52514e">Board concrete</text><rect x="180" y="440" width="116" height="72" rx="6" fill="#d8c8a8" stroke="#0002"/><text x="180" y="534" font-size="15" fill="#52514e">Sand</text>
+<text x="48" y="580" font-size="14" fill="#8a8984">PLACEHOLDER · abstraction--minimal--1 · replace with a curated photo</text>
+</svg>

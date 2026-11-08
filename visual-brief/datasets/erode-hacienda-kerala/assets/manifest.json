@@ -1,0 +1,2030 @@
+{
+  "images": [
+    {
+      "id": "roof--kerala_steep_tile--1",
+      "file": "roof--kerala_steep_tile--1.svg",
+      "dimension_id": "roof",
+      "option_id": "kerala_steep_tile",
+      "origin": "kerala",
+      "subject": "single-storey house, front elevation",
+      "materials": [
+        "Mangalore clay tile",
+        "Timber rafters"
+      ],
+      "palette": [
+        {
+          "name": "Clay tile red",
+          "hex": "#a5482f"
+        },
+        {
+          "name": "Dark teak",
+          "hex": "#5a3a22"
+        }
+      ],
+      "scale": "single-family, 2400-4000 sq ft",
+      "climate": {
+        "status": "ok",
+        "note": ""
+      },
+      "source": "placeholder",
+      "credit": "",
+      "placeholder": true
+    },
+    {
+      "id": "roof--kerala_steep_tile--2",
+      "file": "roof--kerala_steep_tile--2.svg",
+      "dimension_id": "roof",
+      "option_id": "kerala_steep_tile",
+      "origin": "kerala",
+      "subject": "two-storey house, three-quarter view",
+      "materials": [
+        "Mangalore clay tile",
+        "Timber rafters"
+      ],
+      "palette": [
+        {
+          "name": "Clay tile red",
+          "hex": "#a5482f"
+        },
+        {
+          "name": "Dark teak",
+          "hex": "#5a3a22"
+        }
+      ],
+      "scale": "single-family, 2400-4000 sq ft",
+      "climate": {
+        "status": "ok",
+        "note": ""
+      },
+      "source": "placeholder",
+      "credit": "",
+      "placeholder": true
+    },
+    {
+      "id": "roof--kerala_steep_tile--3",
+      "file": "roof--kerala_steep_tile--3.svg",
+      "dimension_id": "roof",
+      "option_id": "kerala_steep_tile",
+      "origin": "kerala",
+      "subject": "house with gablet, side view",
+      "materials": [
+        "Mangalore clay tile",
+        "Timber rafters"
+      ],
+      "palette": [
+        {
+          "name": "Clay tile red",
+          "hex": "#a5482f"
+        },
+        {
+          "name": "Dark teak",
+          "hex": "#5a3a22"
+        }
+      ],
+      "scale": "single-family, 2400-4000 sq ft",
+      "climate": {
+        "status": "ok",
+        "note": ""
+      },
+      "source": "placeholder",
+      "credit": "",
+      "placeholder": true
+    },
+    {
+      "id": "roof--hacienda_low_hip--1",
+      "file": "roof--hacienda_low_hip--1.svg",
+      "dimension_id": "roof",
+      "option_id": "hacienda_low_hip",
+      "origin": "hacienda",
+      "subject": "single-storey house, front elevation",
+      "materials": [
+        "Barrel terracotta tile",
+        "Plastered masonry"
+      ],
+      "palette": [
+        {
+          "name": "Terracotta",
+          "hex": "#c46a3d"
+        },
+        {
+          "name": "Warm stucco",
+          "hex": "#d9b98f"
+        }
+      ],
+      "scale": "single-family, 2400-4000 sq ft",
+      "climate": {
+        "status": "ok",
+        "note": ""
+      },
+      "source": "placeholder",
+      "credit": "",
+      "placeholder": true
+    },
+    {
+      "id": "roof--hacienda_low_hip--2",
+      "file": "roof--hacienda_low_hip--2.svg",
+      "dimension_id": "roof",
+      "option_id": "hacienda_low_hip",
+      "origin": "hacienda",
+      "subject": "two-storey house, three-quarter view",
+      "materials": [
+        "Barrel terracotta tile",
+        "Plastered masonry"
+      ],
+      "palette": [
+        {
+          "name": "Terracotta",
+          "hex": "#c46a3d"
+        },
+        {
+          "name": "Warm stucco",
+          "hex": "#d9b98f"
+        }
+      ],
+      "scale": "single-family, 2400-4000 sq ft",
+      "climate": {
+        "status": "ok",
+        "note": ""
+      },
+      "source": "placeholder",
+      "credit": "",
+      "placeholder": true
+    },
+    {
+      "id": "roof--hacienda_low_hip--3",
+      "file": "roof--hacienda_low_hip--3.svg",
+      "dimension_id": "roof",
+      "option_id": "hacienda_low_hip",
+      "origin": "hacienda",
+      "subject": "long wing, side view",
+      "materials": [
+        "Barrel terracotta tile",
+        "Plastered masonry"
+      ],
+      "palette": [
+        {
+          "name": "Terracotta",
+          "hex": "#c46a3d"
+        },
+        {
+          "name": "Warm stucco",
+          "hex": "#d9b98f"
+        }
+      ],
+      "scale": "single-family, 2400-4000 sq ft",
+      "climate": {
+        "status": "ok",
+        "note": ""
+      },
+      "source": "placeholder",
+      "credit": "",
+      "placeholder": true
+    },
+    {
+      "id": "roof--modern_flat_slab--1",
+      "file": "roof--modern_flat_slab--1.svg",
+      "dimension_id": "roof",
+      "option_id": "modern_flat_slab",
+      "origin": "modern",
+      "subject": "single-storey house, front elevation",
+      "materials": [
+        "Exposed RCC",
+        "Terrace tiles"
+      ],
+      "palette": [
+        {
+          "name": "Board concrete",
+          "hex": "#a9a59c"
+        },
+        {
+          "name": "Lime white",
+          "hex": "#f1ece1"
+        }
+      ],
+      "scale": "single-family, 2400-4000 sq ft",
+      "climate": {
+        "status": "review",
+        "note": "Flat roof needs insulation and a terrace finish against summer heat gain; drains fine with Erode's low rainfall."
+      },
+      "source": "placeholder",
+      "credit": "",
+      "placeholder": true
+    },
+    {
+      "id": "roof--modern_flat_slab--2",
+      "file": "roof--modern_flat_slab--2.svg",
+      "dimension_id": "roof",
+      "option_id": "modern_flat_slab",
+      "origin": "modern",
+      "subject": "two-storey house, three-quarter view",
+      "materials": [
+        "Exposed RCC",
+        "Terrace tiles"
+      ],
+      "palette": [
+        {
+          "name": "Board concrete",
+          "hex": "#a9a59c"
+        },
+        {
+          "name": "Lime white",
+          "hex": "#f1ece1"
+        }
+      ],
+      "scale": "single-family, 2400-4000 sq ft",
+      "climate": {
+        "status": "ok",
+        "note": ""
+      },
+      "source": "placeholder",
+      "credit": "",
+      "placeholder": true
+    },
+    {
+      "id": "roof--modern_mono_pitch--1",
+      "file": "roof--modern_mono_pitch--1.svg",
+      "dimension_id": "roof",
+      "option_id": "modern_mono_pitch",
+      "origin": "modern",
+      "subject": "single-storey house, front elevation",
+      "materials": [
+        "Clay tile on steel",
+        "Steel sections"
+      ],
+      "palette": [
+        {
+          "name": "Clay tile red",
+          "hex": "#a5482f"
+        },
+        {
+          "name": "Dark steel",
+          "hex": "#3a3c3f"
+        }
+      ],
+      "scale": "single-family, 2400-4000 sq ft",
+      "climate": {
+        "status": "ok",
+        "note": ""
+      },
+      "source": "placeholder",
+      "credit": "",
+      "placeholder": true
+    },
+    {
+      "id": "roof--modern_mono_pitch--2",
+      "file": "roof--modern_mono_pitch--2.svg",
+      "dimension_id": "roof",
+      "option_id": "modern_mono_pitch",
+      "origin": "modern",
+      "subject": "two-storey house, three-quarter view",
+      "materials": [
+        "Clay tile on steel",
+        "Steel sections"
+      ],
+      "palette": [
+        {
+          "name": "Clay tile red",
+          "hex": "#a5482f"
+        },
+        {
+          "name": "Dark steel",
+          "hex": "#3a3c3f"
+        }
+      ],
+      "scale": "single-family, 2400-4000 sq ft",
+      "climate": {
+        "status": "ok",
+        "note": ""
+      },
+      "source": "placeholder",
+      "credit": "",
+      "placeholder": true
+    },
+    {
+      "id": "courtyard--nalukettu_enclosed--1",
+      "file": "courtyard--nalukettu_enclosed--1.svg",
+      "dimension_id": "courtyard",
+      "option_id": "nalukettu_enclosed",
+      "origin": "kerala",
+      "subject": "eye level from verandah into court",
+      "materials": [
+        "Timber verandah",
+        "Granite courtyard edge"
+      ],
+      "palette": [
+        {
+          "name": "Dark teak",
+          "hex": "#5a3a22"
+        },
+        {
+          "name": "Grey granite",
+          "hex": "#8b8a86"
+        }
+      ],
+      "scale": "single-family, 2400-4000 sq ft",
+      "climate": {
+        "status": "ok",
+        "note": ""
+      },
+      "source": "placeholder",
+      "credit": "",
+      "placeholder": true
+    },
+    {
+      "id": "courtyard--nalukettu_enclosed--2",
+      "file": "courtyard--nalukettu_enclosed--2.svg",
+      "dimension_id": "courtyard",
+      "option_id": "nalukettu_enclosed",
+      "origin": "kerala",
+      "subject": "aerial, four wings",
+      "materials": [
+        "Timber verandah",
+        "Granite courtyard edge"
+      ],
+      "palette": [
+        {
+          "name": "Dark teak",
+          "hex": "#5a3a22"
+        },
+        {
+          "name": "Grey granite",
+          "hex": "#8b8a86"
+        }
+      ],
+      "scale": "single-family, 2400-4000 sq ft",
+      "climate": {
+        "status": "ok",
+        "note": ""
+      },
+      "source": "placeholder",
+      "credit": "",
+      "placeholder": true
+    },
+    {
+      "id": "courtyard--nalukettu_enclosed--3",
+      "file": "courtyard--nalukettu_enclosed--3.svg",
+      "dimension_id": "courtyard",
+      "option_id": "nalukettu_enclosed",
+      "origin": "kerala",
+      "subject": "rain falling into the court",
+      "materials": [
+        "Timber verandah",
+        "Granite courtyard edge"
+      ],
+      "palette": [
+        {
+          "name": "Dark teak",
+          "hex": "#5a3a22"
+        },
+        {
+          "name": "Grey granite",
+          "hex": "#8b8a86"
+        }
+      ],
+      "scale": "single-family, 2400-4000 sq ft",
+      "climate": {
+        "status": "ok",
+        "note": ""
+      },
+      "source": "placeholder",
+      "credit": "",
+      "placeholder": true
+    },
+    {
+      "id": "courtyard--open_patio--1",
+      "file": "courtyard--open_patio--1.svg",
+      "dimension_id": "courtyard",
+      "option_id": "open_patio",
+      "origin": "hacienda",
+      "subject": "eye level from arcade into patio",
+      "materials": [
+        "Terracotta paving",
+        "Plastered arcade"
+      ],
+      "palette": [
+        {
+          "name": "Terracotta",
+          "hex": "#c46a3d"
+        },
+        {
+          "name": "Warm stucco",
+          "hex": "#d9b98f"
+        }
+      ],
+      "scale": "single-family, 2400-4000 sq ft",
+      "climate": {
+        "status": "ok",
+        "note": ""
+      },
+      "source": "placeholder",
+      "credit": "",
+      "placeholder": true
+    },
+    {
+      "id": "courtyard--open_patio--2",
+      "file": "courtyard--open_patio--2.svg",
+      "dimension_id": "courtyard",
+      "option_id": "open_patio",
+      "origin": "hacienda",
+      "subject": "aerial, U-shaped plan",
+      "materials": [
+        "Terracotta paving",
+        "Plastered arcade"
+      ],
+      "palette": [
+        {
+          "name": "Terracotta",
+          "hex": "#c46a3d"
+        },
+        {
+          "name": "Warm stucco",
+          "hex": "#d9b98f"
+        }
+      ],
+      "scale": "single-family, 2400-4000 sq ft",
+      "climate": {
+        "status": "ok",
+        "note": ""
+      },
+      "source": "placeholder",
+      "credit": "",
+      "placeholder": true
+    },
+    {
+      "id": "courtyard--open_patio--3",
+      "file": "courtyard--open_patio--3.svg",
+      "dimension_id": "courtyard",
+      "option_id": "open_patio",
+      "origin": "hacienda",
+      "subject": "evening gathering in patio",
+      "materials": [
+        "Terracotta paving",
+        "Plastered arcade"
+      ],
+      "palette": [
+        {
+          "name": "Terracotta",
+          "hex": "#c46a3d"
+        },
+        {
+          "name": "Warm stucco",
+          "hex": "#d9b98f"
+        }
+      ],
+      "scale": "single-family, 2400-4000 sq ft",
+      "climate": {
+        "status": "ok",
+        "note": ""
+      },
+      "source": "placeholder",
+      "credit": "",
+      "placeholder": true
+    },
+    {
+      "id": "courtyard--side_court_linear--1",
+      "file": "courtyard--side_court_linear--1.svg",
+      "dimension_id": "courtyard",
+      "option_id": "side_court_linear",
+      "origin": "modern",
+      "subject": "eye level along side court",
+      "materials": [
+        "Glass sliders",
+        "Gravel and stone"
+      ],
+      "palette": [
+        {
+          "name": "Glass",
+          "hex": "#9fb7bf"
+        },
+        {
+          "name": "Grey granite",
+          "hex": "#8b8a86"
+        }
+      ],
+      "scale": "single-family, 2400-4000 sq ft",
+      "climate": {
+        "status": "ok",
+        "note": ""
+      },
+      "source": "placeholder",
+      "credit": "",
+      "placeholder": true
+    },
+    {
+      "id": "courtyard--side_court_linear--2",
+      "file": "courtyard--side_court_linear--2.svg",
+      "dimension_id": "courtyard",
+      "option_id": "side_court_linear",
+      "origin": "modern",
+      "subject": "aerial, linear plan",
+      "materials": [
+        "Glass sliders",
+        "Gravel and stone"
+      ],
+      "palette": [
+        {
+          "name": "Glass",
+          "hex": "#9fb7bf"
+        },
+        {
+          "name": "Grey granite",
+          "hex": "#8b8a86"
+        }
+      ],
+      "scale": "single-family, 2400-4000 sq ft",
+      "climate": {
+        "status": "ok",
+        "note": ""
+      },
+      "source": "placeholder",
+      "credit": "",
+      "placeholder": true
+    },
+    {
+      "id": "courtyard--compact_no_court--1",
+      "file": "courtyard--compact_no_court--1.svg",
+      "dimension_id": "courtyard",
+      "option_id": "compact_no_court",
+      "origin": "modern",
+      "subject": "eye level, skylit double-height hall",
+      "materials": [
+        "Skylights",
+        "RCC frame"
+      ],
+      "palette": [
+        {
+          "name": "Board concrete",
+          "hex": "#a9a59c"
+        },
+        {
+          "name": "Lime white",
+          "hex": "#f1ece1"
+        }
+      ],
+      "scale": "single-family, 2400-4000 sq ft",
+      "climate": {
+        "status": "ok",
+        "note": ""
+      },
+      "source": "placeholder",
+      "credit": "",
+      "placeholder": true
+    },
+    {
+      "id": "courtyard--compact_no_court--2",
+      "file": "courtyard--compact_no_court--2.svg",
+      "dimension_id": "courtyard",
+      "option_id": "compact_no_court",
+      "origin": "modern",
+      "subject": "aerial, compact block",
+      "materials": [
+        "Skylights",
+        "RCC frame"
+      ],
+      "palette": [
+        {
+          "name": "Board concrete",
+          "hex": "#a9a59c"
+        },
+        {
+          "name": "Lime white",
+          "hex": "#f1ece1"
+        }
+      ],
+      "scale": "single-family, 2400-4000 sq ft",
+      "climate": {
+        "status": "ok",
+        "note": ""
+      },
+      "source": "placeholder",
+      "credit": "",
+      "placeholder": true
+    },
+    {
+      "id": "facade_material--laterite--1",
+      "file": "facade_material--laterite--1.svg",
+      "dimension_id": "facade_material",
+      "option_id": "laterite",
+      "origin": "kerala",
+      "subject": "close-up wall with window",
+      "materials": [
+        "Laterite block"
+      ],
+      "palette": [
+        {
+          "name": "Laterite",
+          "hex": "#9c5a3c"
+        },
+        {
+          "name": "Grey granite",
+          "hex": "#8b8a86"
+        }
+      ],
+      "scale": "single-family, 2400-4000 sq ft",
+      "climate": {
+        "status": "review",
+        "note": "Laterite is quarried in Kerala/coastal Karnataka; transport to Erode adds cost. Consider local brick or stone with a similar look."
+      },
+      "source": "placeholder",
+      "credit": "",
+      "placeholder": true
+    },
+    {
+      "id": "facade_material--laterite--2",
+      "file": "facade_material--laterite--2.svg",
+      "dimension_id": "facade_material",
+      "option_id": "laterite",
+      "origin": "kerala",
+      "subject": "corner detail",
+      "materials": [
+        "Laterite block"
+      ],
+      "palette": [
+        {
+          "name": "Laterite",
+          "hex": "#9c5a3c"
+        },
+        {
+          "name": "Grey granite",
+          "hex": "#8b8a86"
+        }
+      ],
+      "scale": "single-family, 2400-4000 sq ft",
+      "climate": {
+        "status": "ok",
+        "note": ""
+      },
+      "source": "placeholder",
+      "credit": "",
+      "placeholder": true
+    },
+    {
+      "id": "facade_material--lime_whitewash--1",
+      "file": "facade_material--lime_whitewash--1.svg",
+      "dimension_id": "facade_material",
+      "option_id": "lime_whitewash",
+      "origin": "hybrid",
+      "subject": "close-up wall with window",
+      "materials": [
+        "Lime plaster",
+        "Whitewash"
+      ],
+      "palette": [
+        {
+          "name": "Lime white",
+          "hex": "#f1ece1"
+        },
+        {
+          "name": "Red oxide",
+          "hex": "#8e3b2e"
+        }
+      ],
+      "scale": "single-family, 2400-4000 sq ft",
+      "climate": {
+        "status": "ok",
+        "note": ""
+      },
+      "source": "placeholder",
+      "credit": "",
+      "placeholder": true
+    },
+    {
+      "id": "facade_material--lime_whitewash--2",
+      "file": "facade_material--lime_whitewash--2.svg",
+      "dimension_id": "facade_material",
+      "option_id": "lime_whitewash",
+      "origin": "hybrid",
+      "subject": "corner detail",
+      "materials": [
+        "Lime plaster",
+        "Whitewash"
+      ],
+      "palette": [
+        {
+          "name": "Lime white",
+          "hex": "#f1ece1"
+        },
+        {
+          "name": "Red oxide",
+          "hex": "#8e3b2e"
+        }
+      ],
+      "scale": "single-family, 2400-4000 sq ft",
+      "climate": {
+        "status": "ok",
+        "note": ""
+      },
+      "source": "placeholder",
+      "credit": "",
+      "placeholder": true
+    },
+    {
+      "id": "facade_material--exposed_brick--1",
+      "file": "facade_material--exposed_brick--1.svg",
+      "dimension_id": "facade_material",
+      "option_id": "exposed_brick",
+      "origin": "modern",
+      "subject": "close-up wall with window",
+      "materials": [
+        "Exposed brick"
+      ],
+      "palette": [
+        {
+          "name": "Country brick",
+          "hex": "#b0573b"
+        },
+        {
+          "name": "Board concrete",
+          "hex": "#a9a59c"
+        }
+      ],
+      "scale": "single-family, 2400-4000 sq ft",
+      "climate": {
+        "status": "ok",
+        "note": ""
+      },
+      "source": "placeholder",
+      "credit": "",
+      "placeholder": true
+    },
+    {
+      "id": "facade_material--exposed_brick--2",
+      "file": "facade_material--exposed_brick--2.svg",
+      "dimension_id": "facade_material",
+      "option_id": "exposed_brick",
+      "origin": "modern",
+      "subject": "corner detail",
+      "materials": [
+        "Exposed brick"
+      ],
+      "palette": [
+        {
+          "name": "Country brick",
+          "hex": "#b0573b"
+        },
+        {
+          "name": "Board concrete",
+          "hex": "#a9a59c"
+        }
+      ],
+      "scale": "single-family, 2400-4000 sq ft",
+      "climate": {
+        "status": "ok",
+        "note": ""
+      },
+      "source": "placeholder",
+      "credit": "",
+      "placeholder": true
+    },
+    {
+      "id": "facade_material--textured_stucco--1",
+      "file": "facade_material--textured_stucco--1.svg",
+      "dimension_id": "facade_material",
+      "option_id": "textured_stucco",
+      "origin": "hacienda",
+      "subject": "close-up wall with window",
+      "materials": [
+        "Textured stucco"
+      ],
+      "palette": [
+        {
+          "name": "Warm stucco",
+          "hex": "#d9b98f"
+        },
+        {
+          "name": "Ochre",
+          "hex": "#c9973a"
+        }
+      ],
+      "scale": "single-family, 2400-4000 sq ft",
+      "climate": {
+        "status": "ok",
+        "note": ""
+      },
+      "source": "placeholder",
+      "credit": "",
+      "placeholder": true
+    },
+    {
+      "id": "facade_material--textured_stucco--2",
+      "file": "facade_material--textured_stucco--2.svg",
+      "dimension_id": "facade_material",
+      "option_id": "textured_stucco",
+      "origin": "hacienda",
+      "subject": "corner detail",
+      "materials": [
+        "Textured stucco"
+      ],
+      "palette": [
+        {
+          "name": "Warm stucco",
+          "hex": "#d9b98f"
+        },
+        {
+          "name": "Ochre",
+          "hex": "#c9973a"
+        }
+      ],
+      "scale": "single-family, 2400-4000 sq ft",
+      "climate": {
+        "status": "ok",
+        "note": ""
+      },
+      "source": "placeholder",
+      "credit": "",
+      "placeholder": true
+    },
+    {
+      "id": "columns--timber_columns--1",
+      "file": "columns--timber_columns--1.svg",
+      "dimension_id": "columns",
+      "option_id": "timber_columns",
+      "origin": "kerala",
+      "subject": "verandah, three columns",
+      "materials": [
+        "Teak or jackwood posts",
+        "Granite plinth",
+        "Timber ceiling"
+      ],
+      "palette": [
+        {
+          "name": "Dark teak",
+          "hex": "#5a3a22"
+        },
+        {
+          "name": "Grey granite",
+          "hex": "#8b8a86"
+        }
+      ],
+      "scale": "single-family, 2400-4000 sq ft",
+      "climate": {
+        "status": "ok",
+        "note": ""
+      },
+      "source": "placeholder",
+      "credit": "",
+      "placeholder": true
+    },
+    {
+      "id": "columns--timber_columns--2",
+      "file": "columns--timber_columns--2.svg",
+      "dimension_id": "columns",
+      "option_id": "timber_columns",
+      "origin": "kerala",
+      "subject": "column and bracket close-up",
+      "materials": [
+        "Teak or jackwood posts",
+        "Granite plinth",
+        "Timber ceiling"
+      ],
+      "palette": [
+        {
+          "name": "Dark teak",
+          "hex": "#5a3a22"
+        },
+        {
+          "name": "Grey granite",
+          "hex": "#8b8a86"
+        }
+      ],
+      "scale": "single-family, 2400-4000 sq ft",
+      "climate": {
+        "status": "ok",
+        "note": ""
+      },
+      "source": "placeholder",
+      "credit": "",
+      "placeholder": true
+    },
+    {
+      "id": "columns--masonry_arcade--1",
+      "file": "columns--masonry_arcade--1.svg",
+      "dimension_id": "columns",
+      "option_id": "masonry_arcade",
+      "origin": "hacienda",
+      "subject": "verandah, three arches",
+      "materials": [
+        "Plastered masonry arches"
+      ],
+      "palette": [
+        {
+          "name": "Warm stucco",
+          "hex": "#d9b98f"
+        },
+        {
+          "name": "Terracotta",
+          "hex": "#c46a3d"
+        }
+      ],
+      "scale": "single-family, 2400-4000 sq ft",
+      "climate": {
+        "status": "ok",
+        "note": ""
+      },
+      "source": "placeholder",
+      "credit": "",
+      "placeholder": true
+    },
+    {
+      "id": "columns--masonry_arcade--2",
+      "file": "columns--masonry_arcade--2.svg",
+      "dimension_id": "columns",
+      "option_id": "masonry_arcade",
+      "origin": "hacienda",
+      "subject": "arch and pier close-up",
+      "materials": [
+        "Plastered masonry arches"
+      ],
+      "palette": [
+        {
+          "name": "Warm stucco",
+          "hex": "#d9b98f"
+        },
+        {
+          "name": "Terracotta",
+          "hex": "#c46a3d"
+        }
+      ],
+      "scale": "single-family, 2400-4000 sq ft",
+      "climate": {
+        "status": "ok",
+        "note": ""
+      },
+      "source": "placeholder",
+      "credit": "",
+      "placeholder": true
+    },
+    {
+      "id": "columns--wrought_iron--1",
+      "file": "columns--wrought_iron--1.svg",
+      "dimension_id": "columns",
+      "option_id": "wrought_iron",
+      "origin": "hacienda",
+      "subject": "verandah, three posts",
+      "materials": [
+        "Wrought iron",
+        "Timber beam"
+      ],
+      "palette": [
+        {
+          "name": "Wrought iron",
+          "hex": "#2b2a29"
+        },
+        {
+          "name": "Dark teak",
+          "hex": "#5a3a22"
+        }
+      ],
+      "scale": "single-family, 2400-4000 sq ft",
+      "climate": {
+        "status": "ok",
+        "note": ""
+      },
+      "source": "placeholder",
+      "credit": "",
+      "placeholder": true
+    },
+    {
+      "id": "columns--wrought_iron--2",
+      "file": "columns--wrought_iron--2.svg",
+      "dimension_id": "columns",
+      "option_id": "wrought_iron",
+      "origin": "hacienda",
+      "subject": "post and corbel close-up",
+      "materials": [
+        "Wrought iron",
+        "Timber beam"
+      ],
+      "palette": [
+        {
+          "name": "Wrought iron",
+          "hex": "#2b2a29"
+        },
+        {
+          "name": "Dark teak",
+          "hex": "#5a3a22"
+        }
+      ],
+      "scale": "single-family, 2400-4000 sq ft",
+      "climate": {
+        "status": "ok",
+        "note": ""
+      },
+      "source": "placeholder",
+      "credit": "",
+      "placeholder": true
+    },
+    {
+      "id": "columns--modern_slender--1",
+      "file": "columns--modern_slender--1.svg",
+      "dimension_id": "columns",
+      "option_id": "modern_slender",
+      "origin": "modern",
+      "subject": "verandah, three columns",
+      "materials": [
+        "Steel columns",
+        "RCC soffit"
+      ],
+      "palette": [
+        {
+          "name": "Dark steel",
+          "hex": "#3a3c3f"
+        },
+        {
+          "name": "Board concrete",
+          "hex": "#a9a59c"
+        }
+      ],
+      "scale": "single-family, 2400-4000 sq ft",
+      "climate": {
+        "status": "ok",
+        "note": ""
+      },
+      "source": "placeholder",
+      "credit": "",
+      "placeholder": true
+    },
+    {
+      "id": "columns--modern_slender--2",
+      "file": "columns--modern_slender--2.svg",
+      "dimension_id": "columns",
+      "option_id": "modern_slender",
+      "origin": "modern",
+      "subject": "column and soffit close-up",
+      "materials": [
+        "Steel columns",
+        "RCC soffit"
+      ],
+      "palette": [
+        {
+          "name": "Dark steel",
+          "hex": "#3a3c3f"
+        },
+        {
+          "name": "Board concrete",
+          "hex": "#a9a59c"
+        }
+      ],
+      "scale": "single-family, 2400-4000 sq ft",
+      "climate": {
+        "status": "ok",
+        "note": ""
+      },
+      "source": "placeholder",
+      "credit": "",
+      "placeholder": true
+    },
+    {
+      "id": "openings--timber_slat_rect--1",
+      "file": "openings--timber_slat_rect--1.svg",
+      "dimension_id": "openings",
+      "option_id": "timber_slat_rect",
+      "origin": "kerala",
+      "subject": "window from outside",
+      "materials": [
+        "Timber shutters",
+        "MS bars"
+      ],
+      "palette": [
+        {
+          "name": "Dark teak",
+          "hex": "#5a3a22"
+        },
+        {
+          "name": "Lime white",
+          "hex": "#f1ece1"
+        }
+      ],
+      "scale": "single-family, 2400-4000 sq ft",
+      "climate": {
+        "status": "ok",
+        "note": ""
+      },
+      "source": "placeholder",
+      "credit": "",
+      "placeholder": true
+    },
+    {
+      "id": "openings--timber_slat_rect--2",
+      "file": "openings--timber_slat_rect--2.svg",
+      "dimension_id": "openings",
+      "option_id": "timber_slat_rect",
+      "origin": "kerala",
+      "subject": "window from inside, light",
+      "materials": [
+        "Timber shutters",
+        "MS bars"
+      ],
+      "palette": [
+        {
+          "name": "Dark teak",
+          "hex": "#5a3a22"
+        },
+        {
+          "name": "Lime white",
+          "hex": "#f1ece1"
+        }
+      ],
+      "scale": "single-family, 2400-4000 sq ft",
+      "climate": {
+        "status": "ok",
+        "note": ""
+      },
+      "source": "placeholder",
+      "credit": "",
+      "placeholder": true
+    },
+    {
+      "id": "openings--arched_openings--1",
+      "file": "openings--arched_openings--1.svg",
+      "dimension_id": "openings",
+      "option_id": "arched_openings",
+      "origin": "hacienda",
+      "subject": "window from outside",
+      "materials": [
+        "Wrought-iron grille",
+        "Plastered reveal"
+      ],
+      "palette": [
+        {
+          "name": "Wrought iron",
+          "hex": "#2b2a29"
+        },
+        {
+          "name": "Warm stucco",
+          "hex": "#d9b98f"
+        }
+      ],
+      "scale": "single-family, 2400-4000 sq ft",
+      "climate": {
+        "status": "ok",
+        "note": ""
+      },
+      "source": "placeholder",
+      "credit": "",
+      "placeholder": true
+    },
+    {
+      "id": "openings--arched_openings--2",
+      "file": "openings--arched_openings--2.svg",
+      "dimension_id": "openings",
+      "option_id": "arched_openings",
+      "origin": "hacienda",
+      "subject": "window from inside, light",
+      "materials": [
+        "Wrought-iron grille",
+        "Plastered reveal"
+      ],
+      "palette": [
+        {
+          "name": "Wrought iron",
+          "hex": "#2b2a29"
+        },
+        {
+          "name": "Warm stucco",
+          "hex": "#d9b98f"
+        }
+      ],
+      "scale": "single-family, 2400-4000 sq ft",
+      "climate": {
+        "status": "ok",
+        "note": ""
+      },
+      "source": "placeholder",
+      "credit": "",
+      "placeholder": true
+    },
+    {
+      "id": "openings--modern_full_height--1",
+      "file": "openings--modern_full_height--1.svg",
+      "dimension_id": "openings",
+      "option_id": "modern_full_height",
+      "origin": "modern",
+      "subject": "window from outside",
+      "materials": [
+        "Glass sliders",
+        "Aluminium or timber frame"
+      ],
+      "palette": [
+        {
+          "name": "Glass",
+          "hex": "#9fb7bf"
+        },
+        {
+          "name": "Dark steel",
+          "hex": "#3a3c3f"
+        }
+      ],
+      "scale": "single-family, 2400-4000 sq ft",
+      "climate": {
+        "status": "review",
+        "note": "Only with deep shade or north orientation; unshaded east/west glass overheats in Erode."
+      },
+      "source": "placeholder",
+      "credit": "",
+      "placeholder": true
+    },
+    {
+      "id": "openings--modern_full_height--2",
+      "file": "openings--modern_full_height--2.svg",
+      "dimension_id": "openings",
+      "option_id": "modern_full_height",
+      "origin": "modern",
+      "subject": "window from inside, light",
+      "materials": [
+        "Glass sliders",
+        "Aluminium or timber frame"
+      ],
+      "palette": [
+        {
+          "name": "Glass",
+          "hex": "#9fb7bf"
+        },
+        {
+          "name": "Dark steel",
+          "hex": "#3a3c3f"
+        }
+      ],
+      "scale": "single-family, 2400-4000 sq ft",
+      "climate": {
+        "status": "ok",
+        "note": ""
+      },
+      "source": "placeholder",
+      "credit": "",
+      "placeholder": true
+    },
+    {
+      "id": "openings--jaali_screen--1",
+      "file": "openings--jaali_screen--1.svg",
+      "dimension_id": "openings",
+      "option_id": "jaali_screen",
+      "origin": "hybrid",
+      "subject": "screen from outside",
+      "materials": [
+        "Terracotta jaali",
+        "Brick jaali"
+      ],
+      "palette": [
+        {
+          "name": "Country brick",
+          "hex": "#b0573b"
+        },
+        {
+          "name": "Terracotta",
+          "hex": "#c46a3d"
+        }
+      ],
+      "scale": "single-family, 2400-4000 sq ft",
+      "climate": {
+        "status": "ok",
+        "note": ""
+      },
+      "source": "placeholder",
+      "credit": "",
+      "placeholder": true
+    },
+    {
+      "id": "openings--jaali_screen--2",
+      "file": "openings--jaali_screen--2.svg",
+      "dimension_id": "openings",
+      "option_id": "jaali_screen",
+      "origin": "hybrid",
+      "subject": "screen from inside, light",
+      "materials": [
+        "Terracotta jaali",
+        "Brick jaali"
+      ],
+      "palette": [
+        {
+          "name": "Country brick",
+          "hex": "#b0573b"
+        },
+        {
+          "name": "Terracotta",
+          "hex": "#c46a3d"
+        }
+      ],
+      "scale": "single-family, 2400-4000 sq ft",
+      "climate": {
+        "status": "ok",
+        "note": ""
+      },
+      "source": "placeholder",
+      "credit": "",
+      "placeholder": true
+    },
+    {
+      "id": "palette--ochre_terracotta--1",
+      "file": "palette--ochre_terracotta--1.svg",
+      "dimension_id": "palette",
+      "option_id": "ochre_terracotta",
+      "origin": "hacienda",
+      "subject": "living room",
+      "materials": [
+        "Ochre limewash",
+        "Terracotta floor",
+        "Glazed accent tile"
+      ],
+      "palette": [
+        {
+          "name": "Ochre",
+          "hex": "#c9973a"
+        },
+        {
+          "name": "Terracotta",
+          "hex": "#c46a3d"
+        },
+        {
+          "name": "Glazed tile blue",
+          "hex": "#2f6f9a"
+        }
+      ],
+      "scale": "single-family, 2400-4000 sq ft",
+      "climate": {
+        "status": "ok",
+        "note": ""
+      },
+      "source": "placeholder",
+      "credit": "",
+      "placeholder": true
+    },
+    {
+      "id": "palette--ochre_terracotta--2",
+      "file": "palette--ochre_terracotta--2.svg",
+      "dimension_id": "palette",
+      "option_id": "ochre_terracotta",
+      "origin": "hacienda",
+      "subject": "entrance facade",
+      "materials": [
+        "Ochre limewash",
+        "Terracotta floor",
+        "Glazed accent tile"
+      ],
+      "palette": [
+        {
+          "name": "Ochre",
+          "hex": "#c9973a"
+        },
+        {
+          "name": "Terracotta",
+          "hex": "#c46a3d"
+        },
+        {
+          "name": "Glazed tile blue",
+          "hex": "#2f6f9a"
+        }
+      ],
+      "scale": "single-family, 2400-4000 sq ft",
+      "climate": {
+        "status": "ok",
+        "note": ""
+      },
+      "source": "placeholder",
+      "credit": "",
+      "placeholder": true
+    },
+    {
+      "id": "palette--wood_whitewash--1",
+      "file": "palette--wood_whitewash--1.svg",
+      "dimension_id": "palette",
+      "option_id": "wood_whitewash",
+      "origin": "kerala",
+      "subject": "living room",
+      "materials": [
+        "Dark teak",
+        "Lime white",
+        "Red-oxide floor"
+      ],
+      "palette": [
+        {
+          "name": "Dark teak",
+          "hex": "#5a3a22"
+        },
+        {
+          "name": "Lime white",
+          "hex": "#f1ece1"
+        },
+        {
+          "name": "Red oxide",
+          "hex": "#8e3b2e"
+        }
+      ],
+      "scale": "single-family, 2400-4000 sq ft",
+      "climate": {
+        "status": "ok",
+        "note": ""
+      },
+      "source": "placeholder",
+      "credit": "",
+      "placeholder": true
+    },
+    {
+      "id": "palette--wood_whitewash--2",
+      "file": "palette--wood_whitewash--2.svg",
+      "dimension_id": "palette",
+      "option_id": "wood_whitewash",
+      "origin": "kerala",
+      "subject": "entrance facade",
+      "materials": [
+        "Dark teak",
+        "Lime white",
+        "Red-oxide floor"
+      ],
+      "palette": [
+        {
+          "name": "Dark teak",
+          "hex": "#5a3a22"
+        },
+        {
+          "name": "Lime white",
+          "hex": "#f1ece1"
+        },
+        {
+          "name": "Red oxide",
+          "hex": "#8e3b2e"
+        }
+      ],
+      "scale": "single-family, 2400-4000 sq ft",
+      "climate": {
+        "status": "ok",
+        "note": ""
+      },
+      "source": "placeholder",
+      "credit": "",
+      "placeholder": true
+    },
+    {
+      "id": "palette--earthy_neutral--1",
+      "file": "palette--earthy_neutral--1.svg",
+      "dimension_id": "palette",
+      "option_id": "earthy_neutral",
+      "origin": "modern",
+      "subject": "living room",
+      "materials": [
+        "Grey granite",
+        "Sand plaster",
+        "Concrete"
+      ],
+      "palette": [
+        {
+          "name": "Sand",
+          "hex": "#d8c8a8"
+        },
+        {
+          "name": "Grey granite",
+          "hex": "#8b8a86"
+        },
+        {
+          "name": "Dry olive",
+          "hex": "#7d7a4f"
+        }
+      ],
+      "scale": "single-family, 2400-4000 sq ft",
+      "climate": {
+        "status": "ok",
+        "note": ""
+      },
+      "source": "placeholder",
+      "credit": "",
+      "placeholder": true
+    },
+    {
+      "id": "palette--earthy_neutral--2",
+      "file": "palette--earthy_neutral--2.svg",
+      "dimension_id": "palette",
+      "option_id": "earthy_neutral",
+      "origin": "modern",
+      "subject": "entrance facade",
+      "materials": [
+        "Grey granite",
+        "Sand plaster",
+        "Concrete"
+      ],
+      "palette": [
+        {
+          "name": "Sand",
+          "hex": "#d8c8a8"
+        },
+        {
+          "name": "Grey granite",
+          "hex": "#8b8a86"
+        },
+        {
+          "name": "Dry olive",
+          "hex": "#7d7a4f"
+        }
+      ],
+      "scale": "single-family, 2400-4000 sq ft",
+      "climate": {
+        "status": "ok",
+        "note": ""
+      },
+      "source": "placeholder",
+      "credit": "",
+      "placeholder": true
+    },
+    {
+      "id": "landscape--courtyard_planting--1",
+      "file": "landscape--courtyard_planting--1.svg",
+      "dimension_id": "landscape",
+      "option_id": "courtyard_planting",
+      "origin": "kerala",
+      "subject": "verandah edge into planted court",
+      "materials": [
+        "Granite tulsi thara",
+        "Frangipani",
+        "Lawn"
+      ],
+      "palette": [
+        {
+          "name": "Tropical green",
+          "hex": "#3f6b3a"
+        },
+        {
+          "name": "Grey granite",
+          "hex": "#8b8a86"
+        }
+      ],
+      "scale": "single-family, 2400-4000 sq ft",
+      "climate": {
+        "status": "ok",
+        "note": ""
+      },
+      "source": "placeholder",
+      "credit": "",
+      "placeholder": true
+    },
+    {
+      "id": "landscape--courtyard_planting--2",
+      "file": "landscape--courtyard_planting--2.svg",
+      "dimension_id": "landscape",
+      "option_id": "courtyard_planting",
+      "origin": "kerala",
+      "subject": "tulsi thara close-up",
+      "materials": [
+        "Granite tulsi thara",
+        "Frangipani",
+        "Lawn"
+      ],
+      "palette": [
+        {
+          "name": "Tropical green",
+          "hex": "#3f6b3a"
+        },
+        {
+          "name": "Grey granite",
+          "hex": "#8b8a86"
+        }
+      ],
+      "scale": "single-family, 2400-4000 sq ft",
+      "climate": {
+        "status": "ok",
+        "note": ""
+      },
+      "source": "placeholder",
+      "credit": "",
+      "placeholder": true
+    },
+    {
+      "id": "landscape--fountain_patio--1",
+      "file": "landscape--fountain_patio--1.svg",
+      "dimension_id": "landscape",
+      "option_id": "fountain_patio",
+      "origin": "hacienda",
+      "subject": "verandah edge to fountain patio",
+      "materials": [
+        "Glazed tile fountain",
+        "Terracotta paving",
+        "Potted plants"
+      ],
+      "palette": [
+        {
+          "name": "Glazed tile blue",
+          "hex": "#2f6f9a"
+        },
+        {
+          "name": "Terracotta",
+          "hex": "#c46a3d"
+        },
+        {
+          "name": "Water",
+          "hex": "#6f9fb0"
+        }
+      ],
+      "scale": "single-family, 2400-4000 sq ft",
+      "climate": {
+        "status": "ok",
+        "note": ""
+      },
+      "source": "placeholder",
+      "credit": "",
+      "placeholder": true
+    },
+    {
+      "id": "landscape--fountain_patio--2",
+      "file": "landscape--fountain_patio--2.svg",
+      "dimension_id": "landscape",
+      "option_id": "fountain_patio",
+      "origin": "hacienda",
+      "subject": "fountain close-up",
+      "materials": [
+        "Glazed tile fountain",
+        "Terracotta paving",
+        "Potted plants"
+      ],
+      "palette": [
+        {
+          "name": "Glazed tile blue",
+          "hex": "#2f6f9a"
+        },
+        {
+          "name": "Terracotta",
+          "hex": "#c46a3d"
+        },
+        {
+          "name": "Water",
+          "hex": "#6f9fb0"
+        }
+      ],
+      "scale": "single-family, 2400-4000 sq ft",
+      "climate": {
+        "status": "ok",
+        "note": ""
+      },
+      "source": "placeholder",
+      "credit": "",
+      "placeholder": true
+    },
+    {
+      "id": "landscape--lush_verandah_garden--1",
+      "file": "landscape--lush_verandah_garden--1.svg",
+      "dimension_id": "landscape",
+      "option_id": "lush_verandah_garden",
+      "origin": "kerala",
+      "subject": "verandah edge into dense garden",
+      "materials": [
+        "Tropical shrubs",
+        "Laterite path"
+      ],
+      "palette": [
+        {
+          "name": "Tropical green",
+          "hex": "#3f6b3a"
+        },
+        {
+          "name": "Laterite",
+          "hex": "#9c5a3c"
+        }
+      ],
+      "scale": "single-family, 2400-4000 sq ft",
+      "climate": {
+        "status": "review",
+        "note": "High irrigation demand in Erode's dry season; keep only with a water plan (rainwater harvesting, drip)."
+      },
+      "source": "placeholder",
+      "credit": "",
+      "placeholder": true
+    },
+    {
+      "id": "landscape--lush_verandah_garden--2",
+      "file": "landscape--lush_verandah_garden--2.svg",
+      "dimension_id": "landscape",
+      "option_id": "lush_verandah_garden",
+      "origin": "kerala",
+      "subject": "garden path",
+      "materials": [
+        "Tropical shrubs",
+        "Laterite path"
+      ],
+      "palette": [
+        {
+          "name": "Tropical green",
+          "hex": "#3f6b3a"
+        },
+        {
+          "name": "Laterite",
+          "hex": "#9c5a3c"
+        }
+      ],
+      "scale": "single-family, 2400-4000 sq ft",
+      "climate": {
+        "status": "ok",
+        "note": ""
+      },
+      "source": "placeholder",
+      "credit": "",
+      "placeholder": true
+    },
+    {
+      "id": "landscape--dry_native--1",
+      "file": "landscape--dry_native--1.svg",
+      "dimension_id": "landscape",
+      "option_id": "dry_native",
+      "origin": "modern",
+      "subject": "verandah edge to dry garden",
+      "materials": [
+        "Native shrubs",
+        "Gravel",
+        "Boulders"
+      ],
+      "palette": [
+        {
+          "name": "Dry olive",
+          "hex": "#7d7a4f"
+        },
+        {
+          "name": "Sand",
+          "hex": "#d8c8a8"
+        },
+        {
+          "name": "Grey granite",
+          "hex": "#8b8a86"
+        }
+      ],
+      "scale": "single-family, 2400-4000 sq ft",
+      "climate": {
+        "status": "ok",
+        "note": ""
+      },
+      "source": "placeholder",
+      "credit": "",
+      "placeholder": true
+    },
+    {
+      "id": "landscape--dry_native--2",
+      "file": "landscape--dry_native--2.svg",
+      "dimension_id": "landscape",
+      "option_id": "dry_native",
+      "origin": "modern",
+      "subject": "gravel path with shade tree",
+      "materials": [
+        "Native shrubs",
+        "Gravel",
+        "Boulders"
+      ],
+      "palette": [
+        {
+          "name": "Dry olive",
+          "hex": "#7d7a4f"
+        },
+        {
+          "name": "Sand",
+          "hex": "#d8c8a8"
+        },
+        {
+          "name": "Grey granite",
+          "hex": "#8b8a86"
+        }
+      ],
+      "scale": "single-family, 2400-4000 sq ft",
+      "climate": {
+        "status": "ok",
+        "note": ""
+      },
+      "source": "placeholder",
+      "credit": "",
+      "placeholder": true
+    },
+    {
+      "id": "landscape--reflecting_pool--1",
+      "file": "landscape--reflecting_pool--1.svg",
+      "dimension_id": "landscape",
+      "option_id": "reflecting_pool",
+      "origin": "modern",
+      "subject": "verandah edge to reflecting pool",
+      "materials": [
+        "Stone-edged pool",
+        "Sparse planting"
+      ],
+      "palette": [
+        {
+          "name": "Water",
+          "hex": "#6f9fb0"
+        },
+        {
+          "name": "Grey granite",
+          "hex": "#8b8a86"
+        }
+      ],
+      "scale": "single-family, 2400-4000 sq ft",
+      "climate": {
+        "status": "ok",
+        "note": ""
+      },
+      "source": "placeholder",
+      "credit": "",
+      "placeholder": true
+    },
+    {
+      "id": "landscape--reflecting_pool--2",
+      "file": "landscape--reflecting_pool--2.svg",
+      "dimension_id": "landscape",
+      "option_id": "reflecting_pool",
+      "origin": "modern",
+      "subject": "pool edge close-up",
+      "materials": [
+        "Stone-edged pool",
+        "Sparse planting"
+      ],
+      "palette": [
+        {
+          "name": "Water",
+          "hex": "#6f9fb0"
+        },
+        {
+          "name": "Grey granite",
+          "hex": "#8b8a86"
+        }
+      ],
+      "scale": "single-family, 2400-4000 sq ft",
+      "climate": {
+        "status": "ok",
+        "note": ""
+      },
+      "source": "placeholder",
+      "credit": "",
+      "placeholder": true
+    },
+    {
+      "id": "abstraction--ornate--1",
+      "file": "abstraction--ornate--1.svg",
+      "dimension_id": "abstraction",
+      "option_id": "ornate",
+      "origin": "kerala",
+      "subject": "Kerala-style verandah",
+      "materials": [
+        "Carved timber",
+        "Decorative tile"
+      ],
+      "palette": [
+        {
+          "name": "Dark teak",
+          "hex": "#5a3a22"
+        },
+        {
+          "name": "Glazed tile blue",
+          "hex": "#2f6f9a"
+        }
+      ],
+      "scale": "single-family, 2400-4000 sq ft",
+      "climate": {
+        "status": "ok",
+        "note": ""
+      },
+      "source": "placeholder",
+      "credit": "",
+      "placeholder": true
+    },
+    {
+      "id": "abstraction--ornate--2",
+      "file": "abstraction--ornate--2.svg",
+      "dimension_id": "abstraction",
+      "option_id": "ornate",
+      "origin": "hacienda",
+      "subject": "hacienda-style arcade",
+      "materials": [
+        "Carved timber",
+        "Decorative tile"
+      ],
+      "palette": [
+        {
+          "name": "Dark teak",
+          "hex": "#5a3a22"
+        },
+        {
+          "name": "Glazed tile blue",
+          "hex": "#2f6f9a"
+        }
+      ],
+      "scale": "single-family, 2400-4000 sq ft",
+      "climate": {
+        "status": "ok",
+        "note": ""
+      },
+      "source": "placeholder",
+      "credit": "",
+      "placeholder": true
+    },
+    {
+      "id": "abstraction--restrained--1",
+      "file": "abstraction--restrained--1.svg",
+      "dimension_id": "abstraction",
+      "option_id": "restrained",
+      "origin": "kerala",
+      "subject": "Kerala-style verandah",
+      "materials": [
+        "Plain timber",
+        "Lime plaster"
+      ],
+      "palette": [
+        {
+          "name": "Dark teak",
+          "hex": "#5a3a22"
+        },
+        {
+          "name": "Lime white",
+          "hex": "#f1ece1"
+        }
+      ],
+      "scale": "single-family, 2400-4000 sq ft",
+      "climate": {
+        "status": "ok",
+        "note": ""
+      },
+      "source": "placeholder",
+      "credit": "",
+      "placeholder": true
+    },
+    {
+      "id": "abstraction--restrained--2",
+      "file": "abstraction--restrained--2.svg",
+      "dimension_id": "abstraction",
+      "option_id": "restrained",
+      "origin": "hacienda",
+      "subject": "hacienda-style arcade",
+      "materials": [
+        "Plain timber",
+        "Lime plaster"
+      ],
+      "palette": [
+        {
+          "name": "Dark teak",
+          "hex": "#5a3a22"
+        },
+        {
+          "name": "Lime white",
+          "hex": "#f1ece1"
+        }
+      ],
+      "scale": "single-family, 2400-4000 sq ft",
+      "climate": {
+        "status": "ok",
+        "note": ""
+      },
+      "source": "placeholder",
+      "credit": "",
+      "placeholder": true
+    },
+    {
+      "id": "abstraction--minimal--1",
+      "file": "abstraction--minimal--1.svg",
+      "dimension_id": "abstraction",
+      "option_id": "minimal",
+      "origin": "modern",
+      "subject": "Kerala-style verandah",
+      "materials": [
+        "Concrete",
+        "Plain plaster"
+      ],
+      "palette": [
+        {
+          "name": "Board concrete",
+          "hex": "#a9a59c"
+        },
+        {
+          "name": "Sand",
+          "hex": "#d8c8a8"
+        }
+      ],
+      "scale": "single-family, 2400-4000 sq ft",
+      "climate": {
+        "status": "ok",
+        "note": ""
+      },
+      "source": "placeholder",
+      "credit": "",
+      "placeholder": true
+    },
+    {
+      "id": "abstraction--minimal--2",
+      "file": "abstraction--minimal--2.svg",
+      "dimension_id": "abstraction",
+      "option_id": "minimal",
+      "origin": "modern",
+      "subject": "hacienda-style arcade",
+      "materials": [
+        "Concrete",
+        "Plain plaster"
+      ],
+      "palette": [
+        {
+          "name": "Board concrete",
+          "hex": "#a9a59c"
+        },
+        {
+          "name": "Sand",
+          "hex": "#d8c8a8"
+        }
+      ],
+      "scale": "single-family, 2400-4000 sq ft",
+      "climate": {
+        "status": "ok",
+        "note": ""
+      },
+      "source": "placeholder",
+      "credit": "",
+      "placeholder": true
+    }
+  ]
+}

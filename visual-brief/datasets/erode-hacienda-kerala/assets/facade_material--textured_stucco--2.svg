@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" font-family="system-ui, sans-serif">
+<rect width="800" height="600" fill="#f3f1ec"/>
+<rect width="800" height="10" fill="#eb6834"/>
+<text x="48" y="64" font-size="18" fill="#52514e" letter-spacing="2">WALL MATERIAL · HACIENDA</text>
+<text x="48" y="124" font-size="40" font-weight="600" fill="#1d1c1a">Hand-troweled stucco</text>
+<text x="48" y="172" font-size="22" fill="#1d1c1a">Shows: corner detail</text>
+<text x="48" y="226" font-size="21" fill="#3b3a37"><tspan x="48" dy="0">Thick, hand-troweled plaster with soft edges, earth-</tspan><tspan x="48" dy="30">tinted.</tspan></text>
+<rect x="48" y="440" width="116" height="72" rx="6" fill="#d9b98f" stroke="#0002"/><text x="48" y="534" font-size="15" fill="#52514e">Warm stucco</text><rect x="180" y="440" width="116" height="72" rx="6" fill="#c9973a" stroke="#0002"/><text x="180" y="534" font-size="15" fill="#52514e">Ochre</text>
+<text x="48" y="580" font-size="14" fill="#8a8984">PLACEHOLDER · facade_material--textured_stucco--2 · replace with a curated photo</text>
+</svg>

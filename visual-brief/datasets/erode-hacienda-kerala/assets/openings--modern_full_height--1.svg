@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" font-family="system-ui, sans-serif">
+<rect width="800" height="600" fill="#f3f1ec"/>
+<rect width="800" height="10" fill="#1baf7a"/>
+<text x="48" y="64" font-size="18" fill="#52514e" letter-spacing="2">WINDOWS &amp; OPENINGS · MODERN</text>
+<text x="48" y="124" font-size="40" font-weight="600" fill="#1d1c1a">Full-height shaded glazing</text>
+<text x="48" y="172" font-size="22" fill="#1d1c1a">Shows: window from outside</text>
+<text x="48" y="226" font-size="21" fill="#3b3a37"><tspan x="48" dy="0">Floor-to-ceiling glazing behind deep shade or</tspan><tspan x="48" dy="30">screens.</tspan></text>
+<rect x="48" y="440" width="116" height="72" rx="6" fill="#9fb7bf" stroke="#0002"/><text x="48" y="534" font-size="15" fill="#52514e">Glass</text><rect x="180" y="440" width="116" height="72" rx="6" fill="#3a3c3f" stroke="#0002"/><text x="180" y="534" font-size="15" fill="#52514e">Dark steel</text>
+<text x="48" y="580" font-size="14" fill="#8a8984">PLACEHOLDER · openings--modern_full_height--1 · replace with a curated photo</text>
+</svg>

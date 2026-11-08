@@ -87,6 +87,7 @@ pipeline/render_engine/
 projects/_template/   copy per architecture project (input/ for view images)
 projects/demo/        small pavilion with SketchUp-style inputs, to try everything
 docs/                 image-track setup and guides
+visual-brief/         client style-brief tool: image A/B rounds -> preference profile (see visual-brief/README.md)
 tests/                unit and end-to-end tests (a fake ComfyUI server stands in for the GPU)
 ```
 
