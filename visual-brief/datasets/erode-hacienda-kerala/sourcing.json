@@ -2,136 +2,137 @@
   "note": "Search terms per dimension/option for tools/source_images.py. Tune freely.",
   "queries": {
     "roof/kerala_steep_tile": [
-      "kerala traditional house tiled roof",
-      "kerala tharavadu",
-      "mangalore tile roof house"
+      "kerala house",
+      "tharavad",
+      "kerala traditional house"
     ],
     "roof/hacienda_low_hip": [
-      "hacienda house mexico exterior",
-      "spanish colonial house terracotta roof",
-      "casa hacienda"
+      "hacienda",
+      "hacienda mexico",
+      "spanish colonial house"
     ],
     "roof/modern_flat_slab": [
-      "modern house flat roof",
-      "modernist villa flat roof"
+      "modern house",
+      "modernist villa"
     ],
     "roof/modern_mono_pitch": [
-      "skillion roof house",
-      "mono pitch roof house"
+      "skillion roof",
+      "shed roof house"
     ],
     "courtyard/nalukettu_enclosed": [
       "nalukettu",
       "nadumuttam",
-      "kerala courtyard house"
+      "kerala courtyard"
     ],
     "courtyard/open_patio": [
       "hacienda patio",
-      "spanish colonial courtyard",
-      "patio hacienda arcos"
+      "colonial courtyard",
+      "patio arcade"
     ],
     "courtyard/side_court_linear": [
-      "modern house courtyard garden",
-      "house side courtyard"
+      "courtyard garden house",
+      "modern courtyard"
     ],
     "courtyard/compact_no_court": [
-      "modern house skylight",
-      "contemporary compact house"
+      "skylight house",
+      "atrium skylight"
     ],
     "facade_material/laterite": [
-      "laterite wall",
-      "laterite stone building kerala"
+      "laterite",
+      "laterite wall"
     ],
     "facade_material/lime_whitewash": [
-      "whitewashed wall window",
-      "lime plaster wall"
+      "whitewashed wall",
+      "lime plaster"
     ],
     "facade_material/exposed_brick": [
-      "exposed brick wall window",
-      "laurie baker brick"
+      "brick wall window",
+      "laurie baker"
     ],
     "facade_material/textured_stucco": [
-      "adobe wall window",
-      "stucco wall window mexico"
+      "adobe wall",
+      "stucco wall"
     ],
     "columns/timber_columns": [
-      "kerala wooden pillars verandah",
-      "padmanabhapuram palace pillars",
-      "wooden veranda pillars"
+      "kerala pillars",
+      "padmanabhapuram palace",
+      "wooden pillars veranda"
     ],
     "columns/masonry_arcade": [
-      "hacienda arcade",
-      "portales arcos",
-      "colonial arcade arches"
+      "arcade arches",
+      "portales",
+      "hacienda arches"
     ],
     "columns/wrought_iron": [
-      "wrought iron veranda posts",
-      "cast iron veranda"
+      "cast iron veranda",
+      "wrought iron porch"
     ],
     "columns/modern_slender": [
-      "modern veranda steel columns",
-      "modern terrace thin columns"
+      "steel columns terrace",
+      "modern porch"
     ],
     "openings/timber_slat_rect": [
-      "kerala wooden window",
-      "wooden louvered window shutters"
+      "wooden shutters",
+      "kerala window"
     ],
     "openings/arched_openings": [
-      "arched window wrought iron grille",
-      "arched window colonial"
+      "arched window grille",
+      "arched window"
     ],
     "openings/modern_full_height": [
-      "floor to ceiling windows house",
-      "large glass sliding door house"
+      "floor to ceiling windows",
+      "glass wall house"
     ],
     "openings/jaali_screen": [
-      "brick jali wall",
-      "jaali screen",
-      "brick screen wall"
+      "jali",
+      "jaali",
+      "brick jali"
     ],
     "palette/ochre_terracotta": [
-      "ochre house mexico",
-      "terracotta tiles interior",
-      "mexican hacienda interior"
+      "ochre wall",
+      "terracotta floor",
+      "mexican courtyard"
     ],
     "palette/wood_whitewash": [
-      "kerala house interior",
-      "white wall wooden interior traditional"
+      "kerala interior",
+      "tharavad interior"
     ],
     "palette/earthy_neutral": [
-      "minimalist interior stone",
-      "concrete house interior"
+      "minimalist interior",
+      "concrete interior"
     ],
     "landscape/courtyard_planting": [
       "tulsi thara",
-      "courtyard plants kerala"
+      "tulasi"
     ],
     "landscape/fountain_patio": [
-      "courtyard fountain tiles",
+      "courtyard fountain",
       "talavera fountain"
     ],
     "landscape/lush_verandah_garden": [
-      "tropical garden veranda",
-      "kerala garden house"
+      "tropical garden",
+      "kerala garden"
     ],
     "landscape/dry_native": [
-      "xeriscape garden",
-      "dry garden boulders gravel"
+      "xeriscape",
+      "rock garden gravel"
     ],
     "landscape/reflecting_pool": [
-      "reflecting pool house",
-      "reflecting pool courtyard"
+      "reflecting pool",
+      "reflection pool house"
     ],
     "abstraction/ornate": [
-      "kerala palace carved wood",
-      "ornate hacienda"
+      "kerala palace",
+      "ornate hacienda",
+      "carved wooden ceiling"
     ],
     "abstraction/restrained": [
-      "kerala heritage house verandah",
+      "heritage house kerala",
       "restored hacienda"
     ],
     "abstraction/minimal": [
-      "minimalist house veranda",
-      "minimalist courtyard house"
+      "minimalist house",
+      "minimalist veranda"
     ]
   }
 }

@@ -51,7 +51,8 @@ def get(url: str, timeout: int = 30, tries: int = 4) -> bytes:
             if attempt == tries - 1:
                 raise
             if getattr(e, "code", None) == 429:
-                time.sleep(20)
+                wait = int((getattr(e, "headers", None) or {}).get("Retry-After", 20) or 20)
+                time.sleep(min(wait, 90) + 2)
             else:
                 time.sleep(2 ** attempt)
     raise RuntimeError("unreachable")
@@ -64,7 +65,7 @@ def strip_tags(s: str) -> str:
 # ---------------------------------------------------------------- sources
 def openverse(query: str, n: int) -> list[dict]:
     q = urllib.parse.urlencode({"q": query, "page_size": n, "license_type": "commercial",
-                                "category": "photograph", "mature": "false"})
+                                "mature": "false"})
     data = json.loads(get(f"https://api.openverse.org/v1/images/?{q}"))
     out = []
     for r in data.get("results", []):
@@ -85,7 +86,7 @@ def openverse(query: str, n: int) -> list[dict]:
 def commons(query: str, n: int) -> list[dict]:
     q = urllib.parse.urlencode({
         "action": "query", "format": "json", "generator": "search", "gsrnamespace": 6, "gsrsearch": query + " filetype:bitmap",
-        "gsrlimit": n, "prop": "imageinfo", "iiprop": "url|extmetadata|size", "iiurlwidth": 1200,
+        "gsrlimit": n, "prop": "imageinfo", "iiprop": "url|extmetadata|size", "iiurlwidth": 960,  # a standard thumbnail size; others are rate-limited
     })
     data = json.loads(get(f"https://commons.wikimedia.org/w/api.php?{q}"))
     out = []
@@ -134,18 +135,19 @@ def search(project: str, only: str | None, per_query: int) -> None:
                                 found[c["cid"]] = c
                     except Exception as e:  # noqa: BLE001
                         print(f"  ! {fn.__name__} {query!r}: {e}", file=sys.stderr)
-                    time.sleep(1.5)  # be polite to both APIs
+                    time.sleep(4)  # be polite: Commons throttles bursts
             def fetch(c):
                 dest = folder / f"{c['cid']}.jpg"
                 if not dest.exists():
                     try:
-                        dest.write_bytes(get(c["image_url"], timeout=20, tries=2))
+                        dest.write_bytes(get(c["image_url"], timeout=20, tries=3))
+                        time.sleep(1)
                     except Exception as e:  # noqa: BLE001
                         print(f"  ! download {c['cid']}: {e}", file=sys.stderr)
                         return None
                 c["file"] = dest.name
                 return c
-            with ThreadPoolExecutor(6) as pool:
+            with ThreadPoolExecutor(1) as pool:  # sequential: Wikimedia rate-limits bursts
                 kept = [c for c in pool.map(fetch, found.values()) if c]
             (folder / "candidates.json").write_text(json.dumps(kept, indent=2, ensure_ascii=False), encoding="utf-8")
             print(f"{dim['id']}/{opt['id']}: {len(kept)} candidates")
