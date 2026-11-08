@@ -1,0 +1,137 @@
+{
+  "note": "Search terms per dimension/option for tools/source_images.py. Tune freely.",
+  "queries": {
+    "roof/kerala_steep_tile": [
+      "kerala traditional house tiled roof",
+      "kerala tharavadu",
+      "mangalore tile roof house"
+    ],
+    "roof/hacienda_low_hip": [
+      "hacienda house mexico exterior",
+      "spanish colonial house terracotta roof",
+      "casa hacienda"
+    ],
+    "roof/modern_flat_slab": [
+      "modern house flat roof",
+      "modernist villa flat roof"
+    ],
+    "roof/modern_mono_pitch": [
+      "skillion roof house",
+      "mono pitch roof house"
+    ],
+    "courtyard/nalukettu_enclosed": [
+      "nalukettu",
+      "nadumuttam",
+      "kerala courtyard house"
+    ],
+    "courtyard/open_patio": [
+      "hacienda patio",
+      "spanish colonial courtyard",
+      "patio hacienda arcos"
+    ],
+    "courtyard/side_court_linear": [
+      "modern house courtyard garden",
+      "house side courtyard"
+    ],
+    "courtyard/compact_no_court": [
+      "modern house skylight",
+      "contemporary compact house"
+    ],
+    "facade_material/laterite": [
+      "laterite wall",
+      "laterite stone building kerala"
+    ],
+    "facade_material/lime_whitewash": [
+      "whitewashed wall window",
+      "lime plaster wall"
+    ],
+    "facade_material/exposed_brick": [
+      "exposed brick wall window",
+      "laurie baker brick"
+    ],
+    "facade_material/textured_stucco": [
+      "adobe wall window",
+      "stucco wall window mexico"
+    ],
+    "columns/timber_columns": [
+      "kerala wooden pillars verandah",
+      "padmanabhapuram palace pillars",
+      "wooden veranda pillars"
+    ],
+    "columns/masonry_arcade": [
+      "hacienda arcade",
+      "portales arcos",
+      "colonial arcade arches"
+    ],
+    "columns/wrought_iron": [
+      "wrought iron veranda posts",
+      "cast iron veranda"
+    ],
+    "columns/modern_slender": [
+      "modern veranda steel columns",
+      "modern terrace thin columns"
+    ],
+    "openings/timber_slat_rect": [
+      "kerala wooden window",
+      "wooden louvered window shutters"
+    ],
+    "openings/arched_openings": [
+      "arched window wrought iron grille",
+      "arched window colonial"
+    ],
+    "openings/modern_full_height": [
+      "floor to ceiling windows house",
+      "large glass sliding door house"
+    ],
+    "openings/jaali_screen": [
+      "brick jali wall",
+      "jaali screen",
+      "brick screen wall"
+    ],
+    "palette/ochre_terracotta": [
+      "ochre house mexico",
+      "terracotta tiles interior",
+      "mexican hacienda interior"
+    ],
+    "palette/wood_whitewash": [
+      "kerala house interior",
+      "white wall wooden interior traditional"
+    ],
+    "palette/earthy_neutral": [
+      "minimalist interior stone",
+      "concrete house interior"
+    ],
+    "landscape/courtyard_planting": [
+      "tulsi thara",
+      "courtyard plants kerala"
+    ],
+    "landscape/fountain_patio": [
+      "courtyard fountain tiles",
+      "talavera fountain"
+    ],
+    "landscape/lush_verandah_garden": [
+      "tropical garden veranda",
+      "kerala garden house"
+    ],
+    "landscape/dry_native": [
+      "xeriscape garden",
+      "dry garden boulders gravel"
+    ],
+    "landscape/reflecting_pool": [
+      "reflecting pool house",
+      "reflecting pool courtyard"
+    ],
+    "abstraction/ornate": [
+      "kerala palace carved wood",
+      "ornate hacienda"
+    ],
+    "abstraction/restrained": [
+      "kerala heritage house verandah",
+      "restored hacienda"
+    ],
+    "abstraction/minimal": [
+      "minimalist house veranda",
+      "minimalist courtyard house"
+    ]
+  }
+}
