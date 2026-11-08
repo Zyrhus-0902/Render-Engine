@@ -403,7 +403,7 @@
     },
     {
       "id": "courtyard--nalukettu_enclosed--1",
-      "file": "courtyard--nalukettu_enclosed--1.svg",
+      "file": "courtyard--nalukettu_enclosed--1.jpg",
       "dimension_id": "courtyard",
       "option_id": "nalukettu_enclosed",
       "origin": "kerala",
@@ -434,14 +434,17 @@
         "status": "ok",
         "note": ""
       },
-      "source": "placeholder",
-      "credit": "",
-      "placeholder": true,
-      "code": "#11"
+      "source": "https://commons.wikimedia.org/wiki/File:Kerala_courtyard_with_planter.jpg",
+      "credit": "User:Soumyavn / Wikimedia Commons",
+      "placeholder": false,
+      "code": "#11",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "title": "Kerala courtyard with planter.jpg"
     },
     {
       "id": "courtyard--nalukettu_enclosed--2",
-      "file": "courtyard--nalukettu_enclosed--2.svg",
+      "file": "courtyard--nalukettu_enclosed--2.jpg",
       "dimension_id": "courtyard",
       "option_id": "nalukettu_enclosed",
       "origin": "kerala",
@@ -472,14 +475,17 @@
         "status": "ok",
         "note": ""
       },
-      "source": "placeholder",
-      "credit": "",
-      "placeholder": true,
-      "code": "#12"
+      "source": "https://commons.wikimedia.org/wiki/File:Chazhur_Kovilakam_Nalukettu.JPG",
+      "credit": "HARISREE / Wikimedia Commons",
+      "placeholder": false,
+      "code": "#12",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "title": "Chazhur Kovilakam Nalukettu.JPG"
     },
     {
       "id": "courtyard--nalukettu_enclosed--3",
-      "file": "courtyard--nalukettu_enclosed--3.svg",
+      "file": "courtyard--nalukettu_enclosed--3.jpg",
       "dimension_id": "courtyard",
       "option_id": "nalukettu_enclosed",
       "origin": "kerala",
@@ -510,10 +516,13 @@
         "status": "ok",
         "note": ""
       },
-      "source": "placeholder",
-      "credit": "",
-      "placeholder": true,
-      "code": "#13"
+      "source": "https://commons.wikimedia.org/wiki/File:Kalyana_bhavanam_nalukettu_nadumuttam.jpg",
+      "credit": "Vijayanrajapuram / Wikimedia Commons",
+      "placeholder": false,
+      "code": "#13",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "title": "Kalyana bhavanam nalukettu nadumuttam.jpg"
     },
     {
       "id": "courtyard--open_patio--1",
