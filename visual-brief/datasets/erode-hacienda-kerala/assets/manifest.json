@@ -242,7 +242,7 @@
     },
     {
       "id": "roof--modern_flat_slab--1",
-      "file": "roof--modern_flat_slab--1.svg",
+      "file": "roof--modern_flat_slab--1.jpg",
       "dimension_id": "roof",
       "option_id": "modern_flat_slab",
       "origin": "modern",
@@ -273,14 +273,17 @@
         "status": "review",
         "note": "Flat roof needs insulation and a terrace finish against summer heat gain; drains fine with Erode's low rainfall."
       },
-      "source": "placeholder",
-      "credit": "",
-      "placeholder": true,
-      "code": "#07"
+      "source": "https://commons.wikimedia.org/wiki/File:4Y1A7841_Alvar_Aalto,_Finland_(26710745140).jpg",
+      "credit": "Ninara from Helsinki, Finland / Wikimedia Commons",
+      "placeholder": false,
+      "code": "#07",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "title": "4Y1A7841 Alvar Aalto, Finland (26710745140).jpg"
     },
     {
       "id": "roof--modern_flat_slab--2",
-      "file": "roof--modern_flat_slab--2.svg",
+      "file": "roof--modern_flat_slab--2.jpg",
       "dimension_id": "roof",
       "option_id": "modern_flat_slab",
       "origin": "modern",
@@ -311,10 +314,13 @@
         "status": "ok",
         "note": ""
       },
-      "source": "placeholder",
-      "credit": "",
-      "placeholder": true,
-      "code": "#08"
+      "source": "https://www.flickr.com/photos/12814307@N00/3579412513",
+      "credit": "LHOON / Openverse/flickr",
+      "placeholder": false,
+      "code": "#08",
+      "license": "CC BY-SA 2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "title": "Modernist villa at Leie"
     },
     {
       "id": "roof--modern_mono_pitch--1",
