@@ -91,6 +91,7 @@ def validate(project: str) -> tuple[list[str], list[str]]:
         warnings.append(f"{len(reviews)} images flagged for climate review: {', '.join(reviews)}")
 
     per_dim: Counter = Counter()
+    mixed: list[str] = []
     seen_ids: set = set()
     for p in pairs:
         pid = p.get("id")
@@ -117,10 +118,14 @@ def validate(project: str) -> tuple[list[str], list[str]]:
             errors.append(f"pair {pid}: both images are option {a['option_id']}; a pair must test two options")
         if a is b:
             errors.append(f"pair {pid}: same image on both sides")
+        if bool(a.get("placeholder")) != bool(b.get("placeholder")):
+            mixed.append(pid)
         if a.get("scale") != b.get("scale"):
             warnings.append(f"pair {pid}: scale differs ({a.get('scale')} vs {b.get('scale')})")
         per_dim[did] += 1
 
+    if mixed and not dataset.get("settings", {}).get("allow_mixed_pairs"):
+        warnings.append(f"{len(mixed)} pairs mix a sketch with a photo and are hidden from clients until both sides are photos: {', '.join(mixed)}")
     for did, d in dims.items():
         n = per_dim[did]
         if not 6 <= n <= 10:

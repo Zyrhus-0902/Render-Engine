@@ -59,7 +59,8 @@
       el("div", { class: "actions" },
         resumable ? el("button", { class: "btn primary", onclick: () => { session = existing; steps = S.buildSequence(D, P.pairs, P.images, session.seed); render(); } },
           t("resume") + (existing.respondent.name ? ` (${existing.respondent.name})` : "")) : null,
-        el("button", { class: resumable ? "btn" : "btn primary", onclick: begin }, resumable ? t("start_over") : t("start"))));
+        el("button", { class: resumable ? "btn" : "btn primary", onclick: begin }, resumable ? t("start_over") : t("start"))),
+      creditsLink());
   }
 
   function progress(step) {
@@ -174,7 +175,26 @@
       el("p", { class: "muted" }, t("remote_hint")),
       el("div", { class: "actions" },
         el("button", { class: "btn primary", onclick: () => download(file, session) }, t("download")),
-        el("button", { class: "btn", onclick: () => { session = null; store.setCurrent(pid, null); render(); } }, t("another"))));
+        el("button", { class: "btn", onclick: () => { session = null; store.setCurrent(pid, null); render(); } }, t("another"))),
+      creditsLink());
+  }
+
+  // Licences (CC BY / BY-SA) require visible credit; kept off the pairs themselves.
+  function creditsLink() {
+    const credited = P.images.filter(i => !i.placeholder && i.credit);
+    if (!credited.length) return null;
+    return el("p", { class: "credits-link" }, el("button", { class: "link", onclick: () => showCredits(credited) }, `Photo credits (${credited.length})`));
+  }
+  function showCredits(list) {
+    const close = () => dlg.remove();
+    const dlg = el("div", { class: "credits", role: "dialog", "aria-modal": "true", "aria-label": "Photo credits", onclick: e => { if (e.target === dlg) close(); } },
+      el("div", { class: "credits-panel" },
+        el("div", { class: "credits-head" }, el("h2", null, "Photo credits"), el("button", { class: "btn ghost", onclick: close }, "Close")),
+        el("ul", null, list.map(i => el("li", null,
+          el("span", { class: "muted" }, (i.code || "") + " "), i.title || "Untitled", " · ", i.credit, " · ",
+          i.license_url ? el("a", { href: i.license_url, target: "_blank", rel: "noopener" }, i.license || "licence") : (i.license || ""),
+          i.source ? [" · ", el("a", { href: i.source, target: "_blank", rel: "noopener" }, "source")] : null)))));
+    document.body.append(dlg);
   }
 
   function render() {

@@ -61,6 +61,19 @@
   function isExcluded(img) { return !img || (img.climate && img.climate.status === "exclude"); }
 
   /**
+   * A sketch placeholder against a real photo is not a fair comparison: the photo
+   * wins on realism, not on the tested variable. Such pairs are left out unless
+   * settings.allow_mixed_pairs is true.
+   */
+  function isMixed(a, b) { return !!(a && b) && !!a.placeholder !== !!b.placeholder; }
+  function pairShown(dataset, imgs, p) {
+    const a = imgs[p.image_a], b = imgs[p.image_b];
+    if (isExcluded(a) || isExcluded(b)) return false;
+    if (isMixed(a, b) && !(dataset.settings && dataset.settings.allow_mixed_pairs)) return false;
+    return true;
+  }
+
+  /**
    * The ordered steps the client walks through: a round intro per dimension,
    * then that dimension's pairs (shuffled), then the brief, then done.
    * Deterministic for a given seed so a resumed session sees the same order.
@@ -71,7 +84,7 @@
     const rand = rng(seed || "fixed");
     const steps = [];
     dataset.dimensions.forEach(function (dim, di) {
-      let ps = pairs.filter(p => p.dimension_id === dim.id && !isExcluded(imgs[p.image_a]) && !isExcluded(imgs[p.image_b]));
+      let ps = pairs.filter(p => p.dimension_id === dim.id && pairShown(dataset, imgs, p));
       if (!ps.length) return;
       if (settings.shuffle_pairs !== false) ps = shuffle(ps, rand);
       steps.push({ type: "round", dimension_id: dim.id, round_index: di, hidden: settings.round_intros === false });
@@ -173,7 +186,7 @@
         wins: 0, losses: 0, both: 0, neither: 0, rejects: 0, chips: {},
       });
       const h2h = {}; // "x|y" (sorted) -> {x: wins, y: wins}
-      const dimPairs = pairs.filter(p => p.dimension_id === dim.id && !isExcluded(imgs[p.image_a]) && !isExcluded(imgs[p.image_b]));
+      const dimPairs = pairs.filter(p => p.dimension_id === dim.id && pairShown(dataset, imgs, p));
       let answered = 0, decisive = 0, neitherCount = 0;
       blendByDim[dim.id] = blankBlend();
 
@@ -439,5 +452,5 @@
     return { dimensions: dims, opposite_pairs: opposite };
   }
 
-  return { POINTS, CHOICES, buildSequence, computeProfile, compareProfiles, latestResponses, isExcluded, rng, shuffle, hashString, text };
+  return { POINTS, CHOICES, buildSequence, computeProfile, compareProfiles, latestResponses, isExcluded, isMixed, pairShown, rng, shuffle, hashString, text };
 });

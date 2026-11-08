@@ -114,6 +114,16 @@ button { font: inherit; color: inherit; }
 .chip.on { background: var(--ink); color: var(--surface); border-color: var(--ink); }
 .nav { display: flex; justify-content: space-between; margin-top: 28px; gap: 12px; }
 
+.credits-link { margin-top: 32px; font-size: .85rem; color: var(--ink-2); }
+.credits-link .link { color: var(--ink-2); padding: 0; }
+.credits { position: fixed; inset: 0; z-index: 30; background: rgb(0 0 0 / .45); display: flex; align-items: flex-end; justify-content: center; }
+.credits-panel { background: var(--surface); width: 100%; max-width: 720px; max-height: 85vh; overflow: auto; border-radius: 16px 16px 0 0; padding: 20px 16px; }
+.credits-head { display: flex; justify-content: space-between; align-items: center; }
+.credits ul { list-style: none; padding: 0; margin: 0; font-size: .85rem; }
+.credits li { padding: 8px 0; border-bottom: 1px solid var(--line); overflow-wrap: anywhere; }
+.credits a { color: var(--accent); }
+@media (min-width: 720px) { .credits { align-items: center; } .credits-panel { border-radius: 16px; } }
+
 /* architect */
 .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; margin-bottom: 16px; }
 .card.head h1 { margin-bottom: .2em; }

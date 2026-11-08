@@ -9,7 +9,8 @@ const S = require("../app/js/scoring.js");
 const base = path.join(__dirname, "..", "datasets", "erode-hacienda-kerala");
 const D = JSON.parse(fs.readFileSync(path.join(base, "dataset.json"), "utf8"));
 const P = JSON.parse(fs.readFileSync(path.join(base, "pairs.json"), "utf8")).pairs;
-const I = JSON.parse(fs.readFileSync(path.join(base, "assets", "manifest.json"), "utf8")).images;
+// Pinned to "all sketches" so the tests check the logic, not how far photo curation has got.
+const I = JSON.parse(fs.readFileSync(path.join(base, "assets", "manifest.json"), "utf8")).images.map(i => Object.assign({}, i, { placeholder: true }));
 const imgs = Object.fromEntries(I.map(i => [i.id, i]));
 
 // A respondent who always picks a fixed option per dimension when it is shown.
@@ -149,4 +150,12 @@ test("sequence: round intros can be switched off", () => {
   const steps = S.buildSequence(D2, P, I, "x");
   assert.equal(steps.filter(s => s.type === "round").length, 0);
   assert.ok(steps.filter(s => s.type === "pair").every(s => s.round_number >= 1 && s.round_count === D.dimensions.length));
+});
+
+test("sequence: a sketch paired with a photo is not shown", () => {
+  const I2 = I.map(i => i.id === P[0].image_a ? Object.assign({}, i, { placeholder: false }) : Object.assign({}, i, { placeholder: true }));
+  const ids = S.buildSequence(D, P, I2, "s").filter(s => s.type === "pair").map(s => s.pair_id);
+  assert.ok(!ids.includes(P[0].id));
+  const D2 = Object.assign({}, D, { settings: Object.assign({}, D.settings, { allow_mixed_pairs: true }) });
+  assert.ok(S.buildSequence(D2, P, I2, "s").some(s => s.pair_id === P[0].id));
 });
