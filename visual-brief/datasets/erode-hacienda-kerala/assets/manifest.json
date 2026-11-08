@@ -1969,7 +1969,7 @@
     },
     {
       "id": "palette--earthy_neutral--2",
-      "file": "palette--earthy_neutral--2.svg",
+      "file": "palette--earthy_neutral--2.jpg",
       "dimension_id": "palette",
       "option_id": "earthy_neutral",
       "origin": "modern",
@@ -2002,10 +2002,13 @@
         "status": "ok",
         "note": ""
       },
-      "source": "placeholder",
-      "credit": "",
-      "placeholder": true,
-      "code": "#50"
+      "source": "https://www.flickr.com/photos/94852245@N00/5330817446",
+      "credit": "seier+seier / Openverse/flickr",
+      "placeholder": false,
+      "code": "#50",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/",
+      "title": "the smithsons, peter and alison smithson, amenity building, university of bath, 1978-1985"
     },
     {
       "id": "landscape--courtyard_planting--1",
