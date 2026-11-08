@@ -1356,7 +1356,7 @@
     },
     {
       "id": "columns--modern_slender--1",
-      "file": "columns--modern_slender--1.svg",
+      "file": "columns--modern_slender--1.jpg",
       "dimension_id": "columns",
       "option_id": "modern_slender",
       "origin": "modern",
@@ -1385,14 +1385,17 @@
         "status": "ok",
         "note": ""
       },
-      "source": "placeholder",
-      "credit": "",
-      "placeholder": true,
-      "code": "#35"
+      "source": "https://www.flickr.com/photos/56377701@N07/49013174667",
+      "credit": "Ronald Douglas Frazier / Openverse/flickr",
+      "placeholder": false,
+      "code": "#35",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/",
+      "title": "The Farnsworth House"
     },
     {
       "id": "columns--modern_slender--2",
-      "file": "columns--modern_slender--2.svg",
+      "file": "columns--modern_slender--2.jpg",
       "dimension_id": "columns",
       "option_id": "modern_slender",
       "origin": "modern",
@@ -1421,10 +1424,13 @@
         "status": "ok",
         "note": ""
       },
-      "source": "placeholder",
-      "credit": "",
-      "placeholder": true,
-      "code": "#36"
+      "source": "https://commons.wikimedia.org/wiki/File:A_beautiful_morning_at_the_Farnsworth_House._(50438835852).jpg",
+      "credit": "Ron Frazier from Bloomington IL, United States / Wikimedia Commons",
+      "placeholder": false,
+      "code": "#36",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "title": "A beautiful morning at the Farnsworth House. (50438835852).jpg"
     },
     {
       "id": "openings--timber_slat_rect--1",
