@@ -2076,7 +2076,7 @@
     },
     {
       "id": "landscape--fountain_patio--1",
-      "file": "landscape--fountain_patio--1.svg",
+      "file": "landscape--fountain_patio--1.jpg",
       "dimension_id": "landscape",
       "option_id": "fountain_patio",
       "origin": "hacienda",
@@ -2111,14 +2111,17 @@
         "status": "ok",
         "note": ""
       },
-      "source": "placeholder",
-      "credit": "",
-      "placeholder": true,
-      "code": "#53"
+      "source": "https://commons.wikimedia.org/wiki/File:Orange_trees_courtyard_fountain_cathedral_Puerta_del_Perdon_Seville_Spain.jpg",
+      "credit": "Jebulon / Wikimedia Commons",
+      "placeholder": false,
+      "code": "#53",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "title": "Orange trees courtyard fountain cathedral Puerta del Perdon Seville Spain.jpg"
     },
     {
       "id": "landscape--fountain_patio--2",
-      "file": "landscape--fountain_patio--2.svg",
+      "file": "landscape--fountain_patio--2.jpg",
       "dimension_id": "landscape",
       "option_id": "fountain_patio",
       "origin": "hacienda",
@@ -2153,10 +2156,13 @@
         "status": "ok",
         "note": ""
       },
-      "source": "placeholder",
-      "credit": "",
-      "placeholder": true,
-      "code": "#54"
+      "source": "https://commons.wikimedia.org/wiki/File:Fountain_courtyard_current_mosque_Granada_Spain.jpg",
+      "credit": "Jebulon / Wikimedia Commons",
+      "placeholder": false,
+      "code": "#54",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "title": "Fountain courtyard current mosque Granada Spain.jpg"
     },
     {
       "id": "landscape--lush_verandah_garden--1",
