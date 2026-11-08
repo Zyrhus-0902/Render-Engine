@@ -1040,7 +1040,7 @@
     },
     {
       "id": "facade_material--textured_stucco--1",
-      "file": "facade_material--textured_stucco--1.svg",
+      "file": "facade_material--textured_stucco--1.jpg",
       "dimension_id": "facade_material",
       "option_id": "textured_stucco",
       "origin": "hacienda",
@@ -1068,14 +1068,17 @@
         "status": "ok",
         "note": ""
       },
-      "source": "placeholder",
-      "credit": "",
-      "placeholder": true,
-      "code": "#27"
+      "source": "https://www.flickr.com/photos/55282649@N05/10622357833",
+      "credit": "Luis Marina / Openverse/flickr",
+      "placeholder": false,
+      "code": "#27",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/",
+      "title": "An adobe wall"
     },
     {
       "id": "facade_material--textured_stucco--2",
-      "file": "facade_material--textured_stucco--2.svg",
+      "file": "facade_material--textured_stucco--2.jpg",
       "dimension_id": "facade_material",
       "option_id": "textured_stucco",
       "origin": "hacienda",
@@ -1103,10 +1106,13 @@
         "status": "ok",
         "note": ""
       },
-      "source": "placeholder",
-      "credit": "",
-      "placeholder": true,
-      "code": "#28"
+      "source": "https://commons.wikimedia.org/wiki/File:Stucco_wall.jpg",
+      "credit": "unknown / Wikimedia Commons",
+      "placeholder": false,
+      "code": "#28",
+      "license": "CC BY-SA 3.0",
+      "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "title": "Stucco wall.jpg"
     },
     {
       "id": "columns--timber_columns--1",
