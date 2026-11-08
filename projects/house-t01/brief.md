@@ -1,73 +1,41 @@
----
-code: "House T01"
-title: "Private residence, Tirupur"
-client: ""
-location: "Tirupur"
-stage: "Enquiry"
-enquiry_date: "2026-11-08"
-plot_sqft: 39204
-footprint_sqft: 8712
----
+# House T01
 
-# House T01 · Private residence, Tirupur
+*Private residence · Tirupur · 90 cents plot · built about 20 cents, all on the ground floor*
 
-## Lead
-- **Project code:** House T01
-- **Working title:** Private residence, Tirupur
-- **Project type:** Private residence
-- **Enquiry date:** 2026-11-08
-- **Stage:** Enquiry
+> A one-of-a-kind single-storey home with a lot of glass, so the house feels open and the landscape becomes part of every room.
 
-## Site
-- **City / town:** Tirupur
-- **Plot area:** 90 cents (39,204 sq ft, 3,642 m²)
+## What they asked for
+Four bedrooms, one living, a wet and a dry kitchen with a dining area.
 
-## Built form
-- **Building footprint:** 20 cents (8,712 sq ft, 809 m²)
-- **Floors:** Ground only
-- **Ground coverage:** 22.2%, open land 30,492 sq ft (70 cents)
+About 70 cents of designed landscape, a basketball court, parking for 10 cars.
 
-## Spaces
-- **Bedrooms:** 4
-- **Living rooms:** 1
-- **Kitchen:** Wet + dry
-- **Dining:** Dining area
-- **Notes on spaces:** One living, one wet and one dry kitchen with a dining area. Everything on the ground floor.
+## Fixed points
+**Vastu sketch to follow, Single floor only**
 
-## Outdoors and parking
-- **Landscape intent:** Rest of the plot (about 70 cents) is designed landscape. The house should look out onto it from inside.
-- **Basketball court:** Size not decided
-- **Car parking (cars):** 10
+Planning follows the sketch from the client's Vastu consultant.
 
-## Vastu
-- **Vastu:** Strict, consultant's sketch governs
-- **Consultant's sketch:** Received
+## The feeling
+A lot of glass, used so the house feels very open and the views of the landscape come into the rooms. The rest is ours to design, one of a kind.
 
-## Look and feel
-- **In the client's words:** Lots of glass, used so the house feels very open and the landscape views come into the built spaces.
-- **Glass / openness:** Extensive, very open
-- **Design freedom:** Free hand
+**Open, Glassy, Light, Landscape pulled inside, Free hand**
 
-## Anything else
-- **Other things said on the call:** Rest of the design to be one of a kind.
+## Starting points
+- Landscape as the fourth wall: every main space opens to a garden it owns.
+- A spread single level: pavilions linked by courtyards and verandahs rather than one large block.
+- Vastu sets the zoning. The design freedom is in the section, the roof, the edges and how each zone opens out.
+- The court as an outdoor room: visible from living, but kept out of the main view.
+- Arrival as a designed car court, screened from the gardens, so parking doesn't take the landscape.
 
-## Open questions
-- [ ] File a scan of the Vastu sketch in the project folder and note what it fixes (entrance, kitchen, master bedroom, puja, tanks, septic, borewell).
-- [ ] Puja room is not in the list. Vastu plans usually place one in the north-east. Confirm.
-- [ ] Does the Vastu consultant review each design stage, and which parts of the sketch can move?
-- [ ] Plot orientation. With this much glass in Tirupur, west and south glazing needs deep overhangs, verandahs or fins and performance glass.
-- [ ] Large glazing: privacy from the road and staff areas, security at night, insect screens, and whether the client accepts blinds or curtains.
-- [ ] Cooling. Extensive glass raises the AC load. Which rooms are air-conditioned, and is a VRV system acceptable?
-- [ ] Parking for 10 cars (about 280 m² / 3,014 sq ft with aisles): covered or open, and is it inside the footprint?
-- [ ] 10 cars usually means drivers. Driver's room and toilet needed?
-- [ ] What cars? SUVs, a collection, guest parking for functions? Is a porch or drop-off at the entrance wanted?
-- [ ] Basketball court size: full court with run-off is about 608 m² (15 cents), half court about 323 m² (8 cents). A full court would take 21% of the open land.
-- [ ] Will the court be used at night (lighting), and what surface? Lay it north–south to keep low sun out of players' eyes.
-- [ ] Single floor: where do the overhead tank, solar panels and AC outdoor units go, and how is the roof reached? Any use for the roof?
-- [ ] Will elderly parents live here or visit? Confirm step-free needs.
-- [ ] Does the 8,712 sq ft footprint include verandahs, car porch and service blocks, or only the enclosed house?
-- [ ] Who designs the 30,492 sq ft of landscape? Water source for irrigation (borewell, recycled STP water)?
-- [ ] Approval route (DTCP / local body). It sets setbacks, coverage and approval time.
-- [ ] Ask for 3–5 reference images of homes they like, even with a free hand, to calibrate “one of a kind”.
-- [ ] Walk-in wardrobes or dressing areas in the bedrooms? Which bedroom is the master suite?
-- [ ] Not logged yet: Client name, Phone, Who signs off decisions?, Plot dimensions / shape, Road access, Plot facing (main road side), Survey drawing, Bathrooms, Who lives here, Construction budget, Timeline, Our scope
+## Tensions to resolve
+- Openness vs. sun and heat: deep overhangs, verandahs and planting let the glass stay open without overheating.
+- Openness vs. privacy and security at night, especially toward the road and service areas.
+- Fixed Vastu positions vs. a flowing open plan.
+- Court and parking are large hard surfaces. Placing them decides how green the plot feels.
+
+## For the next conversation
+- Who will live here, and what does a normal day look like?
+- Which way does the plot face, how do you arrive, and where are the best views?
+- A few homes or images they love, to calibrate “one of a kind”.
+- Sit with the Vastu consultant early: which parts of the sketch can flex?
+- Budget comfort, so the glass and spans stay realistic.
+- A puja room wasn't mentioned. Vastu plans usually have one.
