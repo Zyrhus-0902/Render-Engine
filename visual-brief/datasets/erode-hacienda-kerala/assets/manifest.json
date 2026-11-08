@@ -1659,7 +1659,7 @@
     },
     {
       "id": "openings--jaali_screen--1",
-      "file": "openings--jaali_screen--1.svg",
+      "file": "openings--jaali_screen--1.jpg",
       "dimension_id": "openings",
       "option_id": "jaali_screen",
       "origin": "hybrid",
@@ -1689,14 +1689,17 @@
         "status": "ok",
         "note": ""
       },
-      "source": "placeholder",
-      "credit": "",
-      "placeholder": true,
-      "code": "#43"
+      "source": "https://www.flickr.com/photos/56861611@N00/8178329",
+      "credit": "Phliar / Openverse/flickr",
+      "placeholder": false,
+      "code": "#43",
+      "license": "CC BY-SA 2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "title": "Jaali"
     },
     {
       "id": "openings--jaali_screen--2",
-      "file": "openings--jaali_screen--2.svg",
+      "file": "openings--jaali_screen--2.jpg",
       "dimension_id": "openings",
       "option_id": "jaali_screen",
       "origin": "hybrid",
@@ -1726,10 +1729,13 @@
         "status": "ok",
         "note": ""
       },
-      "source": "placeholder",
-      "credit": "",
-      "placeholder": true,
-      "code": "#44"
+      "source": "https://www.flickr.com/photos/64924693@N00/11064396413",
+      "credit": "Nagarjun / Openverse/flickr",
+      "placeholder": false,
+      "code": "#44",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/",
+      "title": "Jaali"
     },
     {
       "id": "palette--ochre_terracotta--1",
