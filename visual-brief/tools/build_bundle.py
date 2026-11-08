@@ -10,6 +10,7 @@ from file:// and offline. Validation errors stop the build.
 from __future__ import annotations
 
 import base64
+import io
 import json
 import mimetypes
 import sys
@@ -22,7 +23,19 @@ ROOT = Path(__file__).resolve().parents[1]
 APP = ROOT / "app"
 
 
+MAX_WIDTH, QUALITY = 800, 72  # phone/tablet sized; keeps the single file small enough to send
+
+
 def data_uri(path: Path) -> str:
+    if path.suffix.lower() in (".jpg", ".jpeg", ".png", ".webp"):
+        # Photos are resized for the bundle only; the dataset keeps the originals.
+        from PIL import Image
+        im = Image.open(path).convert("RGB")
+        if im.width > MAX_WIDTH:
+            im = im.resize((MAX_WIDTH, round(im.height * MAX_WIDTH / im.width)), Image.LANCZOS)
+        buf = io.BytesIO()
+        im.save(buf, "JPEG", quality=QUALITY, optimize=True, progressive=True)
+        return "data:image/jpeg;base64," + base64.b64encode(buf.getvalue()).decode()
     mime = mimetypes.guess_type(path.name)[0] or "application/octet-stream"
     if path.suffix.lower() == ".svg":
         mime = "image/svg+xml"
