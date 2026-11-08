@@ -964,7 +964,7 @@
     },
     {
       "id": "facade_material--exposed_brick--1",
-      "file": "facade_material--exposed_brick--1.svg",
+      "file": "facade_material--exposed_brick--1.jpg",
       "dimension_id": "facade_material",
       "option_id": "exposed_brick",
       "origin": "modern",
@@ -992,14 +992,17 @@
         "status": "ok",
         "note": ""
       },
-      "source": "placeholder",
-      "credit": "",
-      "placeholder": true,
-      "code": "#25"
+      "source": "https://commons.wikimedia.org/wiki/File:Brick_Window_(6088102199).jpg",
+      "credit": "rumpleteaser from Nagoya, Japan / Wikimedia Commons",
+      "placeholder": false,
+      "code": "#25",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "title": "Brick Window (6088102199).jpg"
     },
     {
       "id": "facade_material--exposed_brick--2",
-      "file": "facade_material--exposed_brick--2.svg",
+      "file": "facade_material--exposed_brick--2.jpg",
       "dimension_id": "facade_material",
       "option_id": "exposed_brick",
       "origin": "modern",
@@ -1027,10 +1030,13 @@
         "status": "ok",
         "note": ""
       },
-      "source": "placeholder",
-      "credit": "",
-      "placeholder": true,
-      "code": "#26"
+      "source": "https://commons.wikimedia.org/wiki/File:Brick_wall_and_window.jpg",
+      "credit": "Tarasna0922 / Wikimedia Commons",
+      "placeholder": false,
+      "code": "#26",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "title": "Brick wall and window.jpg"
     },
     {
       "id": "facade_material--textured_stucco--1",
