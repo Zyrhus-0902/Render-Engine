@@ -324,7 +324,7 @@
     },
     {
       "id": "roof--modern_mono_pitch--1",
-      "file": "roof--modern_mono_pitch--1.svg",
+      "file": "roof--modern_mono_pitch--1.jpg",
       "dimension_id": "roof",
       "option_id": "modern_mono_pitch",
       "origin": "modern",
@@ -355,10 +355,13 @@
         "status": "ok",
         "note": ""
       },
-      "source": "placeholder",
-      "credit": "",
-      "placeholder": true,
-      "code": "#09"
+      "source": "https://www.flickr.com/photos/44343967@N00/8704580056",
+      "credit": "準建築人手札網站 Forgemind ArchiMedia / Openverse/flickr",
+      "placeholder": false,
+      "code": "#09",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/",
+      "title": "2013TRAA第四屆台灣住宅建築獎 - 單棟住宅類 【首獎】 剩閒居"
     },
     {
       "id": "roof--modern_mono_pitch--2",
