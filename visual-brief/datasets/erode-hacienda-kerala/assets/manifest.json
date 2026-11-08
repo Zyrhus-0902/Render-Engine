@@ -886,7 +886,7 @@
     },
     {
       "id": "facade_material--lime_whitewash--1",
-      "file": "facade_material--lime_whitewash--1.svg",
+      "file": "facade_material--lime_whitewash--1.jpg",
       "dimension_id": "facade_material",
       "option_id": "lime_whitewash",
       "origin": "hybrid",
@@ -915,14 +915,17 @@
         "status": "ok",
         "note": ""
       },
-      "source": "placeholder",
-      "credit": "",
-      "placeholder": true,
-      "code": "#23"
+      "source": "https://commons.wikimedia.org/wiki/File:Flowers_and_Whitewashed_Buildings_in_Mykonos,_2024.jpg",
+      "credit": "Julian Lupyan / Wikimedia Commons",
+      "placeholder": false,
+      "code": "#23",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "title": "Flowers and Whitewashed Buildings in Mykonos, 2024.jpg"
     },
     {
       "id": "facade_material--lime_whitewash--2",
-      "file": "facade_material--lime_whitewash--2.svg",
+      "file": "facade_material--lime_whitewash--2.jpg",
       "dimension_id": "facade_material",
       "option_id": "lime_whitewash",
       "origin": "hybrid",
@@ -951,10 +954,13 @@
         "status": "ok",
         "note": ""
       },
-      "source": "placeholder",
-      "credit": "",
-      "placeholder": true,
-      "code": "#24"
+      "source": "https://www.flickr.com/photos/71646105@N03/42196884515",
+      "credit": "Red Moon Sanctuary / Openverse/flickr",
+      "placeholder": false,
+      "code": "#24",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/",
+      "title": "Morning Sunlight On Lime Plaster Wall – Completed Strawbale House Build in Redmond Western Australia"
     },
     {
       "id": "facade_material--exposed_brick--1",
