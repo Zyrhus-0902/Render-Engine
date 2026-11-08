@@ -2558,7 +2558,7 @@
     },
     {
       "id": "abstraction--minimal--1",
-      "file": "abstraction--minimal--1.svg",
+      "file": "abstraction--minimal--1.jpg",
       "dimension_id": "abstraction",
       "option_id": "minimal",
       "origin": "modern",
@@ -2585,14 +2585,17 @@
         "status": "ok",
         "note": ""
       },
-      "source": "placeholder",
-      "credit": "",
-      "placeholder": true,
-      "code": "#65"
+      "source": "https://www.flickr.com/photos/20868483@N00/2437328872",
+      "credit": "tinyfroglet / Openverse/flickr",
+      "placeholder": false,
+      "code": "#65",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/",
+      "title": "Farnsworth House"
     },
     {
       "id": "abstraction--minimal--2",
-      "file": "abstraction--minimal--2.svg",
+      "file": "abstraction--minimal--2.jpg",
       "dimension_id": "abstraction",
       "option_id": "minimal",
       "origin": "modern",
@@ -2619,10 +2622,13 @@
         "status": "ok",
         "note": ""
       },
-      "source": "placeholder",
-      "credit": "",
-      "placeholder": true,
-      "code": "#66"
+      "source": "https://www.flickr.com/photos/23090954@N03/13959265684",
+      "credit": "toehk / Openverse/flickr",
+      "placeholder": false,
+      "code": "#66",
+      "license": "CC BY-SA 2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "title": "Tallinn / 塔林 | quiet corner"
     }
   ]
 }

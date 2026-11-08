@@ -138,7 +138,7 @@ def acceptable(c: dict) -> bool:
 
 
 # ---------------------------------------------------------------- commands
-def search(project: str, only: str | None, per_query: int) -> None:
+def search(project: str, only: str | None, per_query: int, options: list[str] | None = None) -> None:
     base = ROOT / "datasets" / project
     terms = json.loads((base / "sourcing.json").read_text(encoding="utf-8"))["queries"]
     dataset = json.loads((base / "dataset.json").read_text(encoding="utf-8"))
@@ -146,8 +146,15 @@ def search(project: str, only: str | None, per_query: int) -> None:
     for dim in dataset["dimensions"]:
         if only and dim["id"] != only:
             continue
+        if options and not any(o.startswith(dim["id"] + "/") for o in options):
+            continue
         sheet = []
         for opt in dim["options"]:
+            if options and f"{dim['id']}/{opt['id']}" not in options:
+                prev = cand_root / dim["id"] / opt["id"] / "candidates.json"
+                if prev.exists():  # keep it on the contact sheet
+                    sheet.append((opt, json.loads(prev.read_text(encoding="utf-8"))))
+                continue
             folder = cand_root / dim["id"] / opt["id"]
             folder.mkdir(parents=True, exist_ok=True)
             found: dict[str, dict] = {}
@@ -246,11 +253,12 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="cmd", required=True)
     s = sub.add_parser("search"); s.add_argument("project"); s.add_argument("--only"); s.add_argument("--per-query", type=int, default=12)
+    s.add_argument("--options", nargs="*", help="limit to dimension/option ids, e.g. roof/hacienda_low_hip")
     a = sub.add_parser("adopt"); a.add_argument("project"); a.add_argument("image_id"); a.add_argument("cid"); a.add_argument("--force", action="store_true")
     u = sub.add_parser("unadopt"); u.add_argument("project"); u.add_argument("image_id")
     args = ap.parse_args()
     if args.cmd == "search":
-        search(args.project, args.only, args.per_query)
+        search(args.project, args.only, args.per_query, args.options)
     elif args.cmd == "adopt":
         adopt(args.project, args.image_id, args.cid, args.force)
     else:
