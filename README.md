@@ -51,11 +51,6 @@ python -m render_engine render ../projects/courtyard-house             # needs F
 
 Setup: **[docs/hosted.md](docs/hosted.md)** (hosted, default) or [docs/image-track.md](docs/image-track.md) (own GPU).
 
-New enquiries: open `tools/enquiry-form.html` in a browser, answer the
-questions about the client, site, fixed points and feeling, and press **Copy
-for Claude**. It produces a project profile for `projects/<name>/brief.md`, with
-starting points and tensions for predesign. `projects/house-t01` was logged this way.
-
 To start a new project, copy `projects/_template` to `projects/<name>`, set
 `ai.context` and `ai.materials` in `project.yaml`, and drop the SketchUp
 exports into `input/`.

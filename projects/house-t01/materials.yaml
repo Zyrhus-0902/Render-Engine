@@ -1,6 +1,0 @@
-# Project-specific material names -> library ids. Exact names win over patterns.
-aliases: {}
-#   "Client Brick Sample 3": BRICK_EXPOSED_INDIAN
-
-# Force a mapping even when the SketchUp name matches a library id.
-overrides: {}
