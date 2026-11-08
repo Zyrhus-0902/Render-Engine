@@ -1,0 +1,380 @@
+<title>Project Enquiry Log</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500..800&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: questionnaire on the left, live brief + open questions pinned on the right; one column on phones. */
+:root {
+  --paper: #f5f6f2;
+  --sheet: #ffffff;
+  --ink: #1d2420;
+  --muted: #5d6a63;
+  --rule: #d9ded8;
+  --accent: #2f5d50;
+  --accent-soft: #e3ece7;
+  --warn: #8a5a12;
+  --warn-soft: #f7ecd9;
+  --display: "Archivo", "Arial Narrow", system-ui, sans-serif;
+  --body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --paper: #141a17; --sheet: #1b2320; --ink: #e4ebe6; --muted: #9aa8a0; --rule: #2e3a35;
+  --accent: #7fbfa8; --accent-soft: #23352e; --warn: #e2b46a; --warn-soft: #3a2e1b; color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --paper: #141a17; --sheet: #1b2320; --ink: #e4ebe6; --muted: #9aa8a0; --rule: #2e3a35;
+  --accent: #7fbfa8; --accent-soft: #23352e; --warn: #e2b46a; --warn-soft: #3a2e1b; color-scheme: dark; }
+
+* { box-sizing: border-box; }
+body { background: var(--paper); color: var(--ink); font: 16px/1.5 var(--body); margin: 0; }
+.wrap { max-width: 1240px; margin: 0 auto; padding-block: 28px 64px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+header { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 12px 24px; margin-bottom: 24px; }
+h1 { font: 800 clamp(28px, 4vw, 40px)/1.05 var(--display); font-stretch: 80%; margin: 0; letter-spacing: -0.01em; }
+.sub { color: var(--muted); margin: 6px 0 0; max-width: 60ch; }
+.tools { display: flex; flex-wrap: wrap; gap: 8px; }
+button { font: 600 14px var(--body); border: 1px solid var(--rule); background: var(--sheet); color: var(--ink);
+  padding: 8px 14px; border-radius: 6px; cursor: pointer; }
+button:hover { border-color: var(--accent); }
+button.primary { background: var(--accent); border-color: var(--accent); color: var(--sheet); }
+button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 440px); gap: 28px; align-items: start; }
+@media (max-width: 920px) { .grid { grid-template-columns: minmax(0, 1fr); } }
+
+form { display: grid; gap: 18px; }
+fieldset { border: 1px solid var(--rule); background: var(--sheet); border-radius: 8px; padding: 18px 20px 20px; margin: 0; min-width: 0; }
+legend { font: 700 13px var(--display); font-stretch: 85%; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); padding: 0 6px; }
+.fields { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px 18px; }
+.f { display: grid; gap: 4px; min-width: 0; }
+.f.wide { grid-column: 1 / -1; }
+label, .lbl { font-weight: 600; font-size: 14px; }
+.need::after { content: " •"; color: var(--warn); }
+.hint { color: var(--muted); font-size: 13px; }
+input, select, textarea { font: 15px var(--body); color: var(--ink); background: var(--paper); border: 1px solid var(--rule);
+  border-radius: 6px; padding: 8px 10px; width: 100%; min-width: 0; }
+textarea { min-height: 64px; resize: vertical; }
+.area { display: flex; gap: 6px; }
+.area input { flex: 1 1 auto; }
+.area select { flex: 0 0 96px; }
+.calc { font: 12px var(--mono); color: var(--muted); font-variant-numeric: tabular-nums; }
+.checks { display: flex; flex-wrap: wrap; gap: 6px; }
+.checks label { font-weight: 400; display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--rule);
+  border-radius: 999px; padding: 4px 12px 4px 8px; cursor: pointer; background: var(--paper); }
+.checks input { width: auto; margin: 0; accent-color: var(--accent); }
+.checks label:has(input:checked) { background: var(--accent-soft); border-color: var(--accent); }
+
+aside { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 16px); display: grid; gap: 16px; }
+@media (max-width: 920px) { aside { position: static; } }
+.panel { background: var(--sheet); border: 1px solid var(--rule); border-radius: 8px; padding: 16px 18px; min-width: 0; }
+.panel h2 { font: 700 15px var(--display); font-stretch: 85%; text-transform: uppercase; letter-spacing: 0.06em; margin: 0 0 10px;
+  display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+.count { font: 600 13px var(--mono); color: var(--warn); background: var(--warn-soft); padding: 1px 8px; border-radius: 999px; }
+.stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.stat { border-left: 2px solid var(--accent); padding-left: 8px; }
+.stat b { display: block; font: 600 17px var(--mono); font-variant-numeric: tabular-nums; }
+.stat span { font-size: 12px; color: var(--muted); }
+ol.qs { margin: 0; padding-left: 20px; display: grid; gap: 6px; max-height: 340px; overflow: auto; font-size: 14px; }
+ol.qs li.miss { color: var(--muted); }
+pre { font: 12px/1.55 var(--mono); white-space: pre-wrap; word-break: break-word; margin: 0; max-height: 420px; overflow: auto;
+  background: var(--paper); border: 1px solid var(--rule); border-radius: 6px; padding: 12px; }
+.row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.toast { font-size: 13px; color: var(--accent); min-height: 1.2em; }
+.banner { font-size: 14px; background: var(--accent-soft); border: 1px solid var(--accent); border-radius: 6px; padding: 8px 12px; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <div>
+      <h1>Project Enquiry Log</h1>
+      <p class="sub">Answer what you know after the first call. The brief and the list of open questions update as you type. Fields marked • are needed for a proposal.</p>
+    </div>
+    <div class="tools">
+      <button type="button" id="btn-example">Load House T01</button>
+      <button type="button" id="btn-clear">Clear form</button>
+    </div>
+  </header>
+  <div class="banner" id="banner" hidden></div>
+  <div class="grid" style="margin-top:16px">
+    <form id="form" autocomplete="off"></form>
+    <aside>
+      <section class="panel">
+        <h2>Site numbers</h2>
+        <div class="stats" id="stats"></div>
+      </section>
+      <section class="panel">
+        <h2>Still to find out <span class="count" id="qcount">0</span></h2>
+        <ol class="qs" id="qs"></ol>
+      </section>
+      <section class="panel">
+        <h2>Brief</h2>
+        <pre id="out"></pre>
+        <div class="row">
+          <button type="button" class="primary" id="btn-claude">Copy for Claude</button>
+          <button type="button" id="btn-copy">Copy brief only</button>
+        </div>
+        <div class="toast" id="toast" role="status"></div>
+      </section>
+    </aside>
+  </div>
+</div>
+
+<script>
+const UNITS = { cents: 435.6, acres: 43560, grounds: 2400, sqft: 1, sqm: 10.7639 };
+const UNIT_LABEL = { cents: "cents", acres: "acres", grounds: "grounds", sqft: "sq ft", sqm: "m²" };
+
+const SECTIONS = [
+  { title: "Lead", fields: [
+    { id: "code", label: "Project code", need: 1, ph: "House T01" },
+    { id: "title", label: "Working title", ph: "Private residence, Tirupur" },
+    { id: "type", label: "Project type", type: "select", options: ["Private residence", "Farmhouse / weekend home", "Villa in a layout", "Interior only", "Commercial", "Other"] },
+    { id: "enq_date", label: "Enquiry date", type: "date", need: 1 },
+    { id: "source", label: "Came through", type: "select", options: ["Referral", "Repeat client", "Website", "Instagram", "Walk-in", "Other"] },
+    { id: "stage", label: "Stage", type: "select", options: ["Enquiry", "Site visit done", "Proposal sent", "Confirmed", "On hold"] },
+    { id: "client", label: "Client name", need: 1 },
+    { id: "phone", label: "Phone", need: 1 },
+    { id: "email", label: "Email" },
+    { id: "decision", label: "Who signs off decisions?", need: 1, ph: "e.g. client and spouse" },
+  ]},
+  { title: "Site", fields: [
+    { id: "city", label: "City / town", need: 1 },
+    { id: "locality", label: "Locality / survey no." },
+    { id: "plot", label: "Plot area", type: "area", need: 1 },
+    { id: "plot_dims", label: "Plot dimensions / shape", need: 1, ph: "e.g. 60 m × 60 m, rectangular" },
+    { id: "frontage", label: "Road access", need: 1, ph: "which side(s), road width" },
+    { id: "facing", label: "Plot facing (main road side)", type: "select", need: 1, options: ["North", "North-east", "East", "South-east", "South", "South-west", "West", "North-west"] },
+    { id: "topo", label: "Ground", type: "select", options: ["Flat", "Gentle slope", "Steep / terraced", "Low-lying, floods in rain"] },
+    { id: "survey", label: "Survey drawing", type: "select", need: 1, options: ["Not yet", "Requested", "Received"] },
+    { id: "authority", label: "Approval route", type: "select", options: ["Corporation / Municipality", "DTCP approved layout", "Panchayat", "Not known yet"] },
+    { id: "existing", label: "Existing trees, structures, borewell, wells", type: "textarea", wide: 1 },
+    { id: "views", label: "Surroundings and views out of the site", type: "textarea", wide: 1 },
+  ]},
+  { title: "Built form", fields: [
+    { id: "footprint", label: "Building footprint", type: "area", need: 1 },
+    { id: "floors", label: "Floors", type: "select", need: 1, options: ["Ground only", "G+1", "G+2", "Ground + basement"] },
+    { id: "bua", label: "Target built-up", type: "number", hint: "sq ft, if the client gave one" },
+    { id: "expansion", label: "Future expansion", type: "select", options: ["No", "Maybe later", "Yes, plan for it"] },
+  ]},
+  { title: "Spaces", fields: [
+    { id: "bedrooms", label: "Bedrooms", type: "number", need: 1 },
+    { id: "baths", label: "Bathrooms", type: "select", need: 1, options: ["All attached", "Some attached", "Common bath only"] },
+    { id: "living", label: "Living rooms", type: "number" },
+    { id: "kitchen", label: "Kitchen", type: "select", need: 1, options: ["Single kitchen", "Wet + dry", "Wet + dry + pantry"] },
+    { id: "dining", label: "Dining", type: "select", options: ["Dining area", "Separate dining room", "Within living", "Formal + family"] },
+    { id: "extras", label: "Also wanted", type: "checks", wide: 1, options: ["Puja", "Family lounge", "Guest suite", "Powder room", "Home office", "Utility / laundry", "Store", "Staff quarters", "Driver's room", "Gym", "Home theatre", "Swimming pool", "Courtyard", "Verandah / sit-out"] },
+    { id: "program_notes", label: "Notes on spaces", type: "textarea", wide: 1, ph: "sizes, who uses which room, wardrobes, special needs" },
+  ]},
+  { title: "Outdoors and parking", fields: [
+    { id: "landscape", label: "Landscape intent", type: "textarea", wide: 1 },
+    { id: "court", label: "Basketball court", type: "select", options: ["None", "Half court", "Full court", "Size not decided"] },
+    { id: "sports", label: "Other sport / play" },
+    { id: "parking", label: "Car parking (cars)", type: "number", need: 1 },
+    { id: "parking_type", label: "Parking type", type: "select", options: ["Covered", "Open", "Mixed", "Stilt / basement"] },
+    { id: "bikes", label: "Two-wheelers", type: "number" },
+    { id: "outdoor_extras", label: "Also outdoors", type: "checks", wide: 1, options: ["Security cabin", "Service entry", "Court lighting", "Kitchen garden", "Water feature", "Outdoor deck", "Changing room + toilet near court"] },
+  ]},
+  { title: "Vastu", fields: [
+    { id: "vastu", label: "Vastu", type: "select", need: 1, options: ["Strict, consultant's sketch governs", "Guidance only", "Not required"] },
+    { id: "consultant", label: "Vastu consultant" },
+    { id: "vastu_sketch", label: "Consultant's sketch", type: "select", options: ["Not yet", "Requested", "Received", "Received, filed in project"] },
+    { id: "vastu_notes", label: "What the sketch fixes", type: "textarea", wide: 1, ph: "entrance, kitchen, master bedroom, puja, water tank, septic, borewell" },
+  ]},
+  { title: "Look and feel", fields: [
+    { id: "keywords", label: "In the client's words", type: "textarea", wide: 1 },
+    { id: "glass", label: "Glass / openness", type: "select", options: ["Minimal", "Moderate", "Extensive, very open"] },
+    { id: "freedom", label: "Design freedom", type: "select", options: ["Free hand", "Wants to see options", "Has firm ideas"] },
+    { id: "materials", label: "Materials liked / disliked", wide: 1 },
+    { id: "refs", label: "Reference images / houses shared", wide: 1 },
+  ]},
+  { title: "People, budget and scope", fields: [
+    { id: "occupants", label: "Who lives here", need: 1, wide: 1, ph: "adults, children, elderly parents, live-in staff" },
+    { id: "access", label: "Step-free / elderly use", type: "select", options: ["Needed", "Not needed"] },
+    { id: "budget", label: "Construction budget", need: 1, ph: "₹ range, or per sq ft" },
+    { id: "timeline", label: "Timeline", need: 1, ph: "start on site / move in" },
+    { id: "scope", label: "Our scope", type: "checks", need: 1, wide: 1, options: ["Architecture", "Interiors", "Landscape", "Structural coordination", "MEP coordination", "Approvals", "Site supervision", "3D views and renders"] },
+    { id: "services", label: "Services discussed", type: "checks", wide: 1, options: ["AC / VRV", "Solar PV", "Solar water heating", "Rainwater harvesting", "STP / septic", "Sump + overhead tank", "Generator / UPS", "Home automation", "CCTV and security", "EV charging"] },
+  ]},
+  { title: "Anything else", fields: [
+    { id: "notes", label: "Other things said on the call", type: "textarea", wide: 1 },
+  ]},
+];
+
+const EXAMPLE = {
+  code: "House T01", title: "Private residence, Tirupur", type: "Private residence", enq_date: "2026-11-08", stage: "Enquiry",
+  city: "Tirupur", plot: { v: "90", u: "cents" }, footprint: { v: "20", u: "cents" }, floors: "Ground only",
+  bedrooms: "4", living: "1", kitchen: "Wet + dry", dining: "Dining area",
+  program_notes: "One living, one wet and one dry kitchen with a dining area. Everything on the ground floor.",
+  landscape: "Rest of the plot (about 70 cents) is designed landscape. The house should look out onto it from inside.",
+  court: "Size not decided", parking: "10",
+  vastu: "Strict, consultant's sketch governs", vastu_sketch: "Received",
+  keywords: "Lots of glass, used so the house feels very open and the landscape views come into the built spaces.",
+  glass: "Extensive, very open", freedom: "Free hand",
+  notes: "Rest of the design to be one of a kind.",
+};
+
+const ALL = SECTIONS.flatMap(s => s.fields);
+const form = document.getElementById("form");
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+function build() {
+  form.innerHTML = SECTIONS.map(s => `<fieldset><legend>${s.title}</legend><div class="fields">${s.fields.map(field).join("")}</div></fieldset>`).join("");
+}
+function field(f) {
+  const lab = `<label for="f-${f.id}" class="${f.need ? "need" : ""}">${f.label}</label>`;
+  const ph = f.ph ? ` placeholder="${esc(f.ph)}"` : "";
+  let ctl;
+  if (f.type === "select") ctl = `<select id="f-${f.id}" name="${f.id}"><option value="">—</option>${f.options.map(o => `<option>${esc(o)}</option>`).join("")}</select>`;
+  else if (f.type === "textarea") ctl = `<textarea id="f-${f.id}" name="${f.id}"${ph}></textarea>`;
+  else if (f.type === "area") ctl = `<div class="area"><input id="f-${f.id}" name="${f.id}" type="number" min="0" step="any" inputmode="decimal"><select id="f-${f.id}-u" name="${f.id}_u" aria-label="${f.label} unit">${Object.keys(UNITS).map(u => `<option value="${u}">${UNIT_LABEL[u]}</option>`).join("")}</select></div><span class="calc" id="c-${f.id}"></span>`;
+  else if (f.type === "checks") return `<div class="f wide"><span class="lbl ${f.need ? "need" : ""}">${f.label}</span><div class="checks" role="group">${f.options.map((o, i) => `<label><input type="checkbox" id="f-${f.id}-${i}" name="${f.id}" value="${esc(o)}">${esc(o)}</label>`).join("")}</div></div>`;
+  else ctl = `<input id="f-${f.id}" name="${f.id}" type="${f.type || "text"}"${f.type === "number" ? ' min="0" inputmode="numeric"' : ""}${ph}>`;
+  return `<div class="f ${f.wide ? "wide" : ""}">${lab}${ctl}${f.hint ? `<span class="hint">${f.hint}</span>` : ""}</div>`;
+}
+
+function read() {
+  const v = {};
+  for (const f of ALL) {
+    if (f.type === "checks") v[f.id] = [...form.querySelectorAll(`input[name="${f.id}"]:checked`)].map(i => i.value);
+    else if (f.type === "area") v[f.id] = { v: form.elements[f.id].value.trim(), u: form.elements[f.id + "_u"].value };
+    else v[f.id] = form.elements[f.id].value.trim();
+  }
+  return v;
+}
+function write(v) {
+  form.reset();
+  for (const f of ALL) {
+    const x = v[f.id];
+    if (x == null) continue;
+    if (f.type === "checks") form.querySelectorAll(`input[name="${f.id}"]`).forEach(i => { i.checked = x.includes(i.value); });
+    else if (f.type === "area") { form.elements[f.id].value = x.v || ""; form.elements[f.id + "_u"].value = x.u || "cents"; }
+    else form.elements[f.id].value = x;
+  }
+}
+
+const sqft = a => a && a.v !== "" && !isNaN(+a.v) ? +a.v * UNITS[a.u] : null;
+const n = (x, d = 0) => x.toLocaleString("en-IN", { maximumFractionDigits: d });
+const areaText = a => { const s = sqft(a); return s == null ? "" : `${a.v} ${UNIT_LABEL[a.u]} (${n(s)} sq ft, ${n(s / 10.7639)} m²${a.u !== "cents" ? `, ${n(s / 435.6, 1)} cents` : ""})`; };
+const empty = x => x == null || x === "" || (Array.isArray(x) && !x.length) || (typeof x === "object" && !Array.isArray(x) && x.v === "");
+
+// Open questions: unanswered key fields, plus checks that follow from what was answered.
+function questions(v) {
+  const q = [];
+  const has = (k, o) => v[k].includes(o);
+  const plot = sqft(v.plot), fp = sqft(v.footprint), open = plot && fp ? plot - fp : null;
+  const glassy = v.glass.startsWith("Extensive");
+  const where = v.city || "this climate";
+
+  if (v.vastu.startsWith("Strict")) {
+    if (!v.vastu_sketch.startsWith("Received")) q.push("Collect the Vastu consultant's sketch before zoning. It fixes entrance, kitchen, master bedroom, puja and water locations.");
+    else if (v.vastu_sketch === "Received") q.push("File a scan of the Vastu sketch in the project folder and note what it fixes (entrance, kitchen, master bedroom, puja, tanks, septic, borewell).");
+    if (!has("extras", "Puja")) q.push("Puja room is not in the list. Vastu plans usually place one in the north-east. Confirm.");
+    q.push("Does the Vastu consultant review each design stage, and which parts of the sketch can move?");
+  }
+  if (glassy) {
+    if (!v.facing) q.push(`Plot orientation. With this much glass in ${where}, west and south glazing needs deep overhangs, verandahs or fins and performance glass.`);
+    q.push("Large glazing: privacy from the road and staff areas, security at night, insect screens, and whether the client accepts blinds or curtains.");
+    if (!has("services", "AC / VRV")) q.push("Cooling. Extensive glass raises the AC load. Which rooms are air-conditioned, and is a VRV system acceptable?");
+  }
+  if (+v.parking >= 5) {
+    const m2 = +v.parking * 28;
+    if (!v.parking_type) q.push(`Parking for ${v.parking} cars (about ${n(m2)} m² / ${n(m2 * 10.7639)} sq ft with aisles): covered or open, and is it inside the footprint?`);
+    if (!has("extras", "Driver's room") && !has("extras", "Staff quarters")) q.push(`${v.parking} cars usually means drivers. Driver's room and toilet needed?`);
+    q.push("What cars? SUVs, a collection, guest parking for functions? Is a porch or drop-off at the entrance wanted?");
+  }
+  if (v.court && v.court !== "None") {
+    const full = 608, half = 323;
+    let t = v.court === "Half court" ? `Half court with run-off is about ${half} m² (${n(half * 10.7639)} sq ft).` :
+            v.court === "Full court" ? `Full court with run-off is about ${full} m² (${n(full * 10.7639)} sq ft).` :
+            `Basketball court size: full court with run-off is about ${full} m² (${n(full * 10.7639 / 435.6, 1)} cents), half court about ${half} m² (${n(half * 10.7639 / 435.6, 1)} cents).`;
+    if (open) t += ` A full court would take ${n(full * 10.7639 / open * 100)}% of the open land.`;
+    q.push(t);
+    if (!has("outdoor_extras", "Court lighting")) q.push("Will the court be used at night (lighting), and what surface? Lay it north–south to keep low sun out of players' eyes.");
+  }
+  if (v.floors === "Ground only") q.push("Single floor: where do the overhead tank, solar panels and AC outdoor units go, and how is the roof reached? Any use for the roof?");
+  if (v.floors === "Ground only" && !v.access) q.push("Will elderly parents live here or visit? Confirm step-free needs.");
+  if (plot && fp) q.push(`Does the ${n(fp)} sq ft footprint include verandahs, car porch and service blocks, or only the enclosed house?`);
+  if (open && open > plot * 0.5 && !has("scope", "Landscape")) q.push(`Who designs the ${n(open)} sq ft of landscape? Water source for irrigation (borewell, recycled STP water)?`);
+  if (v.authority === "Not known yet" || (!v.authority && v.city)) q.push("Approval route (DTCP / local body). It sets setbacks, coverage and approval time.");
+  if (v.services.length && !has("services", "Rainwater harvesting")) q.push("Rainwater harvesting (required for building approval in Tamil Nadu).");
+  if (!v.refs && (glassy || v.freedom === "Free hand")) q.push("Ask for 3–5 reference images of homes they like, even with a free hand, to calibrate “one of a kind”.");
+  if (+v.bedrooms >= 3 && !v.program_notes.match(/wardrobe|dress/i)) q.push("Walk-in wardrobes or dressing areas in the bedrooms? Which bedroom is the master suite?");
+
+  const miss = ALL.filter(f => f.need && empty(v[f.id])).map(f => f.label);
+  return { q, miss };
+}
+
+function yamlStr(s) { return JSON.stringify(s); }
+function slug(s) { return (s || "new-project").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, ""); }
+
+function brief(v, qs) {
+  const fm = [
+    "---",
+    `code: ${yamlStr(v.code)}`,
+    `title: ${yamlStr(v.title)}`,
+    `client: ${yamlStr(v.client)}`,
+    `location: ${yamlStr(v.city)}`,
+    `stage: ${yamlStr(v.stage || "Enquiry")}`,
+    `enquiry_date: ${yamlStr(v.enq_date)}`,
+  ];
+  const ps = sqft(v.plot), fs = sqft(v.footprint);
+  if (ps) fm.push(`plot_sqft: ${Math.round(ps)}`);
+  if (fs) fm.push(`footprint_sqft: ${Math.round(fs)}`);
+  fm.push("---", "");
+  const L = [...fm, `# ${v.code || "New project"}${v.title ? ` · ${v.title}` : ""}`, ""];
+  for (const s of SECTIONS) {
+    const rows = [];
+    for (const f of s.fields) {
+      const x = v[f.id];
+      if (empty(x)) continue;
+      const val = f.type === "area" ? areaText(x) : Array.isArray(x) ? x.join(", ") : x;
+      rows.push(f.type === "textarea" ? `- **${f.label}:** ${val.replace(/\n+/g, " ")}` : `- **${f.label}:** ${val}`);
+    }
+    if (s.title === "Built form" && ps && fs) rows.push(`- **Ground coverage:** ${n(fs / ps * 100, 1)}%, open land ${n(ps - fs)} sq ft (${n((ps - fs) / 435.6, 1)} cents)`);
+    if (rows.length) L.push(`## ${s.title}`, ...rows, "");
+  }
+  L.push("## Open questions");
+  qs.q.forEach(t => L.push(`- [ ] ${t}`));
+  if (qs.miss.length) L.push(`- [ ] Not logged yet: ${qs.miss.join(", ")}`);
+  return L.join("\n").trim() + "\n";
+}
+
+const $ = id => document.getElementById(id);
+let current = "";
+function update() {
+  const v = read();
+  for (const k of ["plot", "footprint"]) $("c-" + k).textContent = sqft(v[k]) ? areaText(v[k]).replace(/^[^(]*\(|\)$/g, "") : "";
+  const ps = sqft(v.plot), fs = sqft(v.footprint);
+  const stat = (b, s) => `<div class="stat"><b>${b}</b><span>${s}</span></div>`;
+  $("stats").innerHTML = stat(ps ? n(ps) : "–", "plot, sq ft") + stat(ps && fs ? n(fs / ps * 100, 1) + "%" : "–", "ground coverage") + stat(ps && fs ? n(ps - fs) : "–", "open land, sq ft");
+  const qs = questions(v);
+  $("qcount").textContent = qs.q.length + qs.miss.length;
+  $("qs").innerHTML = qs.q.map(t => `<li>${esc(t)}</li>`).join("") + qs.miss.map(t => `<li class="miss">Not logged: ${esc(t)}</li>`).join("");
+  current = brief(v, qs);
+  $("out").textContent = current;
+  try { localStorage.setItem("enquiry-draft", JSON.stringify(v)); } catch (e) {}
+}
+
+function toast(t) { $("toast").textContent = t; clearTimeout(toast.t); toast.t = setTimeout(() => $("toast").textContent = "", 3000); }
+async function copy(text, done) {
+  try { await navigator.clipboard.writeText(text); toast(done); }
+  catch (e) { const r = document.createRange(); r.selectNodeContents($("out")); const s = getSelection(); s.removeAllRanges(); s.addRange(r); toast("Copy was blocked. The brief is selected: press Ctrl+C / ⌘C."); }
+}
+
+build();
+let draft = null;
+try { draft = JSON.parse(localStorage.getItem("enquiry-draft") || "null"); } catch (e) {}
+write(draft || EXAMPLE);
+if (!draft) { $("banner").hidden = false; $("banner").textContent = "Showing House T01 as a filled example. Clear the form to log a new enquiry; your draft is kept in this browser."; }
+form.addEventListener("input", update);
+form.addEventListener("change", update);
+form.addEventListener("submit", e => e.preventDefault());
+$("btn-clear").addEventListener("click", () => { write({}); $("banner").hidden = true; update(); toast("Form cleared."); });
+$("btn-example").addEventListener("click", () => { write(EXAMPLE); update(); toast("House T01 loaded."); });
+$("btn-copy").addEventListener("click", () => copy(current, "Brief copied."));
+$("btn-claude").addEventListener("click", () => {
+  const v = read();
+  copy(`Log this enquiry as a new project. Save it as projects/${slug(v.code)}/brief.md (copy projects/_template for the rest), then tell me what else I should find out.\n\n${current}`, "Copied with instructions. Paste it into Claude.");
+});
+update();
+</script>
