@@ -16,6 +16,9 @@ queries), so the architect can tune them. Only licences that allow commercial
 use are kept: CC0 / public domain, CC BY and CC BY-SA. Candidates are not
 committed (visual-brief/candidates/ is git-ignored); only adopted photos are.
 
+Set VB_CONTACT to an email or URL first: Wikimedia blocks automated clients
+without a contact in the User-Agent (https://w.wiki/4wJS).
+
 Network hosts used: api.openverse.org, commons.wikimedia.org,
 upload.wikimedia.org, live.staticflickr.com.
 """
@@ -24,6 +27,7 @@ from __future__ import annotations
 import argparse
 import html
 import json
+import os
 import re
 import shutil
 import sys
@@ -34,7 +38,10 @@ from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-UA = "visual-brief-sourcing/0.1 (architecture studio reference tool)"
+# Wikimedia's bot policy requires a contact in the User-Agent. It comes from the
+# environment (VB_CONTACT=you@example.com), never from the repository.
+UA = "visual-brief-sourcing/0.1 (architecture studio reference tool" + (
+    f"; {os.environ['VB_CONTACT']})" if os.environ.get("VB_CONTACT") else ")")
 OK_LICENCES = re.compile(r"^(cc0|pdm|public domain|cc[- ]by(-sa)?([- ][0-9.]+)?)", re.I)
 
 
@@ -71,6 +78,8 @@ def openverse(query: str, n: int) -> list[dict]:
     for r in data.get("results", []):
         lic = f"cc {r.get('license', '')} {r.get('license_version', '')}".strip() if r.get("license") not in ("cc0", "pdm") else r.get("license")
         url = r.get("url") or ""
+        if r.get("provider") == "wikimedia":
+            continue  # searched directly on Commons, which gives standard-size thumbnails
         # Full-size files from hosts we can't reach fall back to Openverse's own thumbnail.
         if urllib.parse.urlparse(url).hostname not in REACHABLE:
             url = f"https://api.openverse.org/v1/images/{r['id']}/thumb/"
