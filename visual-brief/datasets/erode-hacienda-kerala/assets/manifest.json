@@ -201,7 +201,7 @@
     },
     {
       "id": "roof--hacienda_low_hip--3",
-      "file": "roof--hacienda_low_hip--3.svg",
+      "file": "roof--hacienda_low_hip--3.jpg",
       "dimension_id": "roof",
       "option_id": "hacienda_low_hip",
       "origin": "hacienda",
@@ -232,10 +232,13 @@
         "status": "ok",
         "note": ""
       },
-      "source": "placeholder",
-      "credit": "",
-      "placeholder": true,
-      "code": "#06"
+      "source": "https://www.flickr.com/photos/33037982@N04/3540637792",
+      "credit": "wallygrom / Openverse/flickr",
+      "placeholder": false,
+      "code": "#06",
+      "license": "CC BY-SA 2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "title": "Hacienda Arona, Canete, Peru"
     },
     {
       "id": "roof--modern_flat_slab--1",
