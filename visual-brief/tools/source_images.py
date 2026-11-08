@@ -96,7 +96,9 @@ def commons(query: str, n: int) -> list[dict]:
         lic = (meta.get("LicenseShortName", {}) or {}).get("value", "")
         out.append({
             "cid": f"wc-{p['pageid']}", "provider": "Wikimedia Commons", "title": p.get("title", "").removeprefix("File:"),
-            "image_url": ii.get("thumburl") or ii.get("url", ""), "landing": ii.get("descriptionurl", ""),
+            # Same file path is served by upload.wikimedia.org, the host this session may reach.
+            "image_url": (ii.get("thumburl") or ii.get("url", "")).replace("//thumb.wikimedia.org/", "//upload.wikimedia.org/"),
+            "landing": ii.get("descriptionurl", ""),
             "creator": strip_tags((meta.get("Artist", {}) or {}).get("value", "")) or "unknown",
             "license": lic, "license_url": (meta.get("LicenseUrl", {}) or {}).get("value", ""),
             "width": ii.get("width"), "height": ii.get("height"), "query": query,
