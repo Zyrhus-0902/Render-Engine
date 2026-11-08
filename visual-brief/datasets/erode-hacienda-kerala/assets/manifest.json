@@ -1739,7 +1739,7 @@
     },
     {
       "id": "palette--ochre_terracotta--1",
-      "file": "palette--ochre_terracotta--1.svg",
+      "file": "palette--ochre_terracotta--1.jpg",
       "dimension_id": "palette",
       "option_id": "ochre_terracotta",
       "origin": "hacienda",
@@ -1772,14 +1772,17 @@
         "status": "ok",
         "note": ""
       },
-      "source": "placeholder",
-      "credit": "",
-      "placeholder": true,
-      "code": "#45"
+      "source": "https://www.flickr.com/photos/22191277@N03/5479494807",
+      "credit": "Larry Lamsa / Openverse/flickr",
+      "placeholder": false,
+      "code": "#45",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/",
+      "title": "Mexican Court Yard"
     },
     {
       "id": "palette--ochre_terracotta--2",
-      "file": "palette--ochre_terracotta--2.svg",
+      "file": "palette--ochre_terracotta--2.jpg",
       "dimension_id": "palette",
       "option_id": "ochre_terracotta",
       "origin": "hacienda",
@@ -1812,10 +1815,13 @@
         "status": "ok",
         "note": ""
       },
-      "source": "placeholder",
-      "credit": "",
-      "placeholder": true,
-      "code": "#46"
+      "source": "https://www.flickr.com/photos/39415781@N06/5848464713",
+      "credit": "ell brown / Openverse/flickr",
+      "placeholder": false,
+      "code": "#46",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/",
+      "title": "Roussillon - Place de la Mairie - balcony and flags"
     },
     {
       "id": "palette--wood_whitewash--1",
