@@ -2184,7 +2184,7 @@
     },
     {
       "id": "landscape--lush_verandah_garden--1",
-      "file": "landscape--lush_verandah_garden--1.svg",
+      "file": "landscape--lush_verandah_garden--1.jpg",
       "dimension_id": "landscape",
       "option_id": "lush_verandah_garden",
       "origin": "kerala",
@@ -2214,14 +2214,17 @@
         "status": "review",
         "note": "High irrigation demand in Erode's dry season; keep only with a water plan (rainwater harvesting, drip)."
       },
-      "source": "placeholder",
-      "credit": "",
-      "placeholder": true,
-      "code": "#55"
+      "source": "https://www.flickr.com/photos/49503128117@N01/3043137274",
+      "credit": "Jesse Wagstaff / Openverse/flickr",
+      "placeholder": false,
+      "code": "#55",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/",
+      "title": "Bali Beach House"
     },
     {
       "id": "landscape--lush_verandah_garden--2",
-      "file": "landscape--lush_verandah_garden--2.svg",
+      "file": "landscape--lush_verandah_garden--2.jpg",
       "dimension_id": "landscape",
       "option_id": "lush_verandah_garden",
       "origin": "kerala",
@@ -2251,10 +2254,13 @@
         "status": "ok",
         "note": ""
       },
-      "source": "placeholder",
-      "credit": "",
-      "placeholder": true,
-      "code": "#56"
+      "source": "https://commons.wikimedia.org/wiki/File:Garden_detail_showing_Bali_house_in_pond_(3179899105).jpg",
+      "credit": "SeaDave from Fairlie, Scotland / Wikimedia Commons",
+      "placeholder": false,
+      "code": "#56",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "title": "Garden detail showing Bali house in pond (3179899105).jpg"
     },
     {
       "id": "landscape--dry_native--1",
