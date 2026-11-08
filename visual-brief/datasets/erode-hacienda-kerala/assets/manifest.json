@@ -1116,7 +1116,7 @@
     },
     {
       "id": "columns--timber_columns--1",
-      "file": "columns--timber_columns--1.jpg",
+      "file": "columns--timber_columns--1.svg",
       "dimension_id": "columns",
       "option_id": "timber_columns",
       "origin": "kerala",
@@ -1146,13 +1146,10 @@
         "status": "ok",
         "note": ""
       },
-      "source": "https://commons.wikimedia.org/wiki/File:Forecourt_Padmanabhapuram_Palace_Mar24_A7C_10099.jpg",
-      "credit": "This Photo was taken by Timothy A. Gonsalves.  Feel free to use my photos, but please mention me as the author.  I would much appreciate if you send me an email tagooty@yahoo.com or write on my talk page, for my information.  Please contact me before commercial use.\n\n\n\nPlease do not upload an edited image here without consulting me.  I would like to make corrections only at my own source to ensure that the changes improve the image and are preserved.Otherwise you may upload an edited image with a new name. Please use one of the templates derivative or extract. / Wikimedia Commons",
-      "placeholder": false,
-      "code": "#29",
-      "license": "CC BY-SA 4.0",
-      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
-      "title": "Forecourt Padmanabhapuram Palace Mar24 A7C 10099.jpg"
+      "source": "placeholder",
+      "credit": "",
+      "placeholder": true,
+      "code": "#29"
     },
     {
       "id": "columns--timber_columns--2",

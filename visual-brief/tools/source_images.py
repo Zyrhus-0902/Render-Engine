@@ -65,6 +65,18 @@ def get(url: str, timeout: int = 30, tries: int = 4) -> bytes:
     raise RuntimeError("unreachable")
 
 
+def short_creator(s: str) -> str:
+    """Credit name only; some Commons authors put long usage notes in the Artist field."""
+    s = re.split(r"\n|\s{2,}", (s or "").strip())[0]
+    s = re.sub(r"^this photo was taken by\s+", "", s, flags=re.I).rstrip(". ")
+    return s[:80] or "unknown"
+
+
+# Author requests beyond the licence ("contact me before commercial use") are respected:
+# such candidates are flagged and refused by `adopt` unless --force is given.
+AUTHOR_RESTRICTIONS = re.compile(r"contact me before commercial|before (any )?commercial use|not for commercial", re.I)
+
+
 def strip_tags(s: str) -> str:
     return html.unescape(re.sub(r"<[^>]+>", "", s or "")).strip()
 
@@ -108,7 +120,8 @@ def commons(query: str, n: int) -> list[dict]:
             # Same file path is served by upload.wikimedia.org, the host this session may reach.
             "image_url": (ii.get("thumburl") or ii.get("url", "")).replace("//thumb.wikimedia.org/", "//upload.wikimedia.org/"),
             "landing": ii.get("descriptionurl", ""),
-            "creator": strip_tags((meta.get("Artist", {}) or {}).get("value", "")) or "unknown",
+            "creator": short_creator(strip_tags((meta.get("Artist", {}) or {}).get("value", ""))),
+            "author_note": strip_tags((meta.get("Artist", {}) or {}).get("value", ""))[:600],
             "license": lic, "license_url": (meta.get("LicenseUrl", {}) or {}).get("value", ""),
             "width": ii.get("width"), "height": ii.get("height"), "query": query,
         })
@@ -180,7 +193,7 @@ figure{{margin:0;background:#fff;padding:4px}}img{{width:100%;aspect-ratio:4/3;o
 <h1>{html.escape(dim['name'])}</h1>{''.join(rows)}""", encoding="utf-8")
 
 
-def adopt(project: str, image_id: str, cid: str) -> None:
+def adopt(project: str, image_id: str, cid: str, force: bool = False) -> None:
     base = ROOT / "datasets" / project
     man_path = base / "assets" / "manifest.json"
     manifest = json.loads(man_path.read_text(encoding="utf-8"))
@@ -196,24 +209,49 @@ def adopt(project: str, image_id: str, cid: str) -> None:
                 if c["cid"] == cid:
                     cands[cid], folder = c, other.parent
     c = cands.get(cid) or sys.exit(f"candidate {cid} not found for {image_id}")
+    if AUTHOR_RESTRICTIONS.search(c.get("author_note", "") or c.get("creator", "")) and not force:
+        sys.exit(f"{cid}: the author asks to be contacted before commercial use; ask them first, then adopt with --force")
     new_file = f"{image_id}.jpg"
     shutil.copyfile(folder / c["file"], base / "assets" / new_file)
     old = img.get("file", "")
     if old.endswith(".svg") and old != new_file and (base / "assets" / old).exists():
         (base / "assets" / old).unlink()
-    img.update({"file": new_file, "source": c["landing"], "credit": f"{c['creator']} / {c['provider']}",
+    img.update({"file": new_file, "source": c["landing"], "credit": f"{short_creator(c['creator'])} / {c['provider']}",
                 "license": c["license"], "license_url": c["license_url"], "title": c["title"], "placeholder": False})
     man_path.write_text(json.dumps(manifest, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print(f"{image_id} <- {cid} ({c['license']}, {c['creator']})")
+
+
+def unadopt(project: str, image_id: str) -> None:
+    """Put an image slot back to its sketch placeholder."""
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    from sketches import sketch_svg
+    base = ROOT / "datasets" / project
+    man_path = base / "assets" / "manifest.json"
+    manifest = json.loads(man_path.read_text(encoding="utf-8"))
+    img = next((i for i in manifest["images"] if i["id"] == image_id), None) or sys.exit(f"no image {image_id}")
+    if img.get("file", "").endswith(".jpg") and (base / "assets" / img["file"]).exists():
+        (base / "assets" / img["file"]).unlink()
+    n = int(image_id.rsplit("--", 1)[1])
+    img["file"] = f"{image_id}.svg"
+    (base / "assets" / img["file"]).write_text(sketch_svg(img["dimension_id"], img["option_id"], n, img.get("code", "")), encoding="utf-8")
+    for k in ("license", "license_url", "title"):
+        img.pop(k, None)
+    img.update({"source": "placeholder", "credit": "", "placeholder": True})
+    man_path.write_text(json.dumps(manifest, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    print(f"{image_id} -> sketch placeholder")
 
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="cmd", required=True)
     s = sub.add_parser("search"); s.add_argument("project"); s.add_argument("--only"); s.add_argument("--per-query", type=int, default=12)
-    a = sub.add_parser("adopt"); a.add_argument("project"); a.add_argument("image_id"); a.add_argument("cid")
+    a = sub.add_parser("adopt"); a.add_argument("project"); a.add_argument("image_id"); a.add_argument("cid"); a.add_argument("--force", action="store_true")
+    u = sub.add_parser("unadopt"); u.add_argument("project"); u.add_argument("image_id")
     args = ap.parse_args()
     if args.cmd == "search":
         search(args.project, args.only, args.per_query)
+    elif args.cmd == "adopt":
+        adopt(args.project, args.image_id, args.cid, args.force)
     else:
-        adopt(args.project, args.image_id, args.cid)
+        unadopt(args.project, args.image_id)
