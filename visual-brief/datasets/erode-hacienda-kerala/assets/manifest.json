@@ -1994,7 +1994,7 @@
     },
     {
       "id": "landscape--courtyard_planting--1",
-      "file": "landscape--courtyard_planting--1.svg",
+      "file": "landscape--courtyard_planting--1.jpg",
       "dimension_id": "landscape",
       "option_id": "courtyard_planting",
       "origin": "kerala",
@@ -2025,14 +2025,17 @@
         "status": "ok",
         "note": ""
       },
-      "source": "placeholder",
-      "credit": "",
-      "placeholder": true,
-      "code": "#51"
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%B2%AE%E0%B2%A8%E0%B3%86_%E0%B2%85%E0%B2%82%E0%B2%97%E0%B2%B3_%E0%B2%A4%E0%B3%81%E0%B2%B3%E0%B2%B8%E0%B2%BF_%E0%B2%95%E0%B2%9F%E0%B3%8D%E0%B2%9F%E0%B3%86.JPG",
+      "credit": "Kannadiga / Wikimedia Commons",
+      "placeholder": false,
+      "code": "#51",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "title": "ಮನೆ ಅಂಗಳ ತುಳಸಿ ಕಟ್ಟೆ.JPG"
     },
     {
       "id": "landscape--courtyard_planting--2",
-      "file": "landscape--courtyard_planting--2.svg",
+      "file": "landscape--courtyard_planting--2.jpg",
       "dimension_id": "landscape",
       "option_id": "courtyard_planting",
       "origin": "kerala",
@@ -2063,10 +2066,13 @@
         "status": "ok",
         "note": ""
       },
-      "source": "placeholder",
-      "credit": "",
-      "placeholder": true,
-      "code": "#52"
+      "source": "https://commons.wikimedia.org/wiki/File:Thulasi_thara.JPG",
+      "credit": "Sivahari / Wikimedia Commons",
+      "placeholder": false,
+      "code": "#52",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "title": "Thulasi thara.JPG"
     },
     {
       "id": "landscape--fountain_patio--1",
