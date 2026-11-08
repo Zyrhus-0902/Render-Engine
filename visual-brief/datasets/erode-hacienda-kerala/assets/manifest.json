@@ -1122,7 +1122,7 @@
     },
     {
       "id": "columns--timber_columns--1",
-      "file": "columns--timber_columns--1.svg",
+      "file": "columns--timber_columns--1.jpg",
       "dimension_id": "columns",
       "option_id": "timber_columns",
       "origin": "kerala",
@@ -1152,10 +1152,13 @@
         "status": "ok",
         "note": ""
       },
-      "source": "placeholder",
-      "credit": "",
-      "placeholder": true,
-      "code": "#29"
+      "source": "https://commons.wikimedia.org/wiki/File:Chappamattam_Tharavadu.jpg",
+      "credit": "VASTHU / Wikimedia Commons",
+      "placeholder": false,
+      "code": "#29",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "title": "Chappamattam Tharavadu.jpg"
     },
     {
       "id": "columns--timber_columns--2",
