@@ -1579,7 +1579,7 @@
     },
     {
       "id": "openings--modern_full_height--1",
-      "file": "openings--modern_full_height--1.svg",
+      "file": "openings--modern_full_height--1.jpg",
       "dimension_id": "openings",
       "option_id": "modern_full_height",
       "origin": "modern",
@@ -1609,14 +1609,17 @@
         "status": "review",
         "note": "Only with deep shade or north orientation; unshaded east/west glass overheats in Erode."
       },
-      "source": "placeholder",
-      "credit": "",
-      "placeholder": true,
-      "code": "#41"
+      "source": "https://www.flickr.com/photos/25186605@N04/2815613330",
+      "credit": "Jeremy Levine Design / Openverse/flickr",
+      "placeholder": false,
+      "code": "#41",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/",
+      "title": "Mobile Sun Screens"
     },
     {
       "id": "openings--modern_full_height--2",
-      "file": "openings--modern_full_height--2.svg",
+      "file": "openings--modern_full_height--2.jpg",
       "dimension_id": "openings",
       "option_id": "modern_full_height",
       "origin": "modern",
@@ -1646,10 +1649,13 @@
         "status": "ok",
         "note": ""
       },
-      "source": "placeholder",
-      "credit": "",
-      "placeholder": true,
-      "code": "#42"
+      "source": "https://commons.wikimedia.org/wiki/File:Ceiling_to_floor_windows_at_Jinnah_International_Airport.jpg",
+      "credit": "Farrah / Wikimedia Commons",
+      "placeholder": false,
+      "code": "#42",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "title": "Ceiling to floor windows at Jinnah International Airport.jpg"
     },
     {
       "id": "openings--jaali_screen--1",
