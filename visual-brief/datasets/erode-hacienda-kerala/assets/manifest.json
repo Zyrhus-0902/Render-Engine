@@ -2484,7 +2484,7 @@
     },
     {
       "id": "abstraction--restrained--1",
-      "file": "abstraction--restrained--1.svg",
+      "file": "abstraction--restrained--1.jpg",
       "dimension_id": "abstraction",
       "option_id": "restrained",
       "origin": "kerala",
@@ -2511,14 +2511,17 @@
         "status": "ok",
         "note": ""
       },
-      "source": "placeholder",
-      "credit": "",
-      "placeholder": true,
-      "code": "#63"
+      "source": "https://commons.wikimedia.org/wiki/File:DakshinaChitra-Kerala_style_house-WUS-01631.jpg",
+      "credit": "Rainer Halama / Wikimedia Commons",
+      "placeholder": false,
+      "code": "#63",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "title": "DakshinaChitra-Kerala style house-WUS-01631.jpg"
     },
     {
       "id": "abstraction--restrained--2",
-      "file": "abstraction--restrained--2.svg",
+      "file": "abstraction--restrained--2.jpg",
       "dimension_id": "abstraction",
       "option_id": "restrained",
       "origin": "hacienda",
@@ -2545,10 +2548,13 @@
         "status": "ok",
         "note": ""
       },
-      "source": "placeholder",
-      "credit": "",
-      "placeholder": true,
-      "code": "#64"
+      "source": "https://www.flickr.com/photos/12806074@N08/2545148583",
+      "credit": "tkksummers / Openverse/flickr",
+      "placeholder": false,
+      "code": "#64",
+      "license": "CC BY-SA 2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "title": "Casa Adobe De San Rafael"
     },
     {
       "id": "abstraction--minimal--1",
