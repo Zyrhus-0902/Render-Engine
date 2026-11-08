@@ -125,7 +125,7 @@
     },
     {
       "id": "roof--hacienda_low_hip--1",
-      "file": "roof--hacienda_low_hip--1.svg",
+      "file": "roof--hacienda_low_hip--1.jpg",
       "dimension_id": "roof",
       "option_id": "hacienda_low_hip",
       "origin": "hacienda",
@@ -156,14 +156,17 @@
         "status": "ok",
         "note": ""
       },
-      "source": "placeholder",
-      "credit": "",
-      "placeholder": true,
-      "code": "#04"
+      "source": "https://commons.wikimedia.org/wiki/File:Stone-clad_colonial_house_with_blue_door_in_Laguna_de_Raya,_Margarita_Island,_Venezuela.jpg",
+      "credit": "Wilfredor / Wikimedia Commons",
+      "placeholder": false,
+      "code": "#04",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "title": "Stone-clad colonial house with blue door in Laguna de Raya, Margarita Island, Venezuela.jpg"
     },
     {
       "id": "roof--hacienda_low_hip--2",
-      "file": "roof--hacienda_low_hip--2.svg",
+      "file": "roof--hacienda_low_hip--2.jpg",
       "dimension_id": "roof",
       "option_id": "hacienda_low_hip",
       "origin": "hacienda",
@@ -194,10 +197,13 @@
         "status": "ok",
         "note": ""
       },
-      "source": "placeholder",
-      "credit": "",
-      "placeholder": true,
-      "code": "#05"
+      "source": "https://commons.wikimedia.org/wiki/File:Casa_Principal,_La_Ferrer%C3%ADa.JPG",
+      "credit": "MohamedPulido / Wikimedia Commons",
+      "placeholder": false,
+      "code": "#05",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "title": "Casa Principal, La Ferrería.JPG"
     },
     {
       "id": "roof--hacienda_low_hip--3",
