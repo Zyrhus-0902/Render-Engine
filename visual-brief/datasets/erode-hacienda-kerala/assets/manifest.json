@@ -2330,7 +2330,7 @@
     },
     {
       "id": "landscape--reflecting_pool--1",
-      "file": "landscape--reflecting_pool--1.svg",
+      "file": "landscape--reflecting_pool--1.jpg",
       "dimension_id": "landscape",
       "option_id": "reflecting_pool",
       "origin": "modern",
@@ -2360,14 +2360,17 @@
         "status": "ok",
         "note": ""
       },
-      "source": "placeholder",
-      "credit": "",
-      "placeholder": true,
-      "code": "#59"
+      "source": "https://commons.wikimedia.org/wiki/File:Pool_and_Wind_Tower,_Borujerdi_House,_Kashan_(14452086306).jpg",
+      "credit": "Julia Maudlin from Lake Oswego, Oregon, USA / Wikimedia Commons",
+      "placeholder": false,
+      "code": "#59",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "title": "Pool and Wind Tower, Borujerdi House, Kashan (14452086306).jpg"
     },
     {
       "id": "landscape--reflecting_pool--2",
-      "file": "landscape--reflecting_pool--2.svg",
+      "file": "landscape--reflecting_pool--2.jpg",
       "dimension_id": "landscape",
       "option_id": "reflecting_pool",
       "origin": "modern",
@@ -2397,10 +2400,13 @@
         "status": "ok",
         "note": ""
       },
-      "source": "placeholder",
-      "credit": "",
-      "placeholder": true,
-      "code": "#60"
+      "source": "https://commons.wikimedia.org/wiki/File:Reflecting_pool,_Jardim_da_Pra%C3%A7a_do_Imp%C3%A9rio,_Lisbon,_Portugal_julesvernex2.jpg",
+      "credit": "Jules Verne Times Two / Wikimedia Commons",
+      "placeholder": false,
+      "code": "#60",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "title": "Reflecting pool, Jardim da Praça do Império, Lisbon, Portugal julesvernex2.jpg"
     },
     {
       "id": "abstraction--ornate--1",

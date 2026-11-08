@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
-<defs><linearGradient id="light" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".18"/><stop offset="1" stop-color="#000" stop-opacity=".18"/></linearGradient></defs>
-<rect x="0" y="0" width="800" height="300" fill="#dfe6ea" /><rect x="0" y="300" width="800" height="300" fill="#8b8a86" /><rect x="120" y="360" width="560" height="150" fill="#6f9fb0" /><rect x="120" y="360" width="560" height="30" fill="#9fc3cf" /><circle cx="715" cy="316" r="20" fill="#557a45" /><circle cx="706" cy="309" r="23" fill="#557a45" /><circle cx="710" cy="312" r="15" fill="#557a45" /><circle cx="701" cy="314" r="24" fill="#557a45" /><rect x="0" y="520" width="800" height="80" fill="#8e3b2e" /><rect x="0" y="0" width="800" height="50" fill="#5a3a22" /><rect x="60" y="50" width="20" height="470" fill="#6b4426" /><rect x="720" y="50" width="20" height="470" fill="#6b4426" />
-<rect width="800" height="600" fill="url(#light)"/>
-<text x="786" y="588" font-family="system-ui, sans-serif" font-size="13" fill="#ffffff" fill-opacity=".75" text-anchor="end" stroke="#000" stroke-opacity=".25" stroke-width=".5">#59</text>
-</svg>
