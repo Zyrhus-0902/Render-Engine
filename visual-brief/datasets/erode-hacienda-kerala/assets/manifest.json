@@ -1499,7 +1499,7 @@
     },
     {
       "id": "openings--arched_openings--1",
-      "file": "openings--arched_openings--1.svg",
+      "file": "openings--arched_openings--1.jpg",
       "dimension_id": "openings",
       "option_id": "arched_openings",
       "origin": "hacienda",
@@ -1529,14 +1529,17 @@
         "status": "ok",
         "note": ""
       },
-      "source": "placeholder",
-      "credit": "",
-      "placeholder": true,
-      "code": "#39"
+      "source": "https://commons.wikimedia.org/wiki/File:Old_window_mexico.jpg",
+      "credit": "Tomas Castelazo / Wikimedia Commons",
+      "placeholder": false,
+      "code": "#39",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "title": "Old window mexico.jpg"
     },
     {
       "id": "openings--arched_openings--2",
-      "file": "openings--arched_openings--2.svg",
+      "file": "openings--arched_openings--2.jpg",
       "dimension_id": "openings",
       "option_id": "arched_openings",
       "origin": "hacienda",
@@ -1566,10 +1569,13 @@
         "status": "ok",
         "note": ""
       },
-      "source": "placeholder",
-      "credit": "",
-      "placeholder": true,
-      "code": "#40"
+      "source": "https://commons.wikimedia.org/wiki/File:Porcelanosa_Arched_Window_1.jpg",
+      "credit": "Steven Bornholtz / Wikimedia Commons",
+      "placeholder": false,
+      "code": "#40",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "title": "Porcelanosa Arched Window 1.jpg"
     },
     {
       "id": "openings--modern_full_height--1",

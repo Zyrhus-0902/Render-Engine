@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
-<defs><linearGradient id="light" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".18"/><stop offset="1" stop-color="#000" stop-opacity=".18"/></linearGradient></defs>
-<rect x="0" y="0" width="800" height="600" fill="#efe9dd" /><path d="M260,460 V240 A140,140 0 0 1 540,240 V460 Z" fill="#c9b79c"/><path d="M285,460 V250 A115,115 0 0 1 515,250 V460 Z" fill="#cfdcc4"/><line x1="310" y1="140" x2="310" y2="460" stroke="#2b2a29" stroke-width="4"/><line x1="348" y1="140" x2="348" y2="460" stroke="#2b2a29" stroke-width="4"/><line x1="386" y1="140" x2="386" y2="460" stroke="#2b2a29" stroke-width="4"/><line x1="424" y1="140" x2="424" y2="460" stroke="#2b2a29" stroke-width="4"/><line x1="462" y1="140" x2="462" y2="460" stroke="#2b2a29" stroke-width="4"/><line x1="285" y1="300" x2="515" y2="300" stroke="#2b2a29" stroke-width="3"/><line x1="285" y1="380" x2="515" y2="380" stroke="#2b2a29" stroke-width="3"/><rect x="0" y="530" width="800" height="70" fill="#cbbb9b" />
-<rect width="800" height="600" fill="url(#light)"/>
-<text x="786" y="588" font-family="system-ui, sans-serif" font-size="13" fill="#ffffff" fill-opacity=".75" text-anchor="end" stroke="#000" stroke-opacity=".25" stroke-width=".5">#39</text>
-</svg>
