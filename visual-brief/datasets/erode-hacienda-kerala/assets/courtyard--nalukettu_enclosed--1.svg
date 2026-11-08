@@ -1,10 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" font-family="system-ui, sans-serif">
-<rect width="800" height="600" fill="#f3f1ec"/>
-<rect width="800" height="10" fill="#2a78d6"/>
-<text x="48" y="64" font-size="18" fill="#52514e" letter-spacing="2">COURTYARD &amp; MASSING · KERALA</text>
-<text x="48" y="124" font-size="40" font-weight="600" fill="#1d1c1a">Enclosed nalukettu court</text>
-<text x="48" y="172" font-size="22" fill="#1d1c1a">Shows: eye level from verandah into court</text>
-<text x="48" y="226" font-size="21" fill="#3b3a37"><tspan x="48" dy="0">Four wings around a small open-to-sky nadumuttam;</tspan><tspan x="48" dy="30">roofs slope inward; verandah ring.</tspan></text>
-<rect x="48" y="440" width="116" height="72" rx="6" fill="#5a3a22" stroke="#0002"/><text x="48" y="534" font-size="15" fill="#52514e">Dark teak</text><rect x="180" y="440" width="116" height="72" rx="6" fill="#8b8a86" stroke="#0002"/><text x="180" y="534" font-size="15" fill="#52514e">Grey granite</text>
-<text x="48" y="580" font-size="14" fill="#8a8984">PLACEHOLDER · courtyard--nalukettu_enclosed--1 · replace with a curated photo</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+<defs><linearGradient id="light" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".18"/><stop offset="1" stop-color="#000" stop-opacity=".18"/></linearGradient></defs>
+<rect x="0" y="0" width="800" height="600" fill="#b9b28e" /><rect x="200" y="110" width="400" height="380" fill="#a5482f" /><line x1="200" y1="110" x2="340" y2="250" stroke="#7d3322" stroke-width="3"/><line x1="600" y1="110" x2="460" y2="250" stroke="#7d3322" stroke-width="3"/><line x1="200" y1="490" x2="340" y2="350" stroke="#7d3322" stroke-width="3"/><line x1="600" y1="490" x2="460" y2="350" stroke="#7d3322" stroke-width="3"/><rect x="340" y="250" width="120" height="100" fill="#8b8a86" /><rect x="360" y="270" width="80" height="60" fill="#6b8f55" /><rect x="392" y="292" width="16" height="16" fill="#d8c8a8" /><circle cx="70" cy="86" r="23" fill="#557a45" /><circle cx="125" cy="82" r="21" fill="#557a45" /><circle cx="51" cy="86" r="35" fill="#557a45" /><circle cx="94" cy="76" r="30" fill="#557a45" /><circle cx="665" cy="507" r="29" fill="#557a45" /><circle cx="694" cy="508" r="32" fill="#557a45" /><circle cx="707" cy="510" r="20" fill="#557a45" /><circle cx="734" cy="510" r="28" fill="#557a45" />
+<rect width="800" height="600" fill="url(#light)"/>
+<text x="786" y="588" font-family="system-ui, sans-serif" font-size="13" fill="#ffffff" fill-opacity=".75" text-anchor="end" stroke="#000" stroke-opacity=".25" stroke-width=".5">#11</text>
 </svg>

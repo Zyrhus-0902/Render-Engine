@@ -17,14 +17,14 @@
   "copy": {
     "en": {
       "intro_title": "Help us see your home",
-      "intro_body": "You'll see pairs of pictures, a few rounds of 6-8 each. Each pair changes one thing only: the roof, the walls, the garden. Tap the one you prefer. There are no right answers and no need to explain; go with your first feeling.",
+      "intro_body": "You'll see pairs of pictures. Tap the one you like more. There are no right answers and nothing to explain; go with your first feeling.",
       "intro_time": "About 10-15 minutes.",
       "name_label": "Your name",
       "name_placeholder": "e.g. Priya",
       "start": "Start",
       "resume": "Continue where you left off",
       "start_over": "Start over",
-      "round": "Round",
+      "round": "Set",
       "of": "of",
       "begin_round": "Begin",
       "both": "Both equally",
@@ -96,7 +96,7 @@
       "id": "roof",
       "name": "Roof form",
       "description": "Pitch, eave depth and roofing material, seen from the same angle on a similar house.",
-      "client_prompt": "Look only at the roof. Which one feels more like your home?",
+      "client_prompt": "Which home feels more like yours?",
       "isolate_note": "Same mass and wall finish, same sky and camera; only the roof changes.",
       "options": [
         {
@@ -118,7 +118,14 @@
               "hex": "#5a3a22"
             }
           ],
-          "why_prompt": "What draws you to the steep roof: the silhouette, the deep shade under the eaves, or the tiled texture?"
+          "why_prompt": "What draws you to the steep roof: the silhouette, the deep shade under the eaves, or the tiled texture?",
+          "attributes": {
+            "roof_pitch": "steep",
+            "eaves": "deep",
+            "timber": "some",
+            "warmth": "warm",
+            "ornament": "medium"
+          }
         },
         {
           "id": "hacienda_low_hip",
@@ -139,7 +146,14 @@
               "hex": "#d9b98f"
             }
           ],
-          "why_prompt": "Is it the lower, calmer roofline you like, or the curved barrel tiles themselves?"
+          "why_prompt": "Is it the lower, calmer roofline you like, or the curved barrel tiles themselves?",
+          "attributes": {
+            "roof_pitch": "low",
+            "eaves": "short",
+            "timber": "none",
+            "warmth": "warm",
+            "ornament": "medium"
+          }
         },
         {
           "id": "modern_flat_slab",
@@ -160,7 +174,14 @@
               "hex": "#f1ece1"
             }
           ],
-          "why_prompt": "Do you want a usable roof terrace, or is it the clean flat edge you like?"
+          "why_prompt": "Do you want a usable roof terrace, or is it the clean flat edge you like?",
+          "attributes": {
+            "roof_pitch": "flat",
+            "eaves": "thin",
+            "timber": "none",
+            "warmth": "neutral",
+            "ornament": "low"
+          }
         },
         {
           "id": "modern_mono_pitch",
@@ -181,7 +202,14 @@
               "hex": "#3a3c3f"
             }
           ],
-          "why_prompt": "Is the single slope about looking contemporary, or about one big sheltering overhang?"
+          "why_prompt": "Is the single slope about looking contemporary, or about one big sheltering overhang?",
+          "attributes": {
+            "roof_pitch": "single",
+            "eaves": "deep",
+            "timber": "none",
+            "warmth": "warm",
+            "ornament": "low"
+          }
         }
       ]
     },
@@ -189,7 +217,7 @@
       "id": "courtyard",
       "name": "Courtyard & massing",
       "description": "How rooms gather around (or without) open space.",
-      "client_prompt": "Look at how the house wraps around the open space. Which arrangement would you rather live in?",
+      "client_prompt": "Which would you rather live in?",
       "isolate_note": "Aerial or eye-level views at the same scale and plot size.",
       "options": [
         {
@@ -211,7 +239,14 @@
               "hex": "#8b8a86"
             }
           ],
-          "why_prompt": "What matters most in the enclosed court: privacy, rain falling inside the house, or everyone gathered around one centre?"
+          "why_prompt": "What matters most in the enclosed court: privacy, rain falling inside the house, or everyone gathered around one centre?",
+          "attributes": {
+            "enclosure": "enclosed",
+            "timber": "prominent",
+            "greenery": "moderate",
+            "water": "none",
+            "arch": "trabeated"
+          }
         },
         {
           "id": "open_patio",
@@ -232,7 +267,14 @@
               "hex": "#d9b98f"
             }
           ],
-          "why_prompt": "Do you picture the patio as an outdoor room for gatherings, or mainly as light and air for the house?"
+          "why_prompt": "Do you picture the patio as an outdoor room for gatherings, or mainly as light and air for the house?",
+          "attributes": {
+            "enclosure": "open",
+            "timber": "none",
+            "greenery": "moderate",
+            "water": "feature",
+            "arch": "arched"
+          }
         },
         {
           "id": "side_court_linear",
@@ -253,7 +295,14 @@
               "hex": "#8b8a86"
             }
           ],
-          "why_prompt": "Is the side court about a garden view from every room, or about keeping the plan compact?"
+          "why_prompt": "Is the side court about a garden view from every room, or about keeping the plan compact?",
+          "attributes": {
+            "enclosure": "open",
+            "timber": "none",
+            "greenery": "moderate",
+            "water": "none",
+            "arch": "trabeated"
+          }
         },
         {
           "id": "compact_no_court",
@@ -274,7 +323,14 @@
               "hex": "#f1ece1"
             }
           ],
-          "why_prompt": "You leaned compact: is a courtyard not important to you, or are you worried about cost and upkeep?"
+          "why_prompt": "You leaned compact: is a courtyard not important to you, or are you worried about cost and upkeep?",
+          "attributes": {
+            "enclosure": "compact",
+            "timber": "none",
+            "greenery": "sparse",
+            "water": "none",
+            "arch": "trabeated"
+          }
         }
       ]
     },
@@ -282,7 +338,7 @@
       "id": "facade_material",
       "name": "Wall material",
       "description": "The main wall surface, close up and in daylight.",
-      "client_prompt": "Look only at the wall surface. Which would you like to touch every day?",
+      "client_prompt": "Which would you rather have around you every day?",
       "isolate_note": "Same window, same light, same crop; only the wall finish changes.",
       "options": [
         {
@@ -303,7 +359,12 @@
               "hex": "#8b8a86"
             }
           ],
-          "why_prompt": "Is it the colour of laterite you like, or the rough, handmade texture? (Local brick or stone could give either.)"
+          "why_prompt": "Is it the colour of laterite you like, or the rough, handmade texture? (Local brick or stone could give either.)",
+          "attributes": {
+            "texture": "rough",
+            "warmth": "warm",
+            "ornament": "low"
+          }
         },
         {
           "id": "lime_whitewash",
@@ -324,7 +385,12 @@
               "hex": "#8e3b2e"
             }
           ],
-          "why_prompt": "White walls show every stain in Erode's dust. Is the crisp white essential, or would an off-white lime work?"
+          "why_prompt": "White walls show every stain in Erode's dust. Is the crisp white essential, or would an off-white lime work?",
+          "attributes": {
+            "texture": "smooth",
+            "warmth": "contrast",
+            "ornament": "low"
+          }
         },
         {
           "id": "exposed_brick",
@@ -344,7 +410,12 @@
               "hex": "#a9a59c"
             }
           ],
-          "why_prompt": "Do you like brick for its warmth, its pattern, or because it needs no painting?"
+          "why_prompt": "Do you like brick for its warmth, its pattern, or because it needs no painting?",
+          "attributes": {
+            "texture": "patterned",
+            "warmth": "warm",
+            "ornament": "low"
+          }
         },
         {
           "id": "textured_stucco",
@@ -364,7 +435,12 @@
               "hex": "#c9973a"
             }
           ],
-          "why_prompt": "Is it the soft, rounded handmade look, or the warm tint of the plaster?"
+          "why_prompt": "Is it the soft, rounded handmade look, or the warm tint of the plaster?",
+          "attributes": {
+            "texture": "handmade",
+            "warmth": "warm",
+            "ornament": "low"
+          }
         }
       ]
     },
@@ -372,7 +448,7 @@
       "id": "columns",
       "name": "Columns & verandah",
       "description": "The column, bracket and ceiling language of the verandah.",
-      "client_prompt": "Look at the columns and the verandah ceiling. Which verandah would you sit in?",
+      "client_prompt": "Where would you rather sit in the evening?",
       "isolate_note": "Same verandah depth and floor; columns and ceiling change.",
       "options": [
         {
@@ -395,7 +471,12 @@
               "hex": "#8b8a86"
             }
           ],
-          "why_prompt": "Is it the warmth of the wood, the carved brackets, or the built-in seating along the edge?"
+          "why_prompt": "Is it the warmth of the wood, the carved brackets, or the built-in seating along the edge?",
+          "attributes": {
+            "timber": "prominent",
+            "arch": "trabeated",
+            "ornament": "high"
+          }
         },
         {
           "id": "masonry_arcade",
@@ -415,7 +496,12 @@
               "hex": "#c46a3d"
             }
           ],
-          "why_prompt": "Is it the arch shape you like, or the solid, shaded rhythm of a deep arcade?"
+          "why_prompt": "Is it the arch shape you like, or the solid, shaded rhythm of a deep arcade?",
+          "attributes": {
+            "timber": "none",
+            "arch": "arched",
+            "ornament": "medium"
+          }
         },
         {
           "id": "wrought_iron",
@@ -436,7 +522,12 @@
               "hex": "#5a3a22"
             }
           ],
-          "why_prompt": "Do you like the ironwork as ornament, or for how light and open it keeps the verandah?"
+          "why_prompt": "Do you like the ironwork as ornament, or for how light and open it keeps the verandah?",
+          "attributes": {
+            "timber": "some",
+            "arch": "trabeated",
+            "ornament": "medium"
+          }
         },
         {
           "id": "modern_slender",
@@ -457,7 +548,12 @@
               "hex": "#a9a59c"
             }
           ],
-          "why_prompt": "Is the plain frame about a clean look, or about less maintenance than timber?"
+          "why_prompt": "Is the plain frame about a clean look, or about less maintenance than timber?",
+          "attributes": {
+            "timber": "none",
+            "arch": "trabeated",
+            "ornament": "low"
+          }
         }
       ]
     },
@@ -465,7 +561,7 @@
       "id": "openings",
       "name": "Windows & openings",
       "description": "Window shape, frame and screening.",
-      "client_prompt": "Look at the windows only. Which would you rather look out of?",
+      "client_prompt": "Which would you rather look out of?",
       "isolate_note": "Same wall, same room behind; only the opening changes.",
       "options": [
         {
@@ -487,7 +583,13 @@
               "hex": "#f1ece1"
             }
           ],
-          "why_prompt": "Do you like being able to open everything for breeze, or the filtered light through the slats?"
+          "why_prompt": "Do you like being able to open everything for breeze, or the filtered light through the slats?",
+          "attributes": {
+            "openness": "filtered",
+            "timber": "prominent",
+            "arch": "trabeated",
+            "ornament": "low"
+          }
         },
         {
           "id": "arched_openings",
@@ -508,7 +610,13 @@
               "hex": "#d9b98f"
             }
           ],
-          "why_prompt": "Is it the arch shape, or the deep, thick-walled reveal around the window?"
+          "why_prompt": "Is it the arch shape, or the deep, thick-walled reveal around the window?",
+          "attributes": {
+            "openness": "framed",
+            "timber": "none",
+            "arch": "arched",
+            "ornament": "medium"
+          }
         },
         {
           "id": "modern_full_height",
@@ -529,7 +637,13 @@
               "hex": "#3a3c3f"
             }
           ],
-          "why_prompt": "Big glass in Erode's sun needs deep shade. Which room do you picture this in, and facing which way?"
+          "why_prompt": "Big glass in Erode's sun needs deep shade. Which room do you picture this in, and facing which way?",
+          "attributes": {
+            "openness": "open",
+            "timber": "none",
+            "arch": "trabeated",
+            "ornament": "low"
+          }
         },
         {
           "id": "jaali_screen",
@@ -550,7 +664,13 @@
               "hex": "#c46a3d"
             }
           ],
-          "why_prompt": "Is the jaali about privacy from the street, or the pattern of light it throws inside?"
+          "why_prompt": "Is the jaali about privacy from the street, or the pattern of light it throws inside?",
+          "attributes": {
+            "openness": "filtered",
+            "timber": "none",
+            "arch": "trabeated",
+            "ornament": "medium"
+          }
         }
       ]
     },
@@ -558,7 +678,7 @@
       "id": "palette",
       "name": "Colour & palette",
       "description": "Overall colour mood of the house, indoors and out.",
-      "client_prompt": "Ignore the shapes. Which colours feel more like you?",
+      "client_prompt": "Which feels more like you?",
       "isolate_note": "Similar rooms or facades; colour is what differs.",
       "options": [
         {
@@ -585,7 +705,11 @@
               "hex": "#2f6f9a"
             }
           ],
-          "why_prompt": "Is it the warmth you want, or the colourful accents (blue, green, tiles)?"
+          "why_prompt": "Is it the warmth you want, or the colourful accents (blue, green, tiles)?",
+          "attributes": {
+            "warmth": "warm",
+            "timber": "none"
+          }
         },
         {
           "id": "wood_whitewash",
@@ -611,7 +735,11 @@
               "hex": "#8e3b2e"
             }
           ],
-          "why_prompt": "Is it the restraint (few colours), or the contrast of dark wood against white?"
+          "why_prompt": "Is it the restraint (few colours), or the contrast of dark wood against white?",
+          "attributes": {
+            "warmth": "contrast",
+            "timber": "prominent"
+          }
         },
         {
           "id": "earthy_neutral",
@@ -637,7 +765,11 @@
               "hex": "#7d7a4f"
             }
           ],
-          "why_prompt": "Do you want calm, low-contrast colour throughout, or a neutral base to add colour to later?"
+          "why_prompt": "Do you want calm, low-contrast colour throughout, or a neutral base to add colour to later?",
+          "attributes": {
+            "warmth": "neutral",
+            "timber": "none"
+          }
         }
       ]
     },
@@ -645,7 +777,7 @@
       "id": "landscape",
       "name": "Landscape & threshold",
       "description": "Planting, water and how the verandah meets the garden.",
-      "client_prompt": "Look at the garden and how you step into it. Which would you rather walk out to?",
+      "client_prompt": "Which would you rather step out into?",
       "isolate_note": "Same verandah edge; the planting and water change.",
       "options": [
         {
@@ -668,7 +800,13 @@
               "hex": "#8b8a86"
             }
           ],
-          "why_prompt": "Is the planted court about a ritual centre for the family, or simply greenery you can see from every room?"
+          "why_prompt": "Is the planted court about a ritual centre for the family, or simply greenery you can see from every room?",
+          "attributes": {
+            "greenery": "moderate",
+            "enclosure": "enclosed",
+            "water": "none",
+            "ornament": "medium"
+          }
         },
         {
           "id": "fountain_patio",
@@ -694,7 +832,13 @@
               "hex": "#6f9fb0"
             }
           ],
-          "why_prompt": "Is it the sound of water, the decorative tile, or a paved space for gatherings?"
+          "why_prompt": "Is it the sound of water, the decorative tile, or a paved space for gatherings?",
+          "attributes": {
+            "greenery": "moderate",
+            "enclosure": "enclosed",
+            "water": "feature",
+            "ornament": "medium"
+          }
         },
         {
           "id": "lush_verandah_garden",
@@ -715,7 +859,13 @@
               "hex": "#9c5a3c"
             }
           ],
-          "why_prompt": "A lush garden needs a lot of water in Erode. How much maintenance and irrigation are you willing to take on?"
+          "why_prompt": "A lush garden needs a lot of water in Erode. How much maintenance and irrigation are you willing to take on?",
+          "attributes": {
+            "greenery": "lush",
+            "enclosure": "open",
+            "water": "none",
+            "ornament": "low"
+          }
         },
         {
           "id": "dry_native",
@@ -741,7 +891,13 @@
               "hex": "#8b8a86"
             }
           ],
-          "why_prompt": "Do you like the dry garden's look, or is it about low water and low upkeep?"
+          "why_prompt": "Do you like the dry garden's look, or is it about low water and low upkeep?",
+          "attributes": {
+            "greenery": "sparse",
+            "enclosure": "open",
+            "water": "none",
+            "ornament": "low"
+          }
         },
         {
           "id": "reflecting_pool",
@@ -762,7 +918,13 @@
               "hex": "#8b8a86"
             }
           ],
-          "why_prompt": "Is the still water about calm and reflection, or about cooling the air near the verandah?"
+          "why_prompt": "Is the still water about calm and reflection, or about cooling the air near the verandah?",
+          "attributes": {
+            "greenery": "sparse",
+            "enclosure": "open",
+            "water": "still",
+            "ornament": "low"
+          }
         }
       ]
     },
@@ -770,7 +932,7 @@
       "id": "abstraction",
       "name": "Modern abstraction",
       "description": "How much traditional detail to keep: ornate, restrained, minimal.",
-      "client_prompt": "Same kind of space, different amount of detail. Which level feels right?",
+      "client_prompt": "Which feels right?",
       "isolate_note": "Same subject (e.g. a verandah) drawn at different levels of detail.",
       "options": [
         {
@@ -792,7 +954,10 @@
               "hex": "#2f6f9a"
             }
           ],
-          "why_prompt": "Which ornaments matter to you, and which are just part of the overall feeling?"
+          "why_prompt": "Which ornaments matter to you, and which are just part of the overall feeling?",
+          "attributes": {
+            "ornament": "high"
+          }
         },
         {
           "id": "restrained",
@@ -813,7 +978,10 @@
               "hex": "#f1ece1"
             }
           ],
-          "why_prompt": "If we keep only two or three traditional pieces, which would they be?"
+          "why_prompt": "If we keep only two or three traditional pieces, which would they be?",
+          "attributes": {
+            "ornament": "medium"
+          }
         },
         {
           "id": "minimal",
@@ -834,7 +1002,10 @@
               "hex": "#d8c8a8"
             }
           ],
-          "why_prompt": "With no ornament, what should still tell people this house is rooted in tradition?"
+          "why_prompt": "With no ornament, what should still tell people this house is rooted in tradition?",
+          "attributes": {
+            "ornament": "low"
+          }
         }
       ]
     }
@@ -990,9 +1161,113 @@
       "prompt": "You leaned towards a compact house without a courtyard, but liked the planted courtyard garden. Is a small court worth the extra footprint?"
     }
   ],
+  "attributes": [
+    {
+      "id": "roof_pitch",
+      "label": "Roof pitch",
+      "values": {
+        "steep": "steep roof",
+        "low": "low-pitched roof",
+        "flat": "flat roof",
+        "single": "single-slope roof"
+      }
+    },
+    {
+      "id": "eaves",
+      "label": "Eaves",
+      "values": {
+        "deep": "deep shading eaves",
+        "short": "short eaves",
+        "thin": "thin edge, little shade"
+      }
+    },
+    {
+      "id": "enclosure",
+      "label": "Enclosure",
+      "values": {
+        "enclosed": "enclosed, inward-looking spaces",
+        "open": "spaces open to sky and garden",
+        "compact": "a compact house with no court"
+      }
+    },
+    {
+      "id": "texture",
+      "label": "Surface texture",
+      "values": {
+        "rough": "rough, raw surfaces",
+        "smooth": "smooth plaster",
+        "handmade": "soft handmade plaster",
+        "patterned": "patterned masonry"
+      }
+    },
+    {
+      "id": "arch",
+      "label": "Arches",
+      "values": {
+        "arched": "arches",
+        "trabeated": "straight posts and beams"
+      }
+    },
+    {
+      "id": "timber",
+      "label": "Timber",
+      "values": {
+        "prominent": "a lot of visible wood",
+        "some": "some wood",
+        "none": "no visible wood"
+      }
+    },
+    {
+      "id": "warmth",
+      "label": "Colour temperature",
+      "values": {
+        "warm": "warm colours",
+        "contrast": "dark wood on white",
+        "neutral": "muted neutrals"
+      }
+    },
+    {
+      "id": "ornament",
+      "label": "Ornament",
+      "values": {
+        "high": "rich ornament",
+        "medium": "a little ornament",
+        "low": "no ornament"
+      }
+    },
+    {
+      "id": "openness",
+      "label": "Openings",
+      "values": {
+        "filtered": "filtered, screened light",
+        "framed": "framed window openings",
+        "open": "large open glazing"
+      }
+    },
+    {
+      "id": "greenery",
+      "label": "Greenery",
+      "values": {
+        "lush": "lush planting",
+        "moderate": "some planting",
+        "sparse": "sparse, dry planting"
+      }
+    },
+    {
+      "id": "water",
+      "label": "Water",
+      "values": {
+        "feature": "a water feature",
+        "still": "still water",
+        "none": "no water"
+      }
+    }
+  ],
   "settings": {
     "shuffle_pairs": true,
     "randomise_sides": true,
-    "show_chips": true
+    "show_chips": true,
+    "round_intros": false,
+    "show_dimension_names": false
   }
 }

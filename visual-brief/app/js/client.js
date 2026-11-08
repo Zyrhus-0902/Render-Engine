@@ -63,12 +63,13 @@
   }
 
   function progress(step) {
-    const roundSteps = steps.filter(s => s.type === "round");
-    const r = roundSteps.find(s => s.dimension_id === step.dimension_id);
+    const num = step.round_number, count = step.round_count;
     const done = step.type === "pair" ? step.index_in_round + 1 : 0;
+    // Category names ("Roof form") are architect vocabulary; hidden from clients unless the dataset asks.
+    const showName = D.settings && D.settings.show_dimension_names;
     return el("div", { class: "progress" },
-      el("div", { class: "rounds", "aria-hidden": "true" }, roundSteps.map(s => el("span", { class: "dot" + (s.round_number < r.round_number ? " done" : s === r ? " now" : "") }))),
-      el("div", { class: "progress-label" }, `${t("round")} ${r.round_number} ${t("of")} ${r.round_count} · ${tx(dimsById[step.dimension_id].name)}`,
+      el("div", { class: "rounds", "aria-hidden": "true" }, Array.from({ length: count }, (_, i) => el("span", { class: "dot" + (i + 1 < num ? " done" : i + 1 === num ? " now" : "") }))),
+      el("div", { class: "progress-label" }, `${t("round")} ${num} ${t("of")} ${count}` + (showName ? ` · ${tx(dimsById[step.dimension_id].name)}` : ""),
         step.type === "pair" ? el("span", { class: "count" }, `${done} / ${step.round_size}`) : null),
       step.type === "pair" ? el("div", { class: "bar", role: "progressbar", "aria-valuemin": 0, "aria-valuemax": step.round_size, "aria-valuenow": done },
         el("span", { style: `width:${(done / step.round_size) * 100}%` })) : null);
@@ -77,7 +78,7 @@
   function roundIntro(step) {
     const dim = dimsById[step.dimension_id];
     return el("main", { class: "wrap round-intro" }, progress(step),
-      el("h1", null, tx(dim.name)),
+      el("h1", null, D.settings && D.settings.show_dimension_names ? tx(dim.name) : `${t("round")} ${step.round_number}`),
       el("p", { class: "lead" }, tx(dim.client_prompt)),
       el("div", { class: "actions" },
         session.position > 0 ? el("button", { class: "btn ghost", onclick: () => go(session.position - 1) }, t("back")) : null,

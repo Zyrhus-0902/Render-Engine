@@ -1,10 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" font-family="system-ui, sans-serif">
-<rect width="800" height="600" fill="#f3f1ec"/>
-<rect width="800" height="10" fill="#eda100"/>
-<text x="48" y="64" font-size="18" fill="#52514e" letter-spacing="2">WALL MATERIAL · HYBRID / SHARED</text>
-<text x="48" y="124" font-size="40" font-weight="600" fill="#1d1c1a">Lime-plastered whitewash</text>
-<text x="48" y="172" font-size="22" fill="#1d1c1a">Shows: close-up wall with window</text>
-<text x="48" y="226" font-size="21" fill="#3b3a37"><tspan x="48" dy="0">Smooth-to-soft lime plaster, whitewashed; shared by</tspan><tspan x="48" dy="30">both traditions.</tspan></text>
-<rect x="48" y="440" width="116" height="72" rx="6" fill="#f1ece1" stroke="#0002"/><text x="48" y="534" font-size="15" fill="#52514e">Lime white</text><rect x="180" y="440" width="116" height="72" rx="6" fill="#8e3b2e" stroke="#0002"/><text x="180" y="534" font-size="15" fill="#52514e">Red oxide</text>
-<text x="48" y="580" font-size="14" fill="#8a8984">PLACEHOLDER · facade_material--lime_whitewash--1 · replace with a curated photo</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+<defs><linearGradient id="light" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".18"/><stop offset="1" stop-color="#000" stop-opacity=".18"/></linearGradient></defs>
+<rect x="0" y="0" width="800" height="600" fill="#f1ece1" /><circle cx="275" cy="29" r="100" fill="#e7e0d2" opacity=".35"/><circle cx="142" cy="562" r="116" fill="#e7e0d2" opacity=".35"/><circle cx="268" cy="232" r="56" fill="#e7e0d2" opacity=".35"/><circle cx="182" cy="573" r="82" fill="#e7e0d2" opacity=".35"/><circle cx="489" cy="596" r="105" fill="#e7e0d2" opacity=".35"/><circle cx="513" cy="10" r="81" fill="#e7e0d2" opacity=".35"/><circle cx="124" cy="174" r="105" fill="#e7e0d2" opacity=".35"/><circle cx="550" cy="296" r="72" fill="#e7e0d2" opacity=".35"/><circle cx="636" cy="528" r="56" fill="#e7e0d2" opacity=".35"/><circle cx="24" cy="451" r="115" fill="#e7e0d2" opacity=".35"/><circle cx="489" cy="287" r="70" fill="#e7e0d2" opacity=".35"/><circle cx="524" cy="95" r="67" fill="#e7e0d2" opacity=".35"/><rect x="0" y="540" width="800" height="60" fill="#8e3b2e" /><rect x="300" y="150" width="200" height="260" fill="#5a3a22" /><rect x="316" y="166" width="168" height="228" fill="#2d2620" /><rect x="398" y="166" width="4" height="228" fill="#5a3a22" /><rect x="290" y="410" width="220" height="16" fill="#8b8a86" /><polygon points="0,0 800,0 800,600 0,600" fill="url(#light)"/>
+<rect width="800" height="600" fill="url(#light)"/>
+<text x="786" y="588" font-family="system-ui, sans-serif" font-size="13" fill="#ffffff" fill-opacity=".75" text-anchor="end" stroke="#000" stroke-opacity=".25" stroke-width=".5">#23</text>
 </svg>

@@ -1,10 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" font-family="system-ui, sans-serif">
-<rect width="800" height="600" fill="#f3f1ec"/>
-<rect width="800" height="10" fill="#1baf7a"/>
-<text x="48" y="64" font-size="18" fill="#52514e" letter-spacing="2">WINDOWS &amp; OPENINGS · MODERN</text>
-<text x="48" y="124" font-size="40" font-weight="600" fill="#1d1c1a">Full-height shaded glazing</text>
-<text x="48" y="172" font-size="22" fill="#1d1c1a">Shows: window from inside, light</text>
-<text x="48" y="226" font-size="21" fill="#3b3a37"><tspan x="48" dy="0">Floor-to-ceiling glazing behind deep shade or</tspan><tspan x="48" dy="30">screens.</tspan></text>
-<rect x="48" y="440" width="116" height="72" rx="6" fill="#9fb7bf" stroke="#0002"/><text x="48" y="534" font-size="15" fill="#52514e">Glass</text><rect x="180" y="440" width="116" height="72" rx="6" fill="#3a3c3f" stroke="#0002"/><text x="180" y="534" font-size="15" fill="#52514e">Dark steel</text>
-<text x="48" y="580" font-size="14" fill="#8a8984">PLACEHOLDER · openings--modern_full_height--2 · replace with a curated photo</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+<defs><linearGradient id="light" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".18"/><stop offset="1" stop-color="#000" stop-opacity=".18"/></linearGradient></defs>
+<rect x="0" y="0" width="800" height="600" fill="#e2d8c6" /><rect x="80" y="60" width="640" height="470" fill="#3a3c3f" /><rect x="92" y="72" width="616" height="446" fill="#9fb7bf" /><rect x="398" y="72" width="6" height="446" fill="#3a3c3f" /><circle cx="243" cy="407" r="46" fill="#557a45" /><circle cx="191" cy="395" r="53" fill="#557a45" /><circle cx="245" cy="393" r="40" fill="#557a45" /><circle cx="298" cy="402" r="47" fill="#557a45" /><circle cx="594" cy="411" r="40" fill="#557a45" /><circle cx="583" cy="408" r="47" fill="#557a45" /><circle cx="547" cy="415" r="53" fill="#557a45" /><circle cx="554" cy="398" r="57" fill="#557a45" /><rect x="0" y="530" width="800" height="70" fill="#8e3b2e" />
+<rect width="800" height="600" fill="url(#light)"/>
+<text x="786" y="588" font-family="system-ui, sans-serif" font-size="13" fill="#ffffff" fill-opacity=".75" text-anchor="end" stroke="#000" stroke-opacity=".25" stroke-width=".5">#42</text>
 </svg>

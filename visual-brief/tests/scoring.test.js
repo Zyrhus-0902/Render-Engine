@@ -34,11 +34,12 @@ test("sequence: every pair once, grouped by dimension, deterministic per seed", 
   assert.equal(new Set(ids).size, P.length);
   assert.deepEqual(a, b);
   assert.notDeepEqual(a.map(s => s.pair_id), c.map(s => s.pair_id));
-  assert.equal(a.filter(s => s.type === "round").length, D.dimensions.length);
+  assert.equal(a.filter(s => s.type === "round").length, D.settings.round_intros === false ? 0 : D.dimensions.length);
   assert.equal(a.at(-1).type, "done");
   // Pairs of one round are contiguous, right after that round's intro.
-  let cur = null;
-  for (const s of a) { if (s.type === "round") cur = s.dimension_id; else if (s.type === "pair") assert.equal(s.dimension_id, cur); }
+  const order = a.filter(s => s.type === "pair").map(s => s.dimension_id);
+  assert.deepEqual([...new Set(order)], D.dimensions.map(d => d.id));
+  for (let i = 1; i < order.length; i++) if (order[i] !== order[i - 1]) assert.ok(!order.slice(0, i).includes(order[i]), "dimension pairs not contiguous");
 });
 
 test("sequence: climate-excluded images drop their pairs", () => {
@@ -124,4 +125,28 @@ test("compare: two respondents who disagree on roof", () => {
   assert.ok(cmp.dimensions.find(d => d.id === "roof").disagree);
   assert.ok(cmp.dimensions.find(d => d.id === "palette").agree);
   assert.ok(cmp.opposite_pairs.length > 0);
+});
+
+test("attributes: a feature picked across sets shows up as drawn-to", () => {
+  // Always pick the picture with more visible timber, whatever the set.
+  const rank = { prominent: 2, some: 1, none: 0 };
+  const steps = S.buildSequence(D, P, I, "t");
+  const responses = steps.filter(s => s.type === "pair").map(s => {
+    const p = P.find(x => x.id === s.pair_id), A = imgs[p.image_a].attributes.timber, B = imgs[p.image_b].attributes.timber;
+    const choice = A != null && B != null && A !== B ? (rank[A] > rank[B] ? "a" : "b") : "both";
+    return { pair_id: p.id, choice, swapped: s.swapped, ms: 3000 };
+  });
+  const prof = S.computeProfile(D, P, I, { responses });
+  const timber = prof.attributes.drawn.find(a => a.key === "timber" && a.value === "prominent");
+  assert.ok(timber && timber.rate === 1 && timber.rounds >= 2, JSON.stringify(timber));
+  assert.ok(prof.attributes.drawn.indexOf(timber) < 4);
+  assert.ok(prof.attributes.repelled.some(a => a.key === "timber" && a.value === "none"));
+  assert.ok(prof.questions.some(q => q.kind === "pattern"));
+});
+
+test("sequence: round intros can be switched off", () => {
+  const D2 = Object.assign({}, D, { settings: Object.assign({}, D.settings, { round_intros: false }) });
+  const steps = S.buildSequence(D2, P, I, "x");
+  assert.equal(steps.filter(s => s.type === "round").length, 0);
+  assert.ok(steps.filter(s => s.type === "pair").every(s => s.round_number >= 1 && s.round_count === D.dimensions.length));
 });

@@ -74,7 +74,7 @@
       let ps = pairs.filter(p => p.dimension_id === dim.id && !isExcluded(imgs[p.image_a]) && !isExcluded(imgs[p.image_b]));
       if (!ps.length) return;
       if (settings.shuffle_pairs !== false) ps = shuffle(ps, rand);
-      steps.push({ type: "round", dimension_id: dim.id, round_index: di });
+      steps.push({ type: "round", dimension_id: dim.id, round_index: di, hidden: settings.round_intros === false });
       ps.forEach(function (p, pi) {
         steps.push({
           type: "pair", pair_id: p.id, dimension_id: dim.id, index_in_round: pi, round_size: ps.length,
@@ -84,9 +84,12 @@
     });
     const rounds = steps.filter(s => s.type === "round");
     rounds.forEach((r, i) => { r.round_number = i + 1; r.round_count = rounds.length; });
+    steps.forEach(s => { if (s.type === "pair") { const r = rounds.find(x => x.dimension_id === s.dimension_id); s.round_number = r.round_number; s.round_count = r.round_count; } });
+    // Round intro screens can be switched off: the client then sees only pictures.
     if (dataset.brief && dataset.brief.fields && dataset.brief.fields.length) steps.push({ type: "brief" });
     steps.push({ type: "done" });
-    return steps;
+    // Round intro screens can be switched off: the client then sees only pictures.
+    return steps.filter(s => !(s.type === "round" && s.hidden));
   }
 
   /** Latest response per pair (a respondent may go back and change an answer). */
@@ -121,6 +124,24 @@
     const latest = latestResponses(session);
     const originIds = (dataset.origins || []).map(o => o.id);
 
+    const attrStats = {}; // "key=value" -> {key, value, wins, losses, rejects, dims:Set}
+    function attrHit(img, key, kind, dimId) {
+      const v = (img.attributes || {})[key], k = key + "=" + v;
+      attrStats[k] = attrStats[k] || { key, value: v, wins: 0, losses: 0, rejects: 0, dims: {} };
+      attrStats[k][kind]++; attrStats[k].dims[dimId] = true;
+    }
+    function attrCompare(A, B, outcome, dimId) {
+      // Only attributes that differ between the two pictures carry information.
+      const keys = new Set(Object.keys(A.attributes || {}).concat(Object.keys(B.attributes || {})));
+      for (const key of keys) {
+        const va = (A.attributes || {})[key], vb = (B.attributes || {})[key];
+        if (va == null || vb == null || va === vb) continue;
+        if (outcome === "a") { attrHit(A, key, "wins", dimId); attrHit(B, key, "losses", dimId); }
+        else if (outcome === "b") { attrHit(B, key, "wins", dimId); attrHit(A, key, "losses", dimId); }
+        else if (outcome === "reject_a") attrHit(A, key, "rejects", dimId);
+        else if (outcome === "reject_b") attrHit(B, key, "rejects", dimId);
+      }
+    }
     const blankBlend = () => { const b = {}; originIds.forEach(o => b[o] = 0); return b; };
     const blendOverall = blankBlend(), rejectByOrigin = blankBlend();
     const blendByDim = {};
@@ -167,6 +188,7 @@
         if (typeof r.ms === "number" && r.ms > 0) durations.push({ pair_id: p.id, ms: r.ms });
         const chips = r.chips || [];
 
+        attrCompare(A, B, r.choice, dim.id);
         let winner = null, loser = null;
         switch (r.choice) {
           case "a": winner = sa; loser = sb; break;
@@ -336,6 +358,28 @@
         text: `This pair took you the longest (${la} vs ${lb}). What was pulling you each way?` });
     }
 
+    // ---------- attribute signals (across rounds) ----------
+    const attrCat = indexBy(dataset.attributes || [], "id");
+    const attrLabel = (key, v) => { const c = attrCat[key]; return c && c.values && c.values[v] ? text(c.values[v], lang) : `${key}: ${v}`; };
+    const signals = Object.values(attrStats).map(a => {
+      const n = a.wins + a.losses;
+      const rate = n ? a.wins / n : 0;
+      // Confidence-weighted lean: distance from a coin flip, scaled by sample size.
+      const lean = n ? (rate - 0.5) * 2 * Math.min(1, Math.sqrt(n / 6)) : 0;
+      return { key: a.key, value: a.value, label: attrLabel(a.key, a.value), group: attrCat[a.key] ? text(attrCat[a.key].label, lang) : a.key,
+        wins: a.wins, losses: a.losses, rejects: a.rejects, n, rate, lean: a.rejects ? lean - 0.15 * a.rejects : lean,
+        rounds: Object.keys(a.dims).length };
+    }).filter(a => a.n >= 2 || a.rejects);
+    // Ties are common (a steep roof always comes with deep eaves in the roof set); break
+    // them by breadth: a feature that wins in more different sets is better evidence.
+    const drawn = signals.filter(a => a.lean >= 0.3).sort((x, y) => y.lean - x.lean || y.rounds - x.rounds || y.n - x.n);
+    const repelled = signals.filter(a => a.lean <= -0.3).sort((x, y) => x.lean - y.lean || y.rounds - x.rounds || y.n - x.n);
+    for (const a of drawn.slice(0, 2)) {
+      if (a.rounds < 2) continue; // only cross-round patterns say something the dimension view doesn't
+      questions.push({ kind: "pattern", priority: 1 + a.lean / 2, context: `Across ${a.rounds} different sets they chose pictures with ${a.label} ${a.wins} of ${a.n} times.`,
+        text: `You were drawn to ${a.label} again and again, even when we were showing something else. What does it give you?` });
+    }
+
     questions.sort((a, b) => b.priority - a.priority);
     questions.forEach((q, i) => q.recommended = i < 5);
     flags.sort((a, b) => b.severity - a.severity);
@@ -363,6 +407,7 @@
       dimensions: dims,
       blend: { overall: normalise(blendOverall), raw: blendOverall, by_dimension: byDim, rejections: rejectByOrigin },
       flags, questions,
+      attributes: { drawn, repelled, all: signals },
       palette: { colours_lean: lean(cl), colours_avoid: avoid(cl), materials_lean: lean(ml), materials_avoid: avoid(ml) },
       brief: session.brief || {},
       timing: { median_ms: med, pairs_timed: durations.length },

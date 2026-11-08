@@ -21,6 +21,13 @@
           "hex": "#5a3a22"
         }
       ],
+      "attributes": {
+        "roof_pitch": "steep",
+        "eaves": "deep",
+        "timber": "some",
+        "warmth": "warm",
+        "ornament": "medium"
+      },
       "scale": "single-family, 2400-4000 sq ft",
       "climate": {
         "status": "ok",
@@ -28,7 +35,8 @@
       },
       "source": "placeholder",
       "credit": "",
-      "placeholder": true
+      "placeholder": true,
+      "code": "#01"
     },
     {
       "id": "roof--kerala_steep_tile--2",
@@ -51,6 +59,13 @@
           "hex": "#5a3a22"
         }
       ],
+      "attributes": {
+        "roof_pitch": "steep",
+        "eaves": "deep",
+        "timber": "some",
+        "warmth": "warm",
+        "ornament": "medium"
+      },
       "scale": "single-family, 2400-4000 sq ft",
       "climate": {
         "status": "ok",
@@ -58,7 +73,8 @@
       },
       "source": "placeholder",
       "credit": "",
-      "placeholder": true
+      "placeholder": true,
+      "code": "#02"
     },
     {
       "id": "roof--kerala_steep_tile--3",
@@ -81,6 +97,13 @@
           "hex": "#5a3a22"
         }
       ],
+      "attributes": {
+        "roof_pitch": "steep",
+        "eaves": "deep",
+        "timber": "some",
+        "warmth": "warm",
+        "ornament": "medium"
+      },
       "scale": "single-family, 2400-4000 sq ft",
       "climate": {
         "status": "ok",
@@ -88,7 +111,8 @@
       },
       "source": "placeholder",
       "credit": "",
-      "placeholder": true
+      "placeholder": true,
+      "code": "#03"
     },
     {
       "id": "roof--hacienda_low_hip--1",
@@ -111,6 +135,13 @@
           "hex": "#d9b98f"
         }
       ],
+      "attributes": {
+        "roof_pitch": "low",
+        "eaves": "short",
+        "timber": "none",
+        "warmth": "warm",
+        "ornament": "medium"
+      },
       "scale": "single-family, 2400-4000 sq ft",
       "climate": {
         "status": "ok",
@@ -118,7 +149,8 @@
       },
       "source": "placeholder",
       "credit": "",
-      "placeholder": true
+      "placeholder": true,
+      "code": "#04"
     },
     {
       "id": "roof--hacienda_low_hip--2",
@@ -141,6 +173,13 @@
           "hex": "#d9b98f"
         }
       ],
+      "attributes": {
+        "roof_pitch": "low",
+        "eaves": "short",
+        "timber": "none",
+        "warmth": "warm",
+        "ornament": "medium"
+      },
       "scale": "single-family, 2400-4000 sq ft",
       "climate": {
         "status": "ok",
@@ -148,7 +187,8 @@
       },
       "source": "placeholder",
       "credit": "",
-      "placeholder": true
+      "placeholder": true,
+      "code": "#05"
     },
     {
       "id": "roof--hacienda_low_hip--3",
@@ -171,6 +211,13 @@
           "hex": "#d9b98f"
         }
       ],
+      "attributes": {
+        "roof_pitch": "low",
+        "eaves": "short",
+        "timber": "none",
+        "warmth": "warm",
+        "ornament": "medium"
+      },
       "scale": "single-family, 2400-4000 sq ft",
       "climate": {
         "status": "ok",
@@ -178,7 +225,8 @@
       },
       "source": "placeholder",
       "credit": "",
-      "placeholder": true
+      "placeholder": true,
+      "code": "#06"
     },
     {
       "id": "roof--modern_flat_slab--1",
@@ -201,6 +249,13 @@
           "hex": "#f1ece1"
         }
       ],
+      "attributes": {
+        "roof_pitch": "flat",
+        "eaves": "thin",
+        "timber": "none",
+        "warmth": "neutral",
+        "ornament": "low"
+      },
       "scale": "single-family, 2400-4000 sq ft",
       "climate": {
         "status": "review",
@@ -208,7 +263,8 @@
       },
       "source": "placeholder",
       "credit": "",
-      "placeholder": true
+      "placeholder": true,
+      "code": "#07"
     },
     {
       "id": "roof--modern_flat_slab--2",
@@ -231,6 +287,13 @@
           "hex": "#f1ece1"
         }
       ],
+      "attributes": {
+        "roof_pitch": "flat",
+        "eaves": "thin",
+        "timber": "none",
+        "warmth": "neutral",
+        "ornament": "low"
+      },
       "scale": "single-family, 2400-4000 sq ft",
       "climate": {
         "status": "ok",
@@ -238,7 +301,8 @@
       },
       "source": "placeholder",
       "credit": "",
-      "placeholder": true
+      "placeholder": true,
+      "code": "#08"
     },
     {
       "id": "roof--modern_mono_pitch--1",
@@ -261,6 +325,13 @@
           "hex": "#3a3c3f"
         }
       ],
+      "attributes": {
+        "roof_pitch": "single",
+        "eaves": "deep",
+        "timber": "none",
+        "warmth": "warm",
+        "ornament": "low"
+      },
       "scale": "single-family, 2400-4000 sq ft",
       "climate": {
         "status": "ok",
@@ -268,7 +339,8 @@
       },
       "source": "placeholder",
       "credit": "",
-      "placeholder": true
+      "placeholder": true,
+      "code": "#09"
     },
     {
       "id": "roof--modern_mono_pitch--2",
@@ -291,6 +363,13 @@
           "hex": "#3a3c3f"
         }
       ],
+      "attributes": {
+        "roof_pitch": "single",
+        "eaves": "deep",
+        "timber": "none",
+        "warmth": "warm",
+        "ornament": "low"
+      },
       "scale": "single-family, 2400-4000 sq ft",
       "climate": {
         "status": "ok",
@@ -298,7 +377,8 @@
       },
       "source": "placeholder",
       "credit": "",
-      "placeholder": true
+      "placeholder": true,
+      "code": "#10"
     },
     {
       "id": "courtyard--nalukettu_enclosed--1",
@@ -321,6 +401,13 @@
           "hex": "#8b8a86"
         }
       ],
+      "attributes": {
+        "enclosure": "enclosed",
+        "timber": "prominent",
+        "greenery": "moderate",
+        "water": "none",
+        "arch": "trabeated"
+      },
       "scale": "single-family, 2400-4000 sq ft",
       "climate": {
         "status": "ok",
@@ -328,7 +415,8 @@
       },
       "source": "placeholder",
       "credit": "",
-      "placeholder": true
+      "placeholder": true,
+      "code": "#11"
     },
     {
       "id": "courtyard--nalukettu_enclosed--2",
@@ -351,6 +439,13 @@
           "hex": "#8b8a86"
         }
       ],
+      "attributes": {
+        "enclosure": "enclosed",
+        "timber": "prominent",
+        "greenery": "moderate",
+        "water": "none",
+        "arch": "trabeated"
+      },
       "scale": "single-family, 2400-4000 sq ft",
       "climate": {
         "status": "ok",
@@ -358,7 +453,8 @@
       },
       "source": "placeholder",
       "credit": "",
-      "placeholder": true
+      "placeholder": true,
+      "code": "#12"
     },
     {
       "id": "courtyard--nalukettu_enclosed--3",
@@ -381,6 +477,13 @@
           "hex": "#8b8a86"
         }
       ],
+      "attributes": {
+        "enclosure": "enclosed",
+        "timber": "prominent",
+        "greenery": "moderate",
+        "water": "none",
+        "arch": "trabeated"
+      },
       "scale": "single-family, 2400-4000 sq ft",
       "climate": {
         "status": "ok",
@@ -388,7 +491,8 @@
       },
       "source": "placeholder",
       "credit": "",
-      "placeholder": true
+      "placeholder": true,
+      "code": "#13"
     },
     {
       "id": "courtyard--open_patio--1",
@@ -411,6 +515,13 @@
           "hex": "#d9b98f"
         }
       ],
+      "attributes": {
+        "enclosure": "open",
+        "timber": "none",
+        "greenery": "moderate",
+        "water": "feature",
+        "arch": "arched"
+      },
       "scale": "single-family, 2400-4000 sq ft",
       "climate": {
         "status": "ok",
@@ -418,7 +529,8 @@
       },
       "source": "placeholder",
       "credit": "",
-      "placeholder": true
+      "placeholder": true,
+      "code": "#14"
     },
     {
       "id": "courtyard--open_patio--2",
@@ -441,6 +553,13 @@
           "hex": "#d9b98f"
         }
       ],
+      "attributes": {
+        "enclosure": "open",
+        "timber": "none",
+        "greenery": "moderate",
+        "water": "feature",
+        "arch": "arched"
+      },
       "scale": "single-family, 2400-4000 sq ft",
       "climate": {
         "status": "ok",
@@ -448,7 +567,8 @@
       },
       "source": "placeholder",
       "credit": "",
-      "placeholder": true
+      "placeholder": true,
+      "code": "#15"
     },
     {
       "id": "courtyard--open_patio--3",
@@ -471,6 +591,13 @@
           "hex": "#d9b98f"
         }
       ],
+      "attributes": {
+        "enclosure": "open",
+        "timber": "none",
+        "greenery": "moderate",
+        "water": "feature",
+        "arch": "arched"
+      },
       "scale": "single-family, 2400-4000 sq ft",
       "climate": {
         "status": "ok",
@@ -478,7 +605,8 @@
       },
       "source": "placeholder",
       "credit": "",
-      "placeholder": true
+      "placeholder": true,
+      "code": "#16"
     },
     {
       "id": "courtyard--side_court_linear--1",
@@ -501,6 +629,13 @@
           "hex": "#8b8a86"
         }
       ],
+      "attributes": {
+        "enclosure": "open",
+        "timber": "none",
+        "greenery": "moderate",
+        "water": "none",
+        "arch": "trabeated"
+      },
       "scale": "single-family, 2400-4000 sq ft",
       "climate": {
         "status": "ok",
@@ -508,7 +643,8 @@
       },
       "source": "placeholder",
       "credit": "",
-      "placeholder": true
+      "placeholder": true,
+      "code": "#17"
     },
     {
       "id": "courtyard--side_court_linear--2",
@@ -531,6 +667,13 @@
           "hex": "#8b8a86"
         }
       ],
+      "attributes": {
+        "enclosure": "open",
+        "timber": "none",
+        "greenery": "moderate",
+        "water": "none",
+        "arch": "trabeated"
+      },
       "scale": "single-family, 2400-4000 sq ft",
       "climate": {
         "status": "ok",
@@ -538,7 +681,8 @@
       },
       "source": "placeholder",
       "credit": "",
-      "placeholder": true
+      "placeholder": true,
+      "code": "#18"
     },
     {
       "id": "courtyard--compact_no_court--1",
@@ -561,6 +705,13 @@
           "hex": "#f1ece1"
         }
       ],
+      "attributes": {
+        "enclosure": "compact",
+        "timber": "none",
+        "greenery": "sparse",
+        "water": "none",
+        "arch": "trabeated"
+      },
       "scale": "single-family, 2400-4000 sq ft",
       "climate": {
         "status": "ok",
@@ -568,7 +719,8 @@
       },
       "source": "placeholder",
       "credit": "",
-      "placeholder": true
+      "placeholder": true,
+      "code": "#19"
     },
     {
       "id": "courtyard--compact_no_court--2",
@@ -591,6 +743,13 @@
           "hex": "#f1ece1"
         }
       ],
+      "attributes": {
+        "enclosure": "compact",
+        "timber": "none",
+        "greenery": "sparse",
+        "water": "none",
+        "arch": "trabeated"
+      },
       "scale": "single-family, 2400-4000 sq ft",
       "climate": {
         "status": "ok",
@@ -598,7 +757,8 @@
       },
       "source": "placeholder",
       "credit": "",
-      "placeholder": true
+      "placeholder": true,
+      "code": "#20"
     },
     {
       "id": "facade_material--laterite--1",
@@ -620,6 +780,11 @@
           "hex": "#8b8a86"
         }
       ],
+      "attributes": {
+        "texture": "rough",
+        "warmth": "warm",
+        "ornament": "low"
+      },
       "scale": "single-family, 2400-4000 sq ft",
       "climate": {
         "status": "review",
@@ -627,7 +792,8 @@
       },
       "source": "placeholder",
       "credit": "",
-      "placeholder": true
+      "placeholder": true,
+      "code": "#21"
     },
     {
       "id": "facade_material--laterite--2",
@@ -649,6 +815,11 @@
           "hex": "#8b8a86"
         }
       ],
+      "attributes": {
+        "texture": "rough",
+        "warmth": "warm",
+        "ornament": "low"
+      },
       "scale": "single-family, 2400-4000 sq ft",
       "climate": {
         "status": "ok",
@@ -656,7 +827,8 @@
       },
       "source": "placeholder",
       "credit": "",
-      "placeholder": true
+      "placeholder": true,
+      "code": "#22"
     },
     {
       "id": "facade_material--lime_whitewash--1",
@@ -679,6 +851,11 @@
           "hex": "#8e3b2e"
         }
       ],
+      "attributes": {
+        "texture": "smooth",
+        "warmth": "contrast",
+        "ornament": "low"
+      },
       "scale": "single-family, 2400-4000 sq ft",
       "climate": {
         "status": "ok",
@@ -686,7 +863,8 @@
       },
       "source": "placeholder",
       "credit": "",
-      "placeholder": true
+      "placeholder": true,
+      "code": "#23"
     },
     {
       "id": "facade_material--lime_whitewash--2",
@@ -709,6 +887,11 @@
           "hex": "#8e3b2e"
         }
       ],
+      "attributes": {
+        "texture": "smooth",
+        "warmth": "contrast",
+        "ornament": "low"
+      },
       "scale": "single-family, 2400-4000 sq ft",
       "climate": {
         "status": "ok",
@@ -716,7 +899,8 @@
       },
       "source": "placeholder",
       "credit": "",
-      "placeholder": true
+      "placeholder": true,
+      "code": "#24"
     },
     {
       "id": "facade_material--exposed_brick--1",
@@ -738,6 +922,11 @@
           "hex": "#a9a59c"
         }
       ],
+      "attributes": {
+        "texture": "patterned",
+        "warmth": "warm",
+        "ornament": "low"
+      },
       "scale": "single-family, 2400-4000 sq ft",
       "climate": {
         "status": "ok",
@@ -745,7 +934,8 @@
       },
       "source": "placeholder",
       "credit": "",
-      "placeholder": true
+      "placeholder": true,
+      "code": "#25"
     },
     {
       "id": "facade_material--exposed_brick--2",
@@ -767,6 +957,11 @@
           "hex": "#a9a59c"
         }
       ],
+      "attributes": {
+        "texture": "patterned",
+        "warmth": "warm",
+        "ornament": "low"
+      },
       "scale": "single-family, 2400-4000 sq ft",
       "climate": {
         "status": "ok",
@@ -774,7 +969,8 @@
       },
       "source": "placeholder",
       "credit": "",
-      "placeholder": true
+      "placeholder": true,
+      "code": "#26"
     },
     {
       "id": "facade_material--textured_stucco--1",
@@ -796,6 +992,11 @@
           "hex": "#c9973a"
         }
       ],
+      "attributes": {
+        "texture": "handmade",
+        "warmth": "warm",
+        "ornament": "low"
+      },
       "scale": "single-family, 2400-4000 sq ft",
       "climate": {
         "status": "ok",
@@ -803,7 +1004,8 @@
       },
       "source": "placeholder",
       "credit": "",
-      "placeholder": true
+      "placeholder": true,
+      "code": "#27"
     },
     {
       "id": "facade_material--textured_stucco--2",
@@ -825,6 +1027,11 @@
           "hex": "#c9973a"
         }
       ],
+      "attributes": {
+        "texture": "handmade",
+        "warmth": "warm",
+        "ornament": "low"
+      },
       "scale": "single-family, 2400-4000 sq ft",
       "climate": {
         "status": "ok",
@@ -832,7 +1039,8 @@
       },
       "source": "placeholder",
       "credit": "",
-      "placeholder": true
+      "placeholder": true,
+      "code": "#28"
     },
     {
       "id": "columns--timber_columns--1",
@@ -856,6 +1064,11 @@
           "hex": "#8b8a86"
         }
       ],
+      "attributes": {
+        "timber": "prominent",
+        "arch": "trabeated",
+        "ornament": "high"
+      },
       "scale": "single-family, 2400-4000 sq ft",
       "climate": {
         "status": "ok",
@@ -863,7 +1076,8 @@
       },
       "source": "placeholder",
       "credit": "",
-      "placeholder": true
+      "placeholder": true,
+      "code": "#29"
     },
     {
       "id": "columns--timber_columns--2",
@@ -887,6 +1101,11 @@
           "hex": "#8b8a86"
         }
       ],
+      "attributes": {
+        "timber": "prominent",
+        "arch": "trabeated",
+        "ornament": "high"
+      },
       "scale": "single-family, 2400-4000 sq ft",
       "climate": {
         "status": "ok",
@@ -894,7 +1113,8 @@
       },
       "source": "placeholder",
       "credit": "",
-      "placeholder": true
+      "placeholder": true,
+      "code": "#30"
     },
     {
       "id": "columns--masonry_arcade--1",
@@ -916,6 +1136,11 @@
           "hex": "#c46a3d"
         }
       ],
+      "attributes": {
+        "timber": "none",
+        "arch": "arched",
+        "ornament": "medium"
+      },
       "scale": "single-family, 2400-4000 sq ft",
       "climate": {
         "status": "ok",
@@ -923,7 +1148,8 @@
       },
       "source": "placeholder",
       "credit": "",
-      "placeholder": true
+      "placeholder": true,
+      "code": "#31"
     },
     {
       "id": "columns--masonry_arcade--2",
@@ -945,6 +1171,11 @@
           "hex": "#c46a3d"
         }
       ],
+      "attributes": {
+        "timber": "none",
+        "arch": "arched",
+        "ornament": "medium"
+      },
       "scale": "single-family, 2400-4000 sq ft",
       "climate": {
         "status": "ok",
@@ -952,7 +1183,8 @@
       },
       "source": "placeholder",
       "credit": "",
-      "placeholder": true
+      "placeholder": true,
+      "code": "#32"
     },
     {
       "id": "columns--wrought_iron--1",
@@ -975,6 +1207,11 @@
           "hex": "#5a3a22"
         }
       ],
+      "attributes": {
+        "timber": "some",
+        "arch": "trabeated",
+        "ornament": "medium"
+      },
       "scale": "single-family, 2400-4000 sq ft",
       "climate": {
         "status": "ok",
@@ -982,7 +1219,8 @@
       },
       "source": "placeholder",
       "credit": "",
-      "placeholder": true
+      "placeholder": true,
+      "code": "#33"
     },
     {
       "id": "columns--wrought_iron--2",
@@ -1005,6 +1243,11 @@
           "hex": "#5a3a22"
         }
       ],
+      "attributes": {
+        "timber": "some",
+        "arch": "trabeated",
+        "ornament": "medium"
+      },
       "scale": "single-family, 2400-4000 sq ft",
       "climate": {
         "status": "ok",
@@ -1012,7 +1255,8 @@
       },
       "source": "placeholder",
       "credit": "",
-      "placeholder": true
+      "placeholder": true,
+      "code": "#34"
     },
     {
       "id": "columns--modern_slender--1",
@@ -1035,6 +1279,11 @@
           "hex": "#a9a59c"
         }
       ],
+      "attributes": {
+        "timber": "none",
+        "arch": "trabeated",
+        "ornament": "low"
+      },
       "scale": "single-family, 2400-4000 sq ft",
       "climate": {
         "status": "ok",
@@ -1042,7 +1291,8 @@
       },
       "source": "placeholder",
       "credit": "",
-      "placeholder": true
+      "placeholder": true,
+      "code": "#35"
     },
     {
       "id": "columns--modern_slender--2",
@@ -1065,6 +1315,11 @@
           "hex": "#a9a59c"
         }
       ],
+      "attributes": {
+        "timber": "none",
+        "arch": "trabeated",
+        "ornament": "low"
+      },
       "scale": "single-family, 2400-4000 sq ft",
       "climate": {
         "status": "ok",
@@ -1072,7 +1327,8 @@
       },
       "source": "placeholder",
       "credit": "",
-      "placeholder": true
+      "placeholder": true,
+      "code": "#36"
     },
     {
       "id": "openings--timber_slat_rect--1",
@@ -1095,6 +1351,12 @@
           "hex": "#f1ece1"
         }
       ],
+      "attributes": {
+        "openness": "filtered",
+        "timber": "prominent",
+        "arch": "trabeated",
+        "ornament": "low"
+      },
       "scale": "single-family, 2400-4000 sq ft",
       "climate": {
         "status": "ok",
@@ -1102,7 +1364,8 @@
       },
       "source": "placeholder",
       "credit": "",
-      "placeholder": true
+      "placeholder": true,
+      "code": "#37"
     },
     {
       "id": "openings--timber_slat_rect--2",
@@ -1125,6 +1388,12 @@
           "hex": "#f1ece1"
         }
       ],
+      "attributes": {
+        "openness": "filtered",
+        "timber": "prominent",
+        "arch": "trabeated",
+        "ornament": "low"
+      },
       "scale": "single-family, 2400-4000 sq ft",
       "climate": {
         "status": "ok",
@@ -1132,7 +1401,8 @@
       },
       "source": "placeholder",
       "credit": "",
-      "placeholder": true
+      "placeholder": true,
+      "code": "#38"
     },
     {
       "id": "openings--arched_openings--1",
@@ -1155,6 +1425,12 @@
           "hex": "#d9b98f"
         }
       ],
+      "attributes": {
+        "openness": "framed",
+        "timber": "none",
+        "arch": "arched",
+        "ornament": "medium"
+      },
       "scale": "single-family, 2400-4000 sq ft",
       "climate": {
         "status": "ok",
@@ -1162,7 +1438,8 @@
       },
       "source": "placeholder",
       "credit": "",
-      "placeholder": true
+      "placeholder": true,
+      "code": "#39"
     },
     {
       "id": "openings--arched_openings--2",
@@ -1185,6 +1462,12 @@
           "hex": "#d9b98f"
         }
       ],
+      "attributes": {
+        "openness": "framed",
+        "timber": "none",
+        "arch": "arched",
+        "ornament": "medium"
+      },
       "scale": "single-family, 2400-4000 sq ft",
       "climate": {
         "status": "ok",
@@ -1192,7 +1475,8 @@
       },
       "source": "placeholder",
       "credit": "",
-      "placeholder": true
+      "placeholder": true,
+      "code": "#40"
     },
     {
       "id": "openings--modern_full_height--1",
@@ -1215,6 +1499,12 @@
           "hex": "#3a3c3f"
         }
       ],
+      "attributes": {
+        "openness": "open",
+        "timber": "none",
+        "arch": "trabeated",
+        "ornament": "low"
+      },
       "scale": "single-family, 2400-4000 sq ft",
       "climate": {
         "status": "review",
@@ -1222,7 +1512,8 @@
       },
       "source": "placeholder",
       "credit": "",
-      "placeholder": true
+      "placeholder": true,
+      "code": "#41"
     },
     {
       "id": "openings--modern_full_height--2",
@@ -1245,6 +1536,12 @@
           "hex": "#3a3c3f"
         }
       ],
+      "attributes": {
+        "openness": "open",
+        "timber": "none",
+        "arch": "trabeated",
+        "ornament": "low"
+      },
       "scale": "single-family, 2400-4000 sq ft",
       "climate": {
         "status": "ok",
@@ -1252,7 +1549,8 @@
       },
       "source": "placeholder",
       "credit": "",
-      "placeholder": true
+      "placeholder": true,
+      "code": "#42"
     },
     {
       "id": "openings--jaali_screen--1",
@@ -1275,6 +1573,12 @@
           "hex": "#c46a3d"
         }
       ],
+      "attributes": {
+        "openness": "filtered",
+        "timber": "none",
+        "arch": "trabeated",
+        "ornament": "medium"
+      },
       "scale": "single-family, 2400-4000 sq ft",
       "climate": {
         "status": "ok",
@@ -1282,7 +1586,8 @@
       },
       "source": "placeholder",
       "credit": "",
-      "placeholder": true
+      "placeholder": true,
+      "code": "#43"
     },
     {
       "id": "openings--jaali_screen--2",
@@ -1305,6 +1610,12 @@
           "hex": "#c46a3d"
         }
       ],
+      "attributes": {
+        "openness": "filtered",
+        "timber": "none",
+        "arch": "trabeated",
+        "ornament": "medium"
+      },
       "scale": "single-family, 2400-4000 sq ft",
       "climate": {
         "status": "ok",
@@ -1312,7 +1623,8 @@
       },
       "source": "placeholder",
       "credit": "",
-      "placeholder": true
+      "placeholder": true,
+      "code": "#44"
     },
     {
       "id": "palette--ochre_terracotta--1",
@@ -1340,6 +1652,10 @@
           "hex": "#2f6f9a"
         }
       ],
+      "attributes": {
+        "warmth": "warm",
+        "timber": "none"
+      },
       "scale": "single-family, 2400-4000 sq ft",
       "climate": {
         "status": "ok",
@@ -1347,7 +1663,8 @@
       },
       "source": "placeholder",
       "credit": "",
-      "placeholder": true
+      "placeholder": true,
+      "code": "#45"
     },
     {
       "id": "palette--ochre_terracotta--2",
@@ -1375,6 +1692,10 @@
           "hex": "#2f6f9a"
         }
       ],
+      "attributes": {
+        "warmth": "warm",
+        "timber": "none"
+      },
       "scale": "single-family, 2400-4000 sq ft",
       "climate": {
         "status": "ok",
@@ -1382,7 +1703,8 @@
       },
       "source": "placeholder",
       "credit": "",
-      "placeholder": true
+      "placeholder": true,
+      "code": "#46"
     },
     {
       "id": "palette--wood_whitewash--1",
@@ -1410,6 +1732,10 @@
           "hex": "#8e3b2e"
         }
       ],
+      "attributes": {
+        "warmth": "contrast",
+        "timber": "prominent"
+      },
       "scale": "single-family, 2400-4000 sq ft",
       "climate": {
         "status": "ok",
@@ -1417,7 +1743,8 @@
       },
       "source": "placeholder",
       "credit": "",
-      "placeholder": true
+      "placeholder": true,
+      "code": "#47"
     },
     {
       "id": "palette--wood_whitewash--2",
@@ -1445,6 +1772,10 @@
           "hex": "#8e3b2e"
         }
       ],
+      "attributes": {
+        "warmth": "contrast",
+        "timber": "prominent"
+      },
       "scale": "single-family, 2400-4000 sq ft",
       "climate": {
         "status": "ok",
@@ -1452,7 +1783,8 @@
       },
       "source": "placeholder",
       "credit": "",
-      "placeholder": true
+      "placeholder": true,
+      "code": "#48"
     },
     {
       "id": "palette--earthy_neutral--1",
@@ -1480,6 +1812,10 @@
           "hex": "#7d7a4f"
         }
       ],
+      "attributes": {
+        "warmth": "neutral",
+        "timber": "none"
+      },
       "scale": "single-family, 2400-4000 sq ft",
       "climate": {
         "status": "ok",
@@ -1487,7 +1823,8 @@
       },
       "source": "placeholder",
       "credit": "",
-      "placeholder": true
+      "placeholder": true,
+      "code": "#49"
     },
     {
       "id": "palette--earthy_neutral--2",
@@ -1515,6 +1852,10 @@
           "hex": "#7d7a4f"
         }
       ],
+      "attributes": {
+        "warmth": "neutral",
+        "timber": "none"
+      },
       "scale": "single-family, 2400-4000 sq ft",
       "climate": {
         "status": "ok",
@@ -1522,7 +1863,8 @@
       },
       "source": "placeholder",
       "credit": "",
-      "placeholder": true
+      "placeholder": true,
+      "code": "#50"
     },
     {
       "id": "landscape--courtyard_planting--1",
@@ -1546,6 +1888,12 @@
           "hex": "#8b8a86"
         }
       ],
+      "attributes": {
+        "greenery": "moderate",
+        "enclosure": "enclosed",
+        "water": "none",
+        "ornament": "medium"
+      },
       "scale": "single-family, 2400-4000 sq ft",
       "climate": {
         "status": "ok",
@@ -1553,7 +1901,8 @@
       },
       "source": "placeholder",
       "credit": "",
-      "placeholder": true
+      "placeholder": true,
+      "code": "#51"
     },
     {
       "id": "landscape--courtyard_planting--2",
@@ -1577,6 +1926,12 @@
           "hex": "#8b8a86"
         }
       ],
+      "attributes": {
+        "greenery": "moderate",
+        "enclosure": "enclosed",
+        "water": "none",
+        "ornament": "medium"
+      },
       "scale": "single-family, 2400-4000 sq ft",
       "climate": {
         "status": "ok",
@@ -1584,7 +1939,8 @@
       },
       "source": "placeholder",
       "credit": "",
-      "placeholder": true
+      "placeholder": true,
+      "code": "#52"
     },
     {
       "id": "landscape--fountain_patio--1",
@@ -1612,6 +1968,12 @@
           "hex": "#6f9fb0"
         }
       ],
+      "attributes": {
+        "greenery": "moderate",
+        "enclosure": "enclosed",
+        "water": "feature",
+        "ornament": "medium"
+      },
       "scale": "single-family, 2400-4000 sq ft",
       "climate": {
         "status": "ok",
@@ -1619,7 +1981,8 @@
       },
       "source": "placeholder",
       "credit": "",
-      "placeholder": true
+      "placeholder": true,
+      "code": "#53"
     },
     {
       "id": "landscape--fountain_patio--2",
@@ -1647,6 +2010,12 @@
           "hex": "#6f9fb0"
         }
       ],
+      "attributes": {
+        "greenery": "moderate",
+        "enclosure": "enclosed",
+        "water": "feature",
+        "ornament": "medium"
+      },
       "scale": "single-family, 2400-4000 sq ft",
       "climate": {
         "status": "ok",
@@ -1654,7 +2023,8 @@
       },
       "source": "placeholder",
       "credit": "",
-      "placeholder": true
+      "placeholder": true,
+      "code": "#54"
     },
     {
       "id": "landscape--lush_verandah_garden--1",
@@ -1677,6 +2047,12 @@
           "hex": "#9c5a3c"
         }
       ],
+      "attributes": {
+        "greenery": "lush",
+        "enclosure": "open",
+        "water": "none",
+        "ornament": "low"
+      },
       "scale": "single-family, 2400-4000 sq ft",
       "climate": {
         "status": "review",
@@ -1684,7 +2060,8 @@
       },
       "source": "placeholder",
       "credit": "",
-      "placeholder": true
+      "placeholder": true,
+      "code": "#55"
     },
     {
       "id": "landscape--lush_verandah_garden--2",
@@ -1707,6 +2084,12 @@
           "hex": "#9c5a3c"
         }
       ],
+      "attributes": {
+        "greenery": "lush",
+        "enclosure": "open",
+        "water": "none",
+        "ornament": "low"
+      },
       "scale": "single-family, 2400-4000 sq ft",
       "climate": {
         "status": "ok",
@@ -1714,7 +2097,8 @@
       },
       "source": "placeholder",
       "credit": "",
-      "placeholder": true
+      "placeholder": true,
+      "code": "#56"
     },
     {
       "id": "landscape--dry_native--1",
@@ -1742,6 +2126,12 @@
           "hex": "#8b8a86"
         }
       ],
+      "attributes": {
+        "greenery": "sparse",
+        "enclosure": "open",
+        "water": "none",
+        "ornament": "low"
+      },
       "scale": "single-family, 2400-4000 sq ft",
       "climate": {
         "status": "ok",
@@ -1749,7 +2139,8 @@
       },
       "source": "placeholder",
       "credit": "",
-      "placeholder": true
+      "placeholder": true,
+      "code": "#57"
     },
     {
       "id": "landscape--dry_native--2",
@@ -1777,6 +2168,12 @@
           "hex": "#8b8a86"
         }
       ],
+      "attributes": {
+        "greenery": "sparse",
+        "enclosure": "open",
+        "water": "none",
+        "ornament": "low"
+      },
       "scale": "single-family, 2400-4000 sq ft",
       "climate": {
         "status": "ok",
@@ -1784,7 +2181,8 @@
       },
       "source": "placeholder",
       "credit": "",
-      "placeholder": true
+      "placeholder": true,
+      "code": "#58"
     },
     {
       "id": "landscape--reflecting_pool--1",
@@ -1807,6 +2205,12 @@
           "hex": "#8b8a86"
         }
       ],
+      "attributes": {
+        "greenery": "sparse",
+        "enclosure": "open",
+        "water": "still",
+        "ornament": "low"
+      },
       "scale": "single-family, 2400-4000 sq ft",
       "climate": {
         "status": "ok",
@@ -1814,7 +2218,8 @@
       },
       "source": "placeholder",
       "credit": "",
-      "placeholder": true
+      "placeholder": true,
+      "code": "#59"
     },
     {
       "id": "landscape--reflecting_pool--2",
@@ -1837,6 +2242,12 @@
           "hex": "#8b8a86"
         }
       ],
+      "attributes": {
+        "greenery": "sparse",
+        "enclosure": "open",
+        "water": "still",
+        "ornament": "low"
+      },
       "scale": "single-family, 2400-4000 sq ft",
       "climate": {
         "status": "ok",
@@ -1844,7 +2255,8 @@
       },
       "source": "placeholder",
       "credit": "",
-      "placeholder": true
+      "placeholder": true,
+      "code": "#60"
     },
     {
       "id": "abstraction--ornate--1",
@@ -1867,6 +2279,9 @@
           "hex": "#2f6f9a"
         }
       ],
+      "attributes": {
+        "ornament": "high"
+      },
       "scale": "single-family, 2400-4000 sq ft",
       "climate": {
         "status": "ok",
@@ -1874,7 +2289,8 @@
       },
       "source": "placeholder",
       "credit": "",
-      "placeholder": true
+      "placeholder": true,
+      "code": "#61"
     },
     {
       "id": "abstraction--ornate--2",
@@ -1897,6 +2313,9 @@
           "hex": "#2f6f9a"
         }
       ],
+      "attributes": {
+        "ornament": "high"
+      },
       "scale": "single-family, 2400-4000 sq ft",
       "climate": {
         "status": "ok",
@@ -1904,7 +2323,8 @@
       },
       "source": "placeholder",
       "credit": "",
-      "placeholder": true
+      "placeholder": true,
+      "code": "#62"
     },
     {
       "id": "abstraction--restrained--1",
@@ -1927,6 +2347,9 @@
           "hex": "#f1ece1"
         }
       ],
+      "attributes": {
+        "ornament": "medium"
+      },
       "scale": "single-family, 2400-4000 sq ft",
       "climate": {
         "status": "ok",
@@ -1934,7 +2357,8 @@
       },
       "source": "placeholder",
       "credit": "",
-      "placeholder": true
+      "placeholder": true,
+      "code": "#63"
     },
     {
       "id": "abstraction--restrained--2",
@@ -1957,6 +2381,9 @@
           "hex": "#f1ece1"
         }
       ],
+      "attributes": {
+        "ornament": "medium"
+      },
       "scale": "single-family, 2400-4000 sq ft",
       "climate": {
         "status": "ok",
@@ -1964,7 +2391,8 @@
       },
       "source": "placeholder",
       "credit": "",
-      "placeholder": true
+      "placeholder": true,
+      "code": "#64"
     },
     {
       "id": "abstraction--minimal--1",
@@ -1987,6 +2415,9 @@
           "hex": "#d8c8a8"
         }
       ],
+      "attributes": {
+        "ornament": "low"
+      },
       "scale": "single-family, 2400-4000 sq ft",
       "climate": {
         "status": "ok",
@@ -1994,7 +2425,8 @@
       },
       "source": "placeholder",
       "credit": "",
-      "placeholder": true
+      "placeholder": true,
+      "code": "#65"
     },
     {
       "id": "abstraction--minimal--2",
@@ -2017,6 +2449,9 @@
           "hex": "#d8c8a8"
         }
       ],
+      "attributes": {
+        "ornament": "low"
+      },
       "scale": "single-family, 2400-4000 sq ft",
       "climate": {
         "status": "ok",
@@ -2024,7 +2459,8 @@
       },
       "source": "placeholder",
       "credit": "",
-      "placeholder": true
+      "placeholder": true,
+      "code": "#66"
     }
   ]
 }

@@ -21,9 +21,9 @@ from __future__ import annotations
 
 import argparse
 import json
-import textwrap
 from pathlib import Path
-from xml.sax.saxutils import escape
+
+from sketches import sketch_svg
 
 ROOT = Path(__file__).resolve().parents[1]
 PROJECT_ID = "erode-hacienda-kerala"
@@ -72,7 +72,7 @@ DIMENSIONS = [
         "id": "roof",
         "name": "Roof form",
         "description": "Pitch, eave depth and roofing material, seen from the same angle on a similar house.",
-        "client_prompt": "Look only at the roof. Which one feels more like your home?",
+        "client_prompt": "Which home feels more like yours?",
         "isolate_note": "Same mass and wall finish, same sky and camera; only the roof changes.",
         "options": [
             {"id": "kerala_steep_tile", "label": "Steep clay-tile roof", "origin": "kerala",
@@ -97,7 +97,7 @@ DIMENSIONS = [
         "id": "courtyard",
         "name": "Courtyard & massing",
         "description": "How rooms gather around (or without) open space.",
-        "client_prompt": "Look at how the house wraps around the open space. Which arrangement would you rather live in?",
+        "client_prompt": "Which would you rather live in?",
         "isolate_note": "Aerial or eye-level views at the same scale and plot size.",
         "options": [
             {"id": "nalukettu_enclosed", "label": "Enclosed nalukettu court", "origin": "kerala",
@@ -122,7 +122,7 @@ DIMENSIONS = [
         "id": "facade_material",
         "name": "Wall material",
         "description": "The main wall surface, close up and in daylight.",
-        "client_prompt": "Look only at the wall surface. Which would you like to touch every day?",
+        "client_prompt": "Which would you rather have around you every day?",
         "isolate_note": "Same window, same light, same crop; only the wall finish changes.",
         "options": [
             {"id": "laterite", "label": "Exposed laterite", "origin": "kerala",
@@ -147,7 +147,7 @@ DIMENSIONS = [
         "id": "columns",
         "name": "Columns & verandah",
         "description": "The column, bracket and ceiling language of the verandah.",
-        "client_prompt": "Look at the columns and the verandah ceiling. Which verandah would you sit in?",
+        "client_prompt": "Where would you rather sit in the evening?",
         "isolate_note": "Same verandah depth and floor; columns and ceiling change.",
         "options": [
             {"id": "timber_columns", "label": "Timber columns & brackets", "origin": "kerala",
@@ -172,7 +172,7 @@ DIMENSIONS = [
         "id": "openings",
         "name": "Windows & openings",
         "description": "Window shape, frame and screening.",
-        "client_prompt": "Look at the windows only. Which would you rather look out of?",
+        "client_prompt": "Which would you rather look out of?",
         "isolate_note": "Same wall, same room behind; only the opening changes.",
         "options": [
             {"id": "timber_slat_rect", "label": "Rectangular timber slat windows", "origin": "kerala",
@@ -197,7 +197,7 @@ DIMENSIONS = [
         "id": "palette",
         "name": "Colour & palette",
         "description": "Overall colour mood of the house, indoors and out.",
-        "client_prompt": "Ignore the shapes. Which colours feel more like you?",
+        "client_prompt": "Which feels more like you?",
         "isolate_note": "Similar rooms or facades; colour is what differs.",
         "options": [
             {"id": "ochre_terracotta", "label": "Ochre & terracotta warmth", "origin": "hacienda",
@@ -218,7 +218,7 @@ DIMENSIONS = [
         "id": "landscape",
         "name": "Landscape & threshold",
         "description": "Planting, water and how the verandah meets the garden.",
-        "client_prompt": "Look at the garden and how you step into it. Which would you rather walk out to?",
+        "client_prompt": "Which would you rather step out into?",
         "isolate_note": "Same verandah edge; the planting and water change.",
         "options": [
             {"id": "courtyard_planting", "label": "Courtyard planting, tulsi thara", "origin": "kerala",
@@ -247,7 +247,7 @@ DIMENSIONS = [
         "id": "abstraction",
         "name": "Modern abstraction",
         "description": "How much traditional detail to keep: ornate, restrained, minimal.",
-        "client_prompt": "Same kind of space, different amount of detail. Which level feels right?",
+        "client_prompt": "Which feels right?",
         "isolate_note": "Same subject (e.g. a verandah) drawn at different levels of detail.",
         "options": [
             {"id": "ornate", "label": "Ornate, full traditional detail", "origin": "kerala",
@@ -265,6 +265,62 @@ DIMENSIONS = [
         ],
     },
 ]
+
+# ---------------------------------------------------------------------------
+# Hidden attributes. The client only sees pictures; every image carries these
+# tags so the profile can read what they respond to across all rounds
+# (e.g. "picked deep eaves 7 of 8 times"), not only the option tested.
+# ---------------------------------------------------------------------------
+ATTRIBUTES = [
+    {"id": "roof_pitch", "label": "Roof pitch", "values": {"steep": "steep roof", "low": "low-pitched roof", "flat": "flat roof", "single": "single-slope roof"}},
+    {"id": "eaves", "label": "Eaves", "values": {"deep": "deep shading eaves", "short": "short eaves", "thin": "thin edge, little shade"}},
+    {"id": "enclosure", "label": "Enclosure", "values": {"enclosed": "enclosed, inward-looking spaces", "open": "spaces open to sky and garden", "compact": "a compact house with no court"}},
+    {"id": "texture", "label": "Surface texture", "values": {"rough": "rough, raw surfaces", "smooth": "smooth plaster", "handmade": "soft handmade plaster", "patterned": "patterned masonry"}},
+    {"id": "arch", "label": "Arches", "values": {"arched": "arches", "trabeated": "straight posts and beams"}},
+    {"id": "timber", "label": "Timber", "values": {"prominent": "a lot of visible wood", "some": "some wood", "none": "no visible wood"}},
+    {"id": "warmth", "label": "Colour temperature", "values": {"warm": "warm colours", "contrast": "dark wood on white", "neutral": "muted neutrals"}},
+    {"id": "ornament", "label": "Ornament", "values": {"high": "rich ornament", "medium": "a little ornament", "low": "no ornament"}},
+    {"id": "openness", "label": "Openings", "values": {"filtered": "filtered, screened light", "framed": "framed window openings", "open": "large open glazing"}},
+    {"id": "greenery", "label": "Greenery", "values": {"lush": "lush planting", "moderate": "some planting", "sparse": "sparse, dry planting"}},
+    {"id": "water", "label": "Water", "values": {"feature": "a water feature", "still": "still water", "none": "no water"}},
+]
+
+OPTION_ATTRIBUTES = {
+    ("roof", "kerala_steep_tile"): {"roof_pitch": "steep", "eaves": "deep", "timber": "some", "warmth": "warm", "ornament": "medium"},
+    ("roof", "hacienda_low_hip"): {"roof_pitch": "low", "eaves": "short", "timber": "none", "warmth": "warm", "ornament": "medium"},
+    ("roof", "modern_flat_slab"): {"roof_pitch": "flat", "eaves": "thin", "timber": "none", "warmth": "neutral", "ornament": "low"},
+    ("roof", "modern_mono_pitch"): {"roof_pitch": "single", "eaves": "deep", "timber": "none", "warmth": "warm", "ornament": "low"},
+    ("courtyard", "nalukettu_enclosed"): {"enclosure": "enclosed", "timber": "prominent", "greenery": "moderate", "water": "none", "arch": "trabeated"},
+    ("courtyard", "open_patio"): {"enclosure": "open", "timber": "none", "greenery": "moderate", "water": "feature", "arch": "arched"},
+    ("courtyard", "side_court_linear"): {"enclosure": "open", "timber": "none", "greenery": "moderate", "water": "none", "arch": "trabeated"},
+    ("courtyard", "compact_no_court"): {"enclosure": "compact", "timber": "none", "greenery": "sparse", "water": "none", "arch": "trabeated"},
+    ("facade_material", "laterite"): {"texture": "rough", "warmth": "warm", "ornament": "low"},
+    ("facade_material", "lime_whitewash"): {"texture": "smooth", "warmth": "contrast", "ornament": "low"},
+    ("facade_material", "exposed_brick"): {"texture": "patterned", "warmth": "warm", "ornament": "low"},
+    ("facade_material", "textured_stucco"): {"texture": "handmade", "warmth": "warm", "ornament": "low"},
+    ("columns", "timber_columns"): {"timber": "prominent", "arch": "trabeated", "ornament": "high"},
+    ("columns", "masonry_arcade"): {"timber": "none", "arch": "arched", "ornament": "medium"},
+    ("columns", "wrought_iron"): {"timber": "some", "arch": "trabeated", "ornament": "medium"},
+    ("columns", "modern_slender"): {"timber": "none", "arch": "trabeated", "ornament": "low"},
+    ("openings", "timber_slat_rect"): {"openness": "filtered", "timber": "prominent", "arch": "trabeated", "ornament": "low"},
+    ("openings", "arched_openings"): {"openness": "framed", "timber": "none", "arch": "arched", "ornament": "medium"},
+    ("openings", "modern_full_height"): {"openness": "open", "timber": "none", "arch": "trabeated", "ornament": "low"},
+    ("openings", "jaali_screen"): {"openness": "filtered", "timber": "none", "arch": "trabeated", "ornament": "medium"},
+    ("palette", "ochre_terracotta"): {"warmth": "warm", "timber": "none"},
+    ("palette", "wood_whitewash"): {"warmth": "contrast", "timber": "prominent"},
+    ("palette", "earthy_neutral"): {"warmth": "neutral", "timber": "none"},
+    ("landscape", "courtyard_planting"): {"greenery": "moderate", "enclosure": "enclosed", "water": "none", "ornament": "medium"},
+    ("landscape", "fountain_patio"): {"greenery": "moderate", "enclosure": "enclosed", "water": "feature", "ornament": "medium"},
+    ("landscape", "lush_verandah_garden"): {"greenery": "lush", "enclosure": "open", "water": "none", "ornament": "low"},
+    ("landscape", "dry_native"): {"greenery": "sparse", "enclosure": "open", "water": "none", "ornament": "low"},
+    ("landscape", "reflecting_pool"): {"greenery": "sparse", "enclosure": "open", "water": "still", "ornament": "low"},
+    ("abstraction", "ornate"): {"ornament": "high"},
+    ("abstraction", "restrained"): {"ornament": "medium"},
+    ("abstraction", "minimal"): {"ornament": "low"},
+}
+for _d in DIMENSIONS:
+    for _o in _d["options"]:
+        _o["attributes"] = OPTION_ATTRIBUTES[(_d["id"], _o["id"])]
 
 # ---------------------------------------------------------------------------
 # Images per option (a short subject line each). Overrides: origin, climate, scale.
@@ -405,14 +461,14 @@ TENSIONS = [
 COPY = {
     "en": {
         "intro_title": "Help us see your home",
-        "intro_body": "You'll see pairs of pictures, a few rounds of 6-8 each. Each pair changes one thing only: the roof, the walls, the garden. Tap the one you prefer. There are no right answers and no need to explain; go with your first feeling.",
+        "intro_body": "You'll see pairs of pictures. Tap the one you like more. There are no right answers and nothing to explain; go with your first feeling.",
         "intro_time": "About 10-15 minutes.",
         "name_label": "Your name",
         "name_placeholder": "e.g. Priya",
         "start": "Start",
         "resume": "Continue where you left off",
         "start_over": "Start over",
-        "round": "Round",
+        "round": "Set",
         "of": "of",
         "begin_round": "Begin",
         "both": "Both equally",
@@ -433,28 +489,6 @@ COPY = {
 }
 
 
-def svg_card(img: dict, dim: dict, opt: dict, origin_label: str) -> str:
-    """A labelled placeholder: origin band, dimension, option, subject, swatches."""
-    w, h = 800, 600
-    band = {"kerala": "#2a78d6", "hacienda": "#eb6834", "modern": "#1baf7a", "hybrid": "#eda100"}[img["origin"]]
-    lines = textwrap.wrap(opt["description"], 52)
-    desc = "".join(f'<tspan x="48" dy="{0 if i == 0 else 30}">{escape(l)}</tspan>' for i, l in enumerate(lines))
-    sw = "".join(
-        f'<rect x="{48 + i * 132}" y="440" width="116" height="72" rx="6" fill="{c["hex"]}" stroke="#0002"/>'
-        f'<text x="{48 + i * 132}" y="534" font-size="15" fill="#52514e">{escape(c["name"])}</text>'
-        for i, c in enumerate(img["palette"][:5]))
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="{w}" height="{h}" font-family="system-ui, sans-serif">
-<rect width="{w}" height="{h}" fill="#f3f1ec"/>
-<rect width="{w}" height="10" fill="{band}"/>
-<text x="48" y="64" font-size="18" fill="#52514e" letter-spacing="2">{escape(dim["name"].upper())} · {escape(origin_label.upper())}</text>
-<text x="48" y="124" font-size="40" font-weight="600" fill="#1d1c1a">{escape(opt["label"])}</text>
-<text x="48" y="172" font-size="22" fill="#1d1c1a">Shows: {escape(img["subject"])}</text>
-<text x="48" y="226" font-size="21" fill="#3b3a37">{desc}</text>
-{sw}
-<text x="48" y="580" font-size="14" fill="#8a8984">PLACEHOLDER · {escape(img["id"])} · replace with a curated photo</text>
-</svg>'''
-
-
 def build(force: bool) -> Path:
     out = ROOT / "datasets" / PROJECT_ID
     assets = out / "assets"
@@ -462,8 +496,8 @@ def build(force: bool) -> Path:
     if (out / "dataset.json").exists() and not force:
         raise SystemExit(f"{out}/dataset.json exists; pass --force to overwrite (curated edits will be lost)")
 
-    origin_labels = {o["id"]: o["label"] for o in ORIGINS}
     images, by_option = [], {}
+    counter = 0
     for dim in DIMENSIONS:
         for opt in dim["options"]:
             for n, entry in enumerate(IMAGES[dim["id"]][opt["id"]], start=1):
@@ -478,6 +512,7 @@ def build(force: bool) -> Path:
                     "subject": subject,
                     "materials": opt["materials"],
                     "palette": opt["palette"],
+                    "attributes": {**opt.get("attributes", {}), **over.get("attributes", {})},
                     "scale": "single-family, 2400-4000 sq ft",
                     "climate": {"status": status, "note": note},
                     "source": "placeholder",
@@ -486,7 +521,9 @@ def build(force: bool) -> Path:
                 }
                 images.append(img)
                 by_option.setdefault((dim["id"], opt["id"]), []).append(img)
-                (assets / img["file"]).write_text(svg_card(img, dim, opt, origin_labels[img["origin"]]), encoding="utf-8")
+                counter += 1
+                img["code"] = f"#{counter:02d}"  # neutral reference for review comments; reveals nothing
+                (assets / img["file"]).write_text(sketch_svg(dim["id"], opt["id"], n, img["code"]), encoding="utf-8")
 
     pairs = []
     for dim in DIMENSIONS:
@@ -531,7 +568,8 @@ def build(force: bool) -> Path:
         "dimensions": DIMENSIONS,
         "brief": BRIEF,
         "tensions": TENSIONS,
-        "settings": {"shuffle_pairs": True, "randomise_sides": True, "show_chips": True},
+        "attributes": ATTRIBUTES,
+        "settings": {"shuffle_pairs": True, "randomise_sides": True, "show_chips": True, "round_intros": False, "show_dimension_names": False},
     }
     (out / "dataset.json").write_text(json.dumps(dataset, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     (out / "pairs.json").write_text(json.dumps({"pairs": pairs}, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")

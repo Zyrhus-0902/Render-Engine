@@ -1,10 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" font-family="system-ui, sans-serif">
-<rect width="800" height="600" fill="#f3f1ec"/>
-<rect width="800" height="10" fill="#1baf7a"/>
-<text x="48" y="64" font-size="18" fill="#52514e" letter-spacing="2">COLOUR &amp; PALETTE · MODERN</text>
-<text x="48" y="124" font-size="40" font-weight="600" fill="#1d1c1a">Muted earth &amp; stone</text>
-<text x="48" y="172" font-size="22" fill="#1d1c1a">Shows: living room</text>
-<text x="48" y="226" font-size="21" fill="#3b3a37"><tspan x="48" dy="0">Sand, grey granite, concrete, muted greens.</tspan></text>
-<rect x="48" y="440" width="116" height="72" rx="6" fill="#d8c8a8" stroke="#0002"/><text x="48" y="534" font-size="15" fill="#52514e">Sand</text><rect x="180" y="440" width="116" height="72" rx="6" fill="#8b8a86" stroke="#0002"/><text x="180" y="534" font-size="15" fill="#52514e">Grey granite</text><rect x="312" y="440" width="116" height="72" rx="6" fill="#7d7a4f" stroke="#0002"/><text x="312" y="534" font-size="15" fill="#52514e">Dry olive</text>
-<text x="48" y="580" font-size="14" fill="#8a8984">PLACEHOLDER · palette--earthy_neutral--1 · replace with a curated photo</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+<defs><linearGradient id="light" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".18"/><stop offset="1" stop-color="#000" stop-opacity=".18"/></linearGradient></defs>
+<rect x="0" y="0" width="800" height="420" fill="#d8c8a8" /><polygon points="0,420 800,420 800,600 0,600" fill="#8b8a86" /><rect x="300" y="120" width="200" height="300" fill="#7d7a4f" /><rect x="318" y="138" width="164" height="282" fill="#00000025" /><rect x="80" y="330" width="160" height="70" fill="#7d7a4f" /><rect x="560" y="300" width="140" height="120" fill="#00000018" /><rect x="100" y="280" width="120" height="50" fill="#7d7a4f" opacity=".8"/>
+<rect width="800" height="600" fill="url(#light)"/>
+<text x="786" y="588" font-family="system-ui, sans-serif" font-size="13" fill="#ffffff" fill-opacity=".75" text-anchor="end" stroke="#000" stroke-opacity=".25" stroke-width=".5">#49</text>
 </svg>

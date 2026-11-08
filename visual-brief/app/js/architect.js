@@ -147,12 +147,27 @@
   function questionsCard(prof) {
     const rec = prof.questions.filter(q => q.recommended), rest = prof.questions.filter(q => !q.recommended);
     const item = q => el("li", { class: "q q-" + q.kind },
-      el("span", { class: "tag" }, { lopsided: "strong pull", inconsistent: "inconsistent", tension: "tension", reject: "dislike", no_fit: "no fit", ambivalent: "hesitated" }[q.kind] || q.kind),
+      el("span", { class: "tag" }, { lopsided: "strong pull", pattern: "pattern", inconsistent: "inconsistent", tension: "tension", reject: "dislike", no_fit: "no fit", ambivalent: "hesitated" }[q.kind] || q.kind),
       el("p", { class: "ask" }, q.text), el("p", { class: "ctx muted small" }, q.context));
     return el("section", { class: "card questions" },
       el("h2", null, "Ask “why?” at the next meeting"),
       rec.length ? el("ol", null, rec.map(item)) : el("p", { class: "muted" }, "Not enough answers to suggest questions yet."),
       rest.length ? el("details", null, el("summary", null, `${rest.length} more`), el("ol", { start: rec.length + 1 }, rest.map(item))) : null);
+  }
+
+  // What the pictures they picked have in common, read from the hidden image tags.
+  function attributesCard(prof) {
+    const row = a => el("li", { "data-tip": `${a.group}: picked ${a.wins} of ${a.n} times when it was one of the two options` + (a.rejects ? ` · “never this” ${a.rejects}x` : "") + ` · seen in ${a.rounds} set(s)` },
+      el("span", { class: "attr-label" }, a.label),
+      el("span", { class: "attr-bar" }, el("span", { style: `width:${pct(a.n ? a.rate : 0)}` })),
+      el("span", { class: "attr-val" }, `${a.wins}/${a.n}` + (a.rejects ? ` ✕${a.rejects}` : "")));
+    const A = prof.attributes;
+    return el("section", { class: "card" },
+      el("h2", null, "What they respond to"),
+      el("p", { class: "muted small" }, "Every picture carries hidden tags (roof pitch, eaves, texture, arches, ornament, greenery…). Counted only when the two pictures in a pair differed on that tag, across all sets. The bar shows how often the picture with that feature was the one picked."),
+      el("div", { class: "two" },
+        el("div", null, el("h3", null, "Drawn to"), A.drawn.length ? el("ul", { class: "attrs" }, A.drawn.slice(0, 8).map(row)) : el("p", { class: "muted small" }, "No clear pattern yet.")),
+        el("div", null, el("h3", null, "Pushed away by"), A.repelled.length ? el("ul", { class: "attrs" }, A.repelled.slice(0, 8).map(row)) : el("p", { class: "muted small" }, "No clear pattern yet."))));
   }
 
   function dimensionsCard(prof) {
@@ -271,7 +286,7 @@
       el("button", { class: "btn", onclick: () => window.print() }, "Print / save PDF")));
     main.append(headerCard(s, prof), questionsCard(prof), headline(prof));
     if (loaded.length > 1) main.append(compareCard(S.compareProfiles(D, P.pairs, profiles, loaded.map(l => l.session))));
-    main.append(blendCard(prof), dimensionsCard(prof), paletteCard(prof), flagsCard(prof), briefCard(prof), responsesCard(s));
+    main.append(attributesCard(prof), blendCard(prof), dimensionsCard(prof), paletteCard(prof), flagsCard(prof), briefCard(prof), responsesCard(s));
   }
 
   window.VBData.loadProject().then(function (project) {

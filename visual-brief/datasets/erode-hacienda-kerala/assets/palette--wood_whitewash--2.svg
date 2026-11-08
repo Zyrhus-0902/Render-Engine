@@ -1,10 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" font-family="system-ui, sans-serif">
-<rect width="800" height="600" fill="#f3f1ec"/>
-<rect width="800" height="10" fill="#2a78d6"/>
-<text x="48" y="64" font-size="18" fill="#52514e" letter-spacing="2">COLOUR &amp; PALETTE · KERALA</text>
-<text x="48" y="124" font-size="40" font-weight="600" fill="#1d1c1a">Natural wood &amp; whitewash</text>
-<text x="48" y="172" font-size="22" fill="#1d1c1a">Shows: entrance facade</text>
-<text x="48" y="226" font-size="21" fill="#3b3a37"><tspan x="48" dy="0">Dark natural timber, white lime walls, red-oxide</tspan><tspan x="48" dy="30">floors.</tspan></text>
-<rect x="48" y="440" width="116" height="72" rx="6" fill="#5a3a22" stroke="#0002"/><text x="48" y="534" font-size="15" fill="#52514e">Dark teak</text><rect x="180" y="440" width="116" height="72" rx="6" fill="#f1ece1" stroke="#0002"/><text x="180" y="534" font-size="15" fill="#52514e">Lime white</text><rect x="312" y="440" width="116" height="72" rx="6" fill="#8e3b2e" stroke="#0002"/><text x="312" y="534" font-size="15" fill="#52514e">Red oxide</text>
-<text x="48" y="580" font-size="14" fill="#8a8984">PLACEHOLDER · palette--wood_whitewash--2 · replace with a curated photo</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+<defs><linearGradient id="light" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".18"/><stop offset="1" stop-color="#000" stop-opacity=".18"/></linearGradient></defs>
+<rect x="0" y="0" width="800" height="470" fill="#dfe6ea" /><rect x="0" y="470" width="800" height="130" fill="#8e3b2e" /><rect x="160" y="230" width="480" height="240" fill="#f1ece1" /><polygon points="130,230 400,140 670,230" fill="#8e3b2e" /><rect x="360" y="330" width="80" height="140" fill="#5a3a22" /><rect x="220" y="300" width="60" height="80" fill="#5a3a22" /><rect x="520" y="300" width="60" height="80" fill="#5a3a22" />
+<rect width="800" height="600" fill="url(#light)"/>
+<text x="786" y="588" font-family="system-ui, sans-serif" font-size="13" fill="#ffffff" fill-opacity=".75" text-anchor="end" stroke="#000" stroke-opacity=".25" stroke-width=".5">#48</text>
 </svg>

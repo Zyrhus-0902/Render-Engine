@@ -63,6 +63,26 @@ def validate(project: str) -> tuple[list[str], list[str]]:
         if status == "review" and not (img.get("climate") or {}).get("note"):
             warnings.append(f"image {iid}: climate review without a note")
 
+    catalog = {a["id"]: set(a.get("values", {})) for a in dataset.get("attributes", [])}
+    for img in images:
+        for key, val in (img.get("attributes") or {}).items():
+            if key not in catalog:
+                errors.append(f"image {img.get('id')}: attribute {key!r} not in dataset attributes")
+            elif val not in catalog[key]:
+                errors.append(f"image {img.get('id')}: attribute {key}={val!r} not a listed value")
+        if catalog and not img.get("attributes"):
+            warnings.append(f"image {img.get('id')}: no attributes; it adds nothing to the cross-set reading")
+
+    # Partial tagging inside one set: a key on some options but not others means
+    # those comparisons are skipped. Usually a forgotten tag ("none" is a value).
+    for did, d in dims.items():
+        dim_imgs = [i for i in images if i.get("dimension_id") == did]
+        keys = set().union(*[set(i.get("attributes") or {}) for i in dim_imgs]) if dim_imgs else set()
+        for key in sorted(keys):
+            missing = sorted({i["option_id"] for i in dim_imgs if key not in (i.get("attributes") or {})})
+            if missing:
+                warnings.append(f"dimension {did}: attribute {key!r} missing on {', '.join(missing)} (those comparisons are skipped)")
+
     placeholders = sum(1 for i in images if i.get("placeholder"))
     if placeholders:
         warnings.append(f"{placeholders} of {len(images)} images are still placeholders")

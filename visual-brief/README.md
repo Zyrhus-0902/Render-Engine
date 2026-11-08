@@ -36,7 +36,10 @@ python visual-brief/tools/build_bundle.py erode-hacienda-kerala
 ## The client flow
 
 1. Intro: the project name, a short instruction and an optional name field. An unfinished run can be resumed.
-2. Per round: a one-line prompt ("Look only at the roof"), then 6-8 pairs.
+2. Pictures only. The client never sees a category name or a term like "flat roof" or "hip roof";
+   each pair has a plain question ("Which home feels more like yours?") and a "Set 3 of 8" counter.
+   Every pair changes only one thing, so their pick says what they prefer without them having to
+   know or name it. (`settings.round_intros` and `settings.show_dimension_names` turn the labels back on.)
    - Tap a picture, or choose **Both equally**, **Neither** or **✕ Never this** under either picture.
    - Optional "what caught your eye?" chips: shape, colour, material, light, mood, detail.
    - Progress shows per round and overall. Back is always available, and an answer can be changed.
@@ -51,6 +54,11 @@ Progress saves to the browser as they go. The client never sees the analysis.
 Load sessions saved on this device, or import the JSON files clients send. If you load two or more, you get a side-by-side comparison.
 
 - **Ask "why?"**: the top 5 questions, ranked. They are built from the most lopsided dimensions (using each option's `why_prompt` and the chips they tapped), repeated contrasts that went both ways, cross-dimension tensions defined in the dataset, firm "never this" choices, rounds where nothing fit, and the pairs that took longest.
+- **What they respond to**: every image carries hidden tags (`attributes` in the manifest:
+  roof pitch, eaves, texture, arches, timber, ornament, greenery, water…). Whenever the two
+  pictures in a pair differ on a tag, the pick counts for that feature, across every set. This is
+  how the tool reads preferences the client can't name: "picked a lot of visible wood 13 of 16
+  times, in 4 different sets". Strong cross-set patterns become "why?" questions.
 - **At a glance**: the winner, its strength (strong / moderate / slight / split) and the runner-up for each dimension.
 - **Style blend**: Kerala / hacienda / modern / hybrid share, overall and per dimension, taken from the origin tags on the chosen images. It also counts "never this" by origin.
 - **By dimension**: a score per option (+1 win, −1 loss, +½ both, −½ neither, −2 never, averaged over the times it was shown), plus chip counts.
@@ -66,7 +74,7 @@ datasets/<project>/
   dataset.json          project, branding, copy (per language), origins, dimensions + options,
                         chips, brief fields, tensions, settings
   pairs.json            pairs[]: id, dimension_id, image_a, image_b, origin_a, origin_b, tags, note
-  assets/manifest.json  images[]: id, file, dimension_id, option_id, origin (or origin_weights),
+  assets/manifest.json  images[]: id, code, file, dimension_id, option_id, origin (or origin_weights), attributes{},
                         subject, materials[], palette[{name,hex}], scale,
                         climate{status: ok|review|exclude, note}, source, credit, placeholder
   assets/*              the images
@@ -88,8 +96,11 @@ Tools:
 
 ## Curating the real image set (Erode)
 
-The starter set has 8 dimensions, 55 pairs and 66 placeholder images. Each placeholder card
-shows what the real photo should be. To replace one, drop the photo into
+The starter set has 8 dimensions, 55 pairs and 66 text-free sketch placeholders
+(`tools/sketches.py`); `subject` in the manifest says what the real photo should show.
+Tag every real photo's `attributes` for what it actually shows: a photo that also has arches
+or a lot of greenery should say so, so that feature is counted too. The validator warns
+when a tag is set on some options of a set but missing on others. To replace one, drop the photo into
 `assets/`, then in `manifest.json` set `file`, `source` and `credit` and remove
 `"placeholder": true`. Rules from the brief that the data supports:
 
