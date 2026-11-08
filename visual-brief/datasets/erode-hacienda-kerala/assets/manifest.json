@@ -526,7 +526,7 @@
     },
     {
       "id": "courtyard--open_patio--1",
-      "file": "courtyard--open_patio--1.svg",
+      "file": "courtyard--open_patio--1.jpg",
       "dimension_id": "courtyard",
       "option_id": "open_patio",
       "origin": "hacienda",
@@ -557,14 +557,17 @@
         "status": "ok",
         "note": ""
       },
-      "source": "placeholder",
-      "credit": "",
-      "placeholder": true,
-      "code": "#14"
+      "source": "https://commons.wikimedia.org/wiki/File:Hacienda_patio_principal_1.JPG",
+      "credit": "GABIEGUIN / Wikimedia Commons",
+      "placeholder": false,
+      "code": "#14",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "title": "Hacienda patio principal 1.JPG"
     },
     {
       "id": "courtyard--open_patio--2",
-      "file": "courtyard--open_patio--2.svg",
+      "file": "courtyard--open_patio--2.jpg",
       "dimension_id": "courtyard",
       "option_id": "open_patio",
       "origin": "hacienda",
@@ -595,14 +598,17 @@
         "status": "ok",
         "note": ""
       },
-      "source": "placeholder",
-      "credit": "",
-      "placeholder": true,
-      "code": "#15"
+      "source": "https://commons.wikimedia.org/wiki/File:Top_view_of_a_courtyard_of_a_colonial_building_in_Trinidad.jpg",
+      "credit": "Panther / Wikimedia Commons",
+      "placeholder": false,
+      "code": "#15",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "title": "Top view of a courtyard of a colonial building in Trinidad.jpg"
     },
     {
       "id": "courtyard--open_patio--3",
-      "file": "courtyard--open_patio--3.svg",
+      "file": "courtyard--open_patio--3.jpg",
       "dimension_id": "courtyard",
       "option_id": "open_patio",
       "origin": "hacienda",
@@ -633,10 +639,13 @@
         "status": "ok",
         "note": ""
       },
-      "source": "placeholder",
-      "credit": "",
-      "placeholder": true,
-      "code": "#16"
+      "source": "https://commons.wikimedia.org/wiki/File:Courtyard_of_a_colonial_building_in_Trinidad.jpg",
+      "credit": "Panther / Wikimedia Commons",
+      "placeholder": false,
+      "code": "#16",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "title": "Courtyard of a colonial building in Trinidad.jpg"
     },
     {
       "id": "courtyard--side_court_linear--1",
