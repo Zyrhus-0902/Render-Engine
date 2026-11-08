@@ -1269,7 +1269,7 @@
     },
     {
       "id": "columns--wrought_iron--1",
-      "file": "columns--wrought_iron--1.svg",
+      "file": "columns--wrought_iron--1.jpg",
       "dimension_id": "columns",
       "option_id": "wrought_iron",
       "origin": "hacienda",
@@ -1298,14 +1298,17 @@
         "status": "ok",
         "note": ""
       },
-      "source": "placeholder",
-      "credit": "",
-      "placeholder": true,
-      "code": "#33"
+      "source": "https://commons.wikimedia.org/wiki/File:Richmond_07.jpg",
+      "credit": "LBM1948 / Wikimedia Commons",
+      "placeholder": false,
+      "code": "#33",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "title": "Richmond 07.jpg"
     },
     {
       "id": "columns--wrought_iron--2",
-      "file": "columns--wrought_iron--2.svg",
+      "file": "columns--wrought_iron--2.jpg",
       "dimension_id": "columns",
       "option_id": "wrought_iron",
       "origin": "hacienda",
@@ -1334,10 +1337,13 @@
         "status": "ok",
         "note": ""
       },
-      "source": "placeholder",
-      "credit": "",
-      "placeholder": true,
-      "code": "#34"
+      "source": "https://commons.wikimedia.org/wiki/File:Richmond_08.jpg",
+      "credit": "LBM1948 / Wikimedia Commons",
+      "placeholder": false,
+      "code": "#34",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "title": "Richmond 08.jpg"
     },
     {
       "id": "columns--modern_slender--1",
