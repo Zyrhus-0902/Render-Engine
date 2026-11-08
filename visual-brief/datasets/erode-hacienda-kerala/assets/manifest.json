@@ -1825,7 +1825,7 @@
     },
     {
       "id": "palette--wood_whitewash--1",
-      "file": "palette--wood_whitewash--1.svg",
+      "file": "palette--wood_whitewash--1.jpg",
       "dimension_id": "palette",
       "option_id": "wood_whitewash",
       "origin": "kerala",
@@ -1858,14 +1858,17 @@
         "status": "ok",
         "note": ""
       },
-      "source": "placeholder",
-      "credit": "",
-      "placeholder": true,
-      "code": "#47"
+      "source": "https://commons.wikimedia.org/wiki/File:Kerala_Jews_History_Museum_interior_3.jpg",
+      "credit": "KannanVM / Wikimedia Commons",
+      "placeholder": false,
+      "code": "#47",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "title": "Kerala Jews History Museum interior 3.jpg"
     },
     {
       "id": "palette--wood_whitewash--2",
-      "file": "palette--wood_whitewash--2.svg",
+      "file": "palette--wood_whitewash--2.jpg",
       "dimension_id": "palette",
       "option_id": "wood_whitewash",
       "origin": "kerala",
@@ -1898,10 +1901,13 @@
         "status": "ok",
         "note": ""
       },
-      "source": "placeholder",
-      "credit": "",
-      "placeholder": true,
-      "code": "#48"
+      "source": "https://commons.wikimedia.org/wiki/File:Kerala_Jews_History_Museum_interior_1.jpg",
+      "credit": "KannanVM / Wikimedia Commons",
+      "placeholder": false,
+      "code": "#48",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "title": "Kerala Jews History Museum interior 1.jpg"
     },
     {
       "id": "palette--earthy_neutral--1",
