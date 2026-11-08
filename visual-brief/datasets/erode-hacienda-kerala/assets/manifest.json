@@ -1193,7 +1193,7 @@
     },
     {
       "id": "columns--masonry_arcade--1",
-      "file": "columns--masonry_arcade--1.svg",
+      "file": "columns--masonry_arcade--1.jpg",
       "dimension_id": "columns",
       "option_id": "masonry_arcade",
       "origin": "hacienda",
@@ -1221,14 +1221,17 @@
         "status": "ok",
         "note": ""
       },
-      "source": "placeholder",
-      "credit": "",
-      "placeholder": true,
-      "code": "#31"
+      "source": "https://commons.wikimedia.org/wiki/File:Arcade_of_Stone_Arches_at_Marr_Hall_Farm_-_geograph.org.uk_-_5106900.jpg",
+      "credit": "Jonathan Clitheroe / Wikimedia Commons",
+      "placeholder": false,
+      "code": "#31",
+      "license": "CC BY-SA 2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+      "title": "Arcade of Stone Arches at Marr Hall Farm - geograph.org.uk - 5106900.jpg"
     },
     {
       "id": "columns--masonry_arcade--2",
-      "file": "columns--masonry_arcade--2.svg",
+      "file": "columns--masonry_arcade--2.jpg",
       "dimension_id": "columns",
       "option_id": "masonry_arcade",
       "origin": "hacienda",
@@ -1256,10 +1259,13 @@
         "status": "ok",
         "note": ""
       },
-      "source": "placeholder",
-      "credit": "",
-      "placeholder": true,
-      "code": "#32"
+      "source": "https://commons.wikimedia.org/wiki/File:Arcos_hacienda_cocoyoc.jpg",
+      "credit": "Majo.gtzm2635 / Wikimedia Commons",
+      "placeholder": false,
+      "code": "#32",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "title": "Arcos hacienda cocoyoc.jpg"
     },
     {
       "id": "columns--wrought_iron--1",
