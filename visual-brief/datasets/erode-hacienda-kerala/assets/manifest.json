@@ -1911,7 +1911,7 @@
     },
     {
       "id": "palette--earthy_neutral--1",
-      "file": "palette--earthy_neutral--1.svg",
+      "file": "palette--earthy_neutral--1.jpg",
       "dimension_id": "palette",
       "option_id": "earthy_neutral",
       "origin": "modern",
@@ -1944,10 +1944,13 @@
         "status": "ok",
         "note": ""
       },
-      "source": "placeholder",
-      "credit": "",
-      "placeholder": true,
-      "code": "#49"
+      "source": "https://stocksnap.io/photo/minimalist-interior-6HFG9L6JGC",
+      "credit": "Travel Adventures / Openverse/stocksnap",
+      "placeholder": false,
+      "code": "#49",
+      "license": "CC0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "title": "Minimalist Interior"
     },
     {
       "id": "palette--earthy_neutral--2",
