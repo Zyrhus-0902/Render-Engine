@@ -1419,7 +1419,7 @@
     },
     {
       "id": "openings--timber_slat_rect--1",
-      "file": "openings--timber_slat_rect--1.svg",
+      "file": "openings--timber_slat_rect--1.jpg",
       "dimension_id": "openings",
       "option_id": "timber_slat_rect",
       "origin": "kerala",
@@ -1449,14 +1449,17 @@
         "status": "ok",
         "note": ""
       },
-      "source": "placeholder",
-      "credit": "",
-      "placeholder": true,
-      "code": "#37"
+      "source": "https://commons.wikimedia.org/wiki/File:Wooden_house_(window_shutters),_Riga.jpg",
+      "credit": "Photograph: / Wikimedia Commons",
+      "placeholder": false,
+      "code": "#37",
+      "license": "Public domain",
+      "license_url": "",
+      "title": "Wooden house (window shutters), Riga.jpg"
     },
     {
       "id": "openings--timber_slat_rect--2",
-      "file": "openings--timber_slat_rect--2.svg",
+      "file": "openings--timber_slat_rect--2.jpg",
       "dimension_id": "openings",
       "option_id": "timber_slat_rect",
       "origin": "kerala",
@@ -1486,10 +1489,13 @@
         "status": "ok",
         "note": ""
       },
-      "source": "placeholder",
-      "credit": "",
-      "placeholder": true,
-      "code": "#38"
+      "source": "https://commons.wikimedia.org/wiki/File:Storm-door,amado,narita-city,japan.JPG",
+      "credit": "katorisi / Wikimedia Commons",
+      "placeholder": false,
+      "code": "#38",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "title": "Storm-door,amado,narita-city,japan.JPG"
     },
     {
       "id": "openings--arched_openings--1",
