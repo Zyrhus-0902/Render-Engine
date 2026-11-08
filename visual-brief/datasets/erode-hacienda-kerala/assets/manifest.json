@@ -2410,7 +2410,7 @@
     },
     {
       "id": "abstraction--ornate--1",
-      "file": "abstraction--ornate--1.svg",
+      "file": "abstraction--ornate--1.jpg",
       "dimension_id": "abstraction",
       "option_id": "ornate",
       "origin": "kerala",
@@ -2437,14 +2437,17 @@
         "status": "ok",
         "note": ""
       },
-      "source": "placeholder",
-      "credit": "",
-      "placeholder": true,
-      "code": "#61"
+      "source": "https://commons.wikimedia.org/wiki/File:Carved_wooden_roof_and_column,_Andijan_Jame_Mosque_Complex,_Uzbekistan.jpg",
+      "credit": "Petar Milošević / Wikimedia Commons",
+      "placeholder": false,
+      "code": "#61",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "title": "Carved wooden roof and column, Andijan Jame Mosque Complex, Uzbekistan.jpg"
     },
     {
       "id": "abstraction--ornate--2",
-      "file": "abstraction--ornate--2.svg",
+      "file": "abstraction--ornate--2.jpg",
       "dimension_id": "abstraction",
       "option_id": "ornate",
       "origin": "hacienda",
@@ -2471,10 +2474,13 @@
         "status": "ok",
         "note": ""
       },
-      "source": "placeholder",
-      "credit": "",
-      "placeholder": true,
-      "code": "#62"
+      "source": "https://commons.wikimedia.org/wiki/File:Hacienda_Lealtad,_former_coffee_plantation_in_Lares,_Puerto_Rico_13.jpg",
+      "credit": "The Eloquent Peasant / Wikimedia Commons",
+      "placeholder": false,
+      "code": "#62",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "title": "Hacienda Lealtad, former coffee plantation in Lares, Puerto Rico 13.jpg"
     },
     {
       "id": "abstraction--restrained--1",
