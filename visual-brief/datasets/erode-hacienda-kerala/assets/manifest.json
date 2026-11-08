@@ -810,7 +810,7 @@
     },
     {
       "id": "facade_material--laterite--1",
-      "file": "facade_material--laterite--1.svg",
+      "file": "facade_material--laterite--1.jpg",
       "dimension_id": "facade_material",
       "option_id": "laterite",
       "origin": "kerala",
@@ -838,14 +838,17 @@
         "status": "review",
         "note": "Laterite is quarried in Kerala/coastal Karnataka; transport to Erode adds cost. Consider local brick or stone with a similar look."
       },
-      "source": "placeholder",
-      "credit": "",
-      "placeholder": true,
-      "code": "#21"
+      "source": "https://www.flickr.com/photos/81989974@N00/2317150492",
+      "credit": "joaquinuy / Openverse/flickr",
+      "placeholder": false,
+      "code": "#21",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/",
+      "title": "Laterite Walls"
     },
     {
       "id": "facade_material--laterite--2",
-      "file": "facade_material--laterite--2.svg",
+      "file": "facade_material--laterite--2.jpg",
       "dimension_id": "facade_material",
       "option_id": "laterite",
       "origin": "kerala",
@@ -873,10 +876,13 @@
         "status": "ok",
         "note": ""
       },
-      "source": "placeholder",
-      "credit": "",
-      "placeholder": true,
-      "code": "#22"
+      "source": "https://commons.wikimedia.org/wiki/File:A_typical_compound_for_Konkan_Homes_using_Laterite_(_Jambha_)_Stones_-_panoramio.jpg",
+      "credit": "Deepak Patil / Wikimedia Commons",
+      "placeholder": false,
+      "code": "#22",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "title": "A typical compound for Konkan Homes using Laterite ( Jambha ) Stones - panoramio.jpg"
     },
     {
       "id": "facade_material--lime_whitewash--1",
