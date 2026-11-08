@@ -731,7 +731,7 @@
     },
     {
       "id": "courtyard--compact_no_court--1",
-      "file": "courtyard--compact_no_court--1.svg",
+      "file": "courtyard--compact_no_court--1.jpg",
       "dimension_id": "courtyard",
       "option_id": "compact_no_court",
       "origin": "modern",
@@ -762,10 +762,13 @@
         "status": "ok",
         "note": ""
       },
-      "source": "placeholder",
-      "credit": "",
-      "placeholder": true,
-      "code": "#19"
+      "source": "https://www.flickr.com/photos/81958151@N08/9579087279",
+      "credit": "natrangdesign.vn / Openverse/flickr",
+      "placeholder": false,
+      "code": "#19",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/",
+      "title": "Skylight house-natrangdesign-04"
     },
     {
       "id": "courtyard--compact_no_court--2",
