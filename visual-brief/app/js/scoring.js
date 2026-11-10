@@ -57,6 +57,9 @@
     const w = {}; w[img.origin] = 1; return w;
   }
 
+  /** Sets switched off in the dataset (`"active": false`) are left out of the run and the profile. */
+  function activeDimensions(dataset) { return dataset.dimensions.filter(d => d.active !== false); }
+
   /** Images the climate/buildability filter keeps out of the client run. */
   function isExcluded(img) { return !img || (img.climate && img.climate.status === "exclude"); }
 
@@ -83,7 +86,7 @@
     const imgs = indexBy(images, "id");
     const rand = rng(seed || "fixed");
     const steps = [];
-    dataset.dimensions.forEach(function (dim, di) {
+    activeDimensions(dataset).forEach(function (dim, di) {
       let ps = pairs.filter(p => p.dimension_id === dim.id && pairShown(dataset, imgs, p));
       if (!ps.length) return;
       if (settings.shuffle_pairs !== false) ps = shuffle(ps, rand);
@@ -179,7 +182,7 @@
       }
     }
 
-    const dims = dataset.dimensions.map(function (dim) {
+    const dims = activeDimensions(dataset).map(function (dim) {
       const optStats = {};
       dim.options.forEach(o => optStats[o.id] = {
         id: o.id, label: text(o.label, lang), origin: o.origin, points: 0, appearances: 0,
@@ -429,7 +432,7 @@
 
   /** Where two or more respondents agree and disagree. */
   function compareProfiles(dataset, pairs, profiles, sessions) {
-    const dims = dataset.dimensions.map(function (dim) {
+    const dims = activeDimensions(dataset).map(function (dim) {
       const per = profiles.map(p => p.dimensions.find(d => d.id === dim.id));
       const winners = per.map(d => d && d.winner ? d.winner.id : null);
       const named = winners.filter(Boolean);
@@ -452,5 +455,5 @@
     return { dimensions: dims, opposite_pairs: opposite };
   }
 
-  return { POINTS, CHOICES, buildSequence, computeProfile, compareProfiles, latestResponses, isExcluded, isMixed, pairShown, rng, shuffle, hashString, text };
+  return { POINTS, CHOICES, activeDimensions, buildSequence, computeProfile, compareProfiles, latestResponses, isExcluded, isMixed, pairShown, rng, shuffle, hashString, text };
 });

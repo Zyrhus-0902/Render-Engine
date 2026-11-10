@@ -18,7 +18,7 @@
     "en": {
       "intro_title": "Help us see your home",
       "intro_body": "You'll see pairs of pictures. Tap the one you like more. There are no right answers and nothing to explain; go with your first feeling.",
-      "intro_time": "About 10-15 minutes.",
+      "intro_time": "About 8-10 minutes.",
       "name_label": "Your name",
       "name_placeholder": "e.g. Priya",
       "start": "Start",
@@ -771,7 +771,9 @@
             "timber": "none"
           }
         }
-      ]
+      ],
+      "active": false,
+      "inactive_note": "Off: colour warmth and ornament are read from the hidden tags on every photo in the other sets."
     },
     {
       "id": "landscape",
@@ -1007,7 +1009,9 @@
             "ornament": "low"
           }
         }
-      ]
+      ],
+      "active": false,
+      "inactive_note": "Off: colour warmth and ornament are read from the hidden tags on every photo in the other sets."
     }
   ],
   "brief": {
@@ -1266,7 +1270,7 @@
   "settings": {
     "shuffle_pairs": true,
     "randomise_sides": true,
-    "show_chips": true,
+    "show_chips": false,
     "round_intros": false,
     "show_dimension_names": false
   }

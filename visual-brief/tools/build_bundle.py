@@ -77,6 +77,10 @@ def build(project: str) -> Path:
             print("ERROR:  ", e)
         raise SystemExit(f"{project}: {len(errors)} validation errors; not bundling")
     dataset, pairs, images, base = load(project)
+    # Sets switched off in the dataset ship without their photos or pairs.
+    off = {d["id"] for d in dataset["dimensions"] if d.get("active") is False}
+    images = [i for i in images if i["dimension_id"] not in off]
+    pairs = [p for p in pairs if p["dimension_id"] not in off]
     for img in images:
         f = img["file"]
         if not f.startswith(("http://", "https://", "data:")):

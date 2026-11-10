@@ -7,10 +7,13 @@ const path = require("node:path");
 const S = require("../app/js/scoring.js");
 
 const base = path.join(__dirname, "..", "datasets", "erode-hacienda-kerala");
-const D = JSON.parse(fs.readFileSync(path.join(base, "dataset.json"), "utf8"));
+const RAW = JSON.parse(fs.readFileSync(path.join(base, "dataset.json"), "utf8"));
+// Logic tests run with every set switched on, whatever the live dataset has turned off.
+const D = Object.assign({}, RAW, { dimensions: RAW.dimensions.map(d => Object.assign({}, d, { active: true })) });
 const P = JSON.parse(fs.readFileSync(path.join(base, "pairs.json"), "utf8")).pairs;
 // Pinned to "all sketches" so the tests check the logic, not how far photo curation has got.
 const I = JSON.parse(fs.readFileSync(path.join(base, "assets", "manifest.json"), "utf8")).images.map(i => Object.assign({}, i, { placeholder: true }));
+const ACTIVE = S.activeDimensions(D);
 const imgs = Object.fromEntries(I.map(i => [i.id, i]));
 
 // A respondent who always picks a fixed option per dimension when it is shown.
@@ -35,11 +38,11 @@ test("sequence: every pair once, grouped by dimension, deterministic per seed", 
   assert.equal(new Set(ids).size, P.length);
   assert.deepEqual(a, b);
   assert.notDeepEqual(a.map(s => s.pair_id), c.map(s => s.pair_id));
-  assert.equal(a.filter(s => s.type === "round").length, D.settings.round_intros === false ? 0 : D.dimensions.length);
+  assert.equal(a.filter(s => s.type === "round").length, D.settings.round_intros === false ? 0 : ACTIVE.length);
   assert.equal(a.at(-1).type, "done");
   // Pairs of one round are contiguous, right after that round's intro.
   const order = a.filter(s => s.type === "pair").map(s => s.dimension_id);
-  assert.deepEqual([...new Set(order)], D.dimensions.map(d => d.id));
+  assert.deepEqual([...new Set(order)], ACTIVE.map(d => d.id));
   for (let i = 1; i < order.length; i++) if (order[i] !== order[i - 1]) assert.ok(!order.slice(0, i).includes(order[i]), "dimension pairs not contiguous");
 });
 
@@ -149,7 +152,7 @@ test("sequence: round intros can be switched off", () => {
   const D2 = Object.assign({}, D, { settings: Object.assign({}, D.settings, { round_intros: false }) });
   const steps = S.buildSequence(D2, P, I, "x");
   assert.equal(steps.filter(s => s.type === "round").length, 0);
-  assert.ok(steps.filter(s => s.type === "pair").every(s => s.round_number >= 1 && s.round_count === D.dimensions.length));
+  assert.ok(steps.filter(s => s.type === "pair").every(s => s.round_number >= 1 && s.round_count === ACTIVE.length));
 });
 
 test("sequence: a sketch paired with a photo is not shown", () => {
@@ -158,4 +161,13 @@ test("sequence: a sketch paired with a photo is not shown", () => {
   assert.ok(!ids.includes(P[0].id));
   const D2 = Object.assign({}, D, { settings: Object.assign({}, D.settings, { allow_mixed_pairs: true }) });
   assert.ok(S.buildSequence(D2, P, I2, "s").some(s => s.pair_id === P[0].id));
+});
+
+test("sets switched off are left out of the run and the profile", () => {
+  const D2 = Object.assign({}, D, { dimensions: D.dimensions.map(d => Object.assign({}, d, { active: d.id !== "palette" })) });
+  const steps = S.buildSequence(D2, P, I, "x");
+  assert.ok(!steps.some(s => s.dimension_id === "palette"));
+  const prof = S.computeProfile(D2, P, I, { responses: P.map(p => ({ pair_id: p.id, choice: "a", ms: 3000 })) });
+  assert.ok(!prof.dimensions.some(d => d.id === "palette"));
+  assert.equal(prof.total_pairs, P.filter(p => p.dimension_id !== "palette").length);
 });

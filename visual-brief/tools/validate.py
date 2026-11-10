@@ -127,6 +127,8 @@ def validate(project: str) -> tuple[list[str], list[str]]:
     if mixed and not dataset.get("settings", {}).get("allow_mixed_pairs"):
         warnings.append(f"{len(mixed)} pairs mix a sketch with a photo and are hidden from clients until both sides are photos: {', '.join(mixed)}")
     for did, d in dims.items():
+        if d.get("active") is False:
+            continue
         n = per_dim[did]
         if not 6 <= n <= 10:
             warnings.append(f"dimension {did}: {n} pairs (aim for 6-10)")
