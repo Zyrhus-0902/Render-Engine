@@ -11,3 +11,6 @@ projects/*/export/*.obj
 projects/*/export/*.glb
 !projects/demo/export/model.fbx
 *.blend1
+
+# Local secrets
+.env
